@@ -1,0 +1,987 @@
+HOFFMANN FIRMWARE ANALYSIS REPORT
+Python binary inspection
+
+===========================================================================
+FILE: slaveboot.img
+SIZE: 2097152 bytes
+SHA256: ff4b8ee75a9728fe758974c46909ca9a02220aba4258f95a2f2a71e8bc350273
+
+FIRST 256 BYTES:
+3a 08 00 ea 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+KEY STRINGS:
+0x000022E8: Slave boot startup
+0x0007821C: hi_adp_disp_init
+0x0007823C: hi_log_init
+0x00078248: emmc_get_flash_info
+0x0007825C: check_duplicate_partition
+0x00078278: emmc_choose_image_info
+0x00078290: hi_flash_write_block_buff
+0x000782AC: hi_flash_write_aligned_write_offset
+0x000782D0: loader_burn_write_data_ext4sp
+0x000782F0: loader_burn_new_sparse_ctl
+0x0007830C: loader_burn_ext4sp_init_header_offset
+0x00078334: loader_burn_verify_chunk
+0x00078350: loader_burn_ext4sp_search_chunk
+0x00078370: loader_burn_ext4sp_init_header
+0x00078390: loader_burn_ext4sp_chunk_type_fill
+0x000783B4: loader_burn_large_block_with_fill_mode
+0x000783DC: loader_burn_write_data_raw
+0x000783F8: loader_burn_write_raw_remain
+0x00078418: loader_burn_write_raw_data
+0x00078834: usb_dev_init
+0x00078844: hi_drv_custom_board_init
+0x000788B4: custom_write_i2c
+0x00078A30: hi_drv_gpio_write_bit
+0x00078A48: hi_drv_gpio_read_bit
+0x00078A74: i2c_drv_wait_write_end
+0x00078A8C: i2c_drv_wait_read
+0x00078AA0: hi_drv_i2c_write_config
+0x00078AB8: hi_drv_i2c_write
+0x00078ACC: hi_drv_i2c_read
+0x00078ADC: hi_drv_i2c_init
+0x00078AFC: hi_drv_i2c_read_cmd
+0x00078B10: hi_drv_i2c_write_cmd
+0x00078B44: hi_drv_mailbox_update_flash_info
+0x00078BAC: osal_timer_init
+0x00078C60: panel_drv_check_spread
+0x00078C78: panel_drv_set_spread
+0x00078ED4: hi_drv_panel_set_power_on_recovery
+0x00078FBC: hi_drv_panel_init
+0x00078FD0: hi_drv_panel_de_init
+0x0007911C: panel_drv_alloc_mmz_in_boot
+0x00079300: panel_drv_i2_c_read
+0x00079314: panel_drv_i2_c_write
+0x00079368: panel_drv_read_bl_driver_file
+0x000793C4: panel_drv_resume_cfg_k_thread
+0x00079A1C: panel_drv_check_lvds_phy_spread_enable
+0x00079A44: panel_drv_check_lvds_phy_spread_ratio
+0x00079A6C: panel_drv_check_lvds_phy_spread_freq
+0x00079AE4: panel_drv_check_lvds_attr_spread_ratio
+0x00079B28: panel_drv_check_lvds_attr_spread_freq
+0x0007A388: panel_drv_get_power_on_recovery
+0x0007A3E0: panel_drv_pwm_init
+0x0007A43C: panel_drv_pwm_de_init
+0x0007A984: panel_hal_set_spread_freq
+0x0007AA14: hal_tianlai_init
+0x0007AA28: hi_flash_open_emmc_0
+0x0007AA98: graphic_io_read
+0x0007AAC0: read_from_securestore
+0x0007AAD8: read_from_system
+0x0007AAEC: write_to_securestore
+0x0007B1D0: init_loader_drv
+0x0007B1E0: loader_second_usb_mandatory_upgrd_ext
+0x0007B20C: product_display_init
+0x0007B224: hi_boot_panel_power_on
+0x0007B380: optm_alg_g_zme_vdp_comn_init
+0x0007B3A0: optm_alg_g_zme_vdp_comn_de_init
+0x0007B408: optm_vdp_driver_de_init
+0x0007B4EC: optm_vdp_gfx_set_layer_addr_ex
+0x0007B5A0: optm_vdp_gfx_set_read_mode
+0x0007B718: optm_vdp_gp_set_read_mode
+0x0007B800: optm_vdp_fdr_gfx_set_head_addr_l
+0x0007BB2C: optm_vdp_gp_set_zme_coef_addr
+0x0007BBD0: optm_gfx_set_gp_in_init_flag
+0x0007BBF0: optm_gfx_get_gp_in_init_flag
+0x0007BC2C: optm_gfx_set_layer_read_mode
+0x0007BC88: optm_gfx_set_layer_addr
+0x0007BD88: optm_gfx_set_clut_addr
+0x0007BDB4: optm_gfx_init_layer
+0x0007BE04: optm_gpdata_init
+0x0007BE18: optm_gfx_init
+0x0007C020: optm_layer_recovery
+0x0007C034: optm_gp_recovery_all_gfx
+0x0007C050: optm_gp_recovery
+0x0007C064: optm_gp_init_from_disp
+0x0007CA50: hal_otp_v100_wait_ready
+0x0007CA78: otp_write
+0x0007CA84: otp_read
+0x0007CCC0: ldm_spi_reg_init
+0x0007CCD4: ldm_spi_reg_de_init
+0x0007E5D8: hisi_file_load_upgrade_image
+0x0007E608: hisi_file_prepare_src
+0x0007E620: hisi_file_load_header
+0x0007E638: hisi_file_header_parase
+0x0007E650: hisi_file_get_version
+0x0007E668: hisi_file_verify_header
+0x0007E680: hisi_file_load_upgrade_data
+0x0007E69C: hisi_file_show_upgrade_result
+0x0007E6BC: hisi_file_finish_update
+0x0007E6D4: tde_hal_init_para_table
+0x0007F2D4: ui_grphic_init
+0x0007F2E4: ui_init_v1
+0x0007F348: get_partition_upgrad_cfg
+0x00080274: analog amp no init! 
+0x000802D4: pfn_gpio_write_bit failed, line =%d
+0x000802FC: pfn_gpio_write_bit failed, line = %d
+0x0008036C: ad82010 i2c write error :i2c_num:0x%x, i2c_dev_addr:0x%x, u1_addr:0x%x, addlen:0x%x, pu1_buf:0x%x, u2_byte_cnt:0x%x
+0x000803E4: ad82010 read fail :%d!
+0x00080438: AD82010 write I2C fail 
+0x00080454: AD82010 read I2C fail 
+0x0008046C: amp_write_reg function failed 
+0x000804CC: AD82010 init fail 
+0x000804FC: ad82584 i2c write error :i2c_num:0x%x, i2c_dev_addr:0x%x, u1_addr:0x%x, addlen:0x%x, pu1_buf:0x%x, u2_byte_cnt:0x%x
+0x00080574: ad82584 read fail :%d!
+0x000805C8: AD82584 write I2C fail 
+0x000805E4: AD82584 read I2C fail 
+0x000805FC: AD82584 no init! 
+0x0008065C: AD82584 init fail 
+0x00080690: ad82584_f i2c write error :i2c_num:0x%x, i2c_dev_addr:0x%x, u1_addr:0x%x, addlen:0x%x, pu1_buf:0x%x, u2_byte_cnt:0x%x
+0x00080728: ad82584_f read fail :%d!
+0x00080764: AD82584F write I2C fail 
+0x00080780: AD82584F read I2C fail 
+0x000807C4: AD82584F init fail 
+0x000807DC: AD82584F no init! 
+0x00080850: ad83586 i2c write error :i2c_num:0x%x, i2c_dev_addr:0x%x, u1_addr:0x%x, addlen:0x%x, pu1_buf:0x%x, u2_byte_cnt:0x%x
+0x000808C8: ad83586 read fail :%d!
+0x00080900: ad83586 write I2C fail 
+0x0008091C: ad83586 read I2C fail 
+0x00080934: ad83586 no init! 
+0x00080994: ad83586 init fail 
+0x000809C4: ALC1301 i2c write error :i2c_num:0x%x, i2c_dev_addr:0x%x, u1_addr:0x%x, addlen:0x%x, pu1_buf:0x%x, u2_byte_cnt:0x%x
+0x00080A3C: 5707 read fail :%d!
+0x00080A74: ALC1310 write I2C fail 
+0x00080A90: ALC1310 read I2C fail 
+0x00080AA8: ALC1310 no init! 
+0x00080B08: ALC1310 init fail 
+0x00080B30: NTP8212 i2c write error :i2c_num:0x%x, i2c_dev_addr:0x%x, u1_addr:0x%x, addlen:0x%x, pu1_buf:0x%x, u2_byte_cnt:0x%x
+0x00080BA8: 5711read fail :%d!
+0x00080BDC: NTP8212 write I2C fail 
+0x00080BF8: NTP8212 no init! 
+0x00080C30: NTP8212 read I2C fail 
+0x00080C70: ntp8212_init fail 
+0x00080C84: NTP8214 i2c write error :i2c_num:0x%x, i2c_dev_addr:0x%x, u1_addr:0x%x, addlen:0x%x, pu1_buf:0x%x, u2_byte_cnt:0x%x
+0x00080D1C: NTP8214 write I2C fail 
+0x00080D38: NTP8214 no init! 
+0x00080D70: NTP8214 read I2C fail 
+0x00080DB0: ntp8214_init fail 
+0x00080DC4: rt9107b_drv i2c write error :i2c_num:0x%x, i2c_dev_addr:0x%x, u1_addr:0x%x, addlen:0x%x, pu1_buf:0x%x, u2_byte_cnt:0x%x
+0x00080E40: rt9107b_drv read fail :%d!
+0x00080E7C: rt9107b write I2C fail 
+0x00080E98: rt9107b_drv no init! 
+0x00080ED4: rt9107b read I2C fail 
+0x00080F14: rt9107b init fail 
+0x00080F28: tas5707_drv i2c write error :i2c_num:0x%x, i2c_dev_addr:0x%x, u1_addr:0x%x, addlen:0x%x, pu1_buf:0x%x, u2_byte_cnt:0x%x
+0x00080FA4: tas5707_drv read fail :%d!
+0x00080FE0: TAS5707 write I2C fail 
+0x00080FFC: tas5707_drv no init! 
+0x00081038: TAS5707 read I2C fail 
+0x00081050: TAS5707 init fail 
+0x0008108C: tas5711 i2c write error :i2c_num:0x%x, i2c_dev_addr:0x%x, u1_addr:0x%x, addlen:0x%x, pu1_buf:0x%x, u2_byte_cnt:0x%x
+0x00081124: TAS5711 write I2C fail 
+0x00081140: TAS5711 no init! 
+0x00081154: TAS5711 read I2C fail 
+0x000811B8: tas5711_init fail 
+0x000811E0: Tas5805Drv i2c write error :I2cNum:0x%x, I2cDevAddr:0x%x, addr:0x%x, addlen:0x%x, buf:0x%x, byte_cnt:0x%x
+0x0008124C: Tas5805Drv read fail :%d!
+0x00081288: TAS5805 write I2C Fail 
+0x000812A4: Tas5805Drv no Init! 
+0x000812F8: TAS5805 Read I2C Fail 
+0x00081310: TAS5805 Init WriteReg Fail 
+0x00081368: HI_UNF_PANEL_Init err! ret = %x
+0x0008138C: HI_UNF_DISP_Init err! ret = %x
+0x000813CC: HI_UNF_DISP_DeInit  err! ret = %x
+0x00081424: secure func call error
+0x0008145C: flash
+0x000814A4: loader
+0x000814B0: ERROR:  failed to open flash, type:0x%x start_addr:0x%llx.
+0x000814EC: ERROR:  hi_flash_get_info failed.
+0x00081510: ERROR:  invalid end address.(flash size: 0x%08llx, end addr: 0x%08llx)
+0x00081558: INFO:  partition_id = %d
+0x00081574: INFO:  en_flash_type = %d
+0x00081590: INFO:  h_flash_handle = 0x%x
+0x000815B0: INFO:  write_offset = 0x%llx
+0x000815E8: INFO:  write_flags = %d
+0x00081604: INFO:  flash_block_size = 0x%x
+0x00081644: INFO:  remained_buff addr = 0x%x
+0x000816C4: INFO:  image is ext4 sparse filesystem for partition(%d).
+0x00081700: INFO:  image is raw data for partition(%d).
+0x00081814: INFO:      duplicate flash_addr_end 0x%llx
+0x00081840: WARNING:  Choose Partition with Chip Size:   %s(0x%llx) Bytes, Offset: 0x%llx
+0x00081890: WARNING:  Select Partition end: 0x%llx
+0x000818B8: ERROR:  Parse duplicate partitions err, ret = %d, start partition_id = %d
+0x00081904: ERROR:  emmc_get_image_info err, ret = %d, partition_id = %d
+0x00081944: INFO:  address alignment: burn_ext4sp hi_flash_write_block_buff, data addrs:0x%x, len:%d,adjust addrs: 0x%x
+0x000819B4: ERROR:  write data failed(%d),hi_flash_write_block_buff handle = 0x%x, address = 0x%llx, block_buff = 0x%x, len = 0x%x, flags = 0x%x.
+0x00081A54: INFO:  hi_flash_write_aligned_write_offset, address(0x%llx), aligned_address(0x%llx), blockindatalen(0x%x).
+0x00081AC4: ERROR:  read block data failed(%d).
+0x00081AEC: INFO:  address alignment: burn_ext4sp aligned_write_offset, data addrs:0x%x, data len:%d,adjust addrs: 0x%x
+0x00081B5C: ERROR:  write block data failed(%d).
+0x00081B84: INFO:  write block aligned raw data, aligned address(0x%llx), len(0x%x).
+0x00081BD0: INFO:  hi_flash_write_block,len=0x%x, flash_block_size=0x%x, blocks=%d,remain_len=0x%x
+0x00081C28: ERROR:  write data failed(%d),hi_flash_write_block for handle = 0x%x, address = 0x%llx, block_buff = 0x%x, data_block_len = 0x%x, flags = 0x%x.
+0x00081CBC: ERROR:  write data failed(%d),hi_flash_write_block handle = 0x%x, address = 0x%llx, block_buff = 0x%x, remain_len = 0x%x, flags = 0x%x.
+0x00081F8C: loader_burn_ext4sp_init_header_offset
+0x00081FFC: loader_burn_ext4sp_init_header
+0x0008201C: INFO:  write null data offset:0x%llx, data_len:0x%llx.
+0x000820AC: INFO:  write large block data [0x%x] for the %dth large block return %d.
+0x000820F8: ERROR:  write data failed(%d).
+0x00082118: INFO:  write fill data [0x%x] for the %dth block return %d.
+0x000821B4: loader_burn_ext4sp_chunk_type_fill
+0x00082208: ERROR:  burn erase flash error! ret:0x%x
+0x00082234: loader_burn_write_raw_erased
+0x00082260: ERROR:  write flash error!
+0x000822D4: INFO:  adjust after, data addrs:0x%x, data len:%d,adjust addrs: 0x%x
+0x00082325: [loader_error]: flash write fail!
+0x00082348: INFO:  UPGRD_FLASH_DO write(TYPE: %d writeflag: %d) offset: 0x%llx bytes: 0x%x
+0x000823D4: otpwrite
+0x000823E0: write otp ,for example otpwrite adddress value 
+0x00082410: otpreadall
+0x0008241C: read otp ,for example otpreadall 
+0x00082494: INFO:  expect read len is zero
+0x000824B4: ERROR:  usb_read failed, act len=%ld
+0x000824DC: INFO:  usb_read offset=0x%x
+0x00082594: call hi_drv_pdm_get_tcon_index fail , read value error
+0x000825CC: call hi_drv_pdm_get_panel_index fail , read value error
+0x0008262C: HI3751V350_DEMO_BOARD
+0x00082698: ERR: call hi_drv_gpio_write_bit fail
+0x00082744: hi_drv_i2c_write(HI_BOARD_PANEL_I2C_CHN, HI_BOARD_PANEL_I2C_DEV_ADDR, panel_data[i][0], 1, (hi_u8 *)(&panel_data[i][1]), HI_BOARD_PANEL_I2C_DATA_LEN) failure!
+0x000828A0: hi_drv_gpio_write_bit(((tcon_gpio[i][0] * 8) + tcon_gpio[i][1]), tcon_gpio[i][2]) failure!
+0x00082994: stt init fialed 
+0x000829A8: disp not inited
+0x00082AF8: pcr begin set clock ,step: %d 10000,init clock = %d,run clock = %d
+0x00082B8C: attach error:the slave disp=%d have already attach with disp=%d!
+0x00082DD0: disp_drv_pdm_get_init_param get panel_cfg invalid
+0x00082FAC: %s,%d: GPIO Direction is input, write can not operate, GroupNo is %d ,            BitNo is %d
+0x00083098: %s,%d: wait write data timeout!
+0x000830BC: %s,%d: wait write ack ok timeout!
+0x000830E0: %s,%d: para i2c_reg_addr_byte_num is invalid.
+0x00083154: %s,%d: wait read data timeout!
+0x000831BC: Usage: i2c_read  i2c_channel  device_addr  register_addr  
+0x000831F8: register_addr_len  read_bytes_number
+0x00083220: %s,%d: register address length is error!
+0x0008324C: %s,%d: read bytes number is error!
+0x00083289:  pReadData malloc() error!
+0x000832BC: call hi_drv_i2c_read failed.
+0x000832DD: data read:
+0x000832F4: Usage: i2c_write  i2c_channel  device_addr  register_addr  
+0x00083330: register_addr_len  write_bytes_number  byte0 [... byten]
+0x0008336C: register address length is error!
+0x00083390: write bytes number is error!
+0x000833DC: i2c write failed!
+0x000833F0: i2c write success!
+0x00083404: i2c_write
+0x00083410: I2C Write, please be careful !!!
+0x00083434: i2c_read
+0x00083440: I2C Read, please be careful !!!
+0x000834C8: counts is %d, over FLASH_INFO_MAX
+0x000836D4: spread_enable is invalid 
+0x000836F0: LVDS or VBO spread_freq is out of range,spread_freq=%u
+0x00083728: spread_freq is out of range, spread_freq=%u
+0x00083758: spread_ratio is not legal, spread_ratio=%u!
+0x0008379C: panel_drv_check_spread
+0x00083858: panel_drv_pwm_init
+0x00083A98: panel_hal_init
+0x00083BC0: panel moudle not init!!!
+0x00083D20: panel_drv_get_power_on_recovery
+0x00083DC4: panel not init!! 
+0x00083E2C: panel can not init multiple!
+0x00083ED0: panel init failure, set panel power_down!
+0x00083F44: please init 0D dim first!
+0x000840AC: alloc mmz in boot size:%d invailed
+0x00084110: panel_drv_alloc_mmz_in_boot failed!
+0x00084294: hi_drv_gpio_write_bit
+0x000842AC: hi_drv_gpio_read_bit
+0x000843A0: read i2c data failed!
+0x000843B8: write i2c data failed!
+0x00084510: panel_drv_read_bl_driver_file success.
+0x00085470: drv_panel_k_thread_create
+0x000856E0: LVDS spread enable invalid,spread_enable=%d!
+0x00085710: panel_drv_check_lvds_phy_spread_enable
+0x00085738: LVDS spread ratio invalid,lvds_spread_ratio=%d!
+0x0008576C: panel_drv_check_lvds_phy_spread_ratio
+0x00085794: LVDS spread freq invalid,lvds_spread_freq=%d!
+0x000857C4: panel_drv_check_lvds_phy_spread_freq
+0x000858A0: lvds spread ratio is out of range,lvds_spread_ratio=%d
+0x000858D8: panel_drv_check_lvds_attr_spread_ratio
+0x00085900: lvds spread freq is out of range,lvds_spread_freq=%d
+0x00085938: panel_drv_check_lvds_attr_spread_freq
+0x00085F14: pwm_type not init, please init first,pwm_type=%s!
+0x00085F70: pwm_type not init, please init first,pwm_type is %s!
+0x00085FD4: pwm_type not init, please init first,wm_type=%s
+0x00086030: panel_drv_pwm_de_init memset_s is failed
+0x0008605C: pwm_type not init, please init first,pwm_type=%d!
+0x00086090: update_pwm_duty failed, please init first!
+0x000860BC: update pwm dynamic mode failed, please init first!
+0x00086478: cur_delay: %d, pre_delay: %d, val: %x, i: %d, address: %x, value: %x, eg_mask: %x
+0x00086514: I2C init failed!
+0x00086540: read group1 data from peri failure!
+0x00086594: F91 TCONLESS panel write data from data register to EEPROM ret = %d!
+0x000865DC: read group2 data from peri failure!
+0x00086644: VBO spread enable invalid!
+0x00086660: (hi_u32)intf_attr_p->spread_enable
+0x00086684: VBO spread ratio invalid!
+0x000866A0: intf_attr_p->vbo_spread_ratio
+0x000866C0: VBO spread freq invalid!
+0x000866DC: (hi_u32)intf_attr_p->vbo_spread_freq
+0x0008677C: error: vbo spread ratio invalid, must in range[0, PANEL_SPREAD_RATIO_MAX]
+0x000867C8: vbo_attr_p->vbo_spread_ratio
+0x000867E8: error: VBO spread freq invalid must in                     range[HI_DRV_PANEL_VBO_SSFREQ_46P875KHZ, HI_DRV_PANEL_VBO_SSFREQ_BUTT)
+0x0008686C: (hi_u32)vbo_attr_p->vbo_spread_freq
+0x00086B3C: ERR: only support set source type ddr
+0x00086F98: call pdm_read_logo_param fail , there is no logo param
+0x00087000: call pdm_read_logo_param fail , there is no logobak param
+0x00087134: ERR: call pdm_read_logo_param fail , there is no logo param!
+0x00087264: ERR: call pdm_read_panel fail
+0x00087498: Call pdm_read_panel_body Failure!
+0x000874D4: ERR: Call pdm_read_panel_body fail 
+0x000874FC: fall pdm_read_panel_body fail
+0x0008751C: ERR: call pdm_read_panel_body fail
+0x00087590: ERR: call hi_drv_pdm_read_bm_param fail , there is no boot music param!
+0x000875DC: BOOT_MUSIC_TB
+0x000875EC: ERR: call hi_db_get_table_by_name fail , BOOT_MUSIC_TBNAME
+0x00087628: BOOT_MUSIC_SW
+0x00087638: ERR: call hi_db_get_key_by_name fail , BOOT_MUSIC_SWITCH
+0x00087674: BOOT_MUSIC_VL
+0x00087684: ERR: call hi_db_get_key_by_name fail , BOOT_MUSIC_Volume
+0x000876C0: BOOT_MUSIC_DL
+0x000876D0: ERR: call hi_db_get_key_by_name fail , BOOT_MUSIC_DATALEN
+0x0008770C: BOOT_MUSIC_PL
+0x0008771C: ERR: call hi_db_get_key_by_name fail , BOOT_MUSIC_DPLAYLEN
+0x00087758: bootmusic
+0x00087770: ERR: read_len is 0 ,can not malloc 
+0x00087798: bootargs
+0x00087804: get partition name: call strstr fail , return null
+0x00087838: get partition name : bound violation of array mtd_name 
+0x0008791C: ERR: call hi_flash_open_by_name fail
+0x0008797C: ERR: call hi_flash_read exception
+0x000879A0: ERR: call hi_flash_erase fail
+0x000879C0: ERR: call hi_flash_write fail
+0x00087B40: PDM_Read Tcon failure!
+0x00087D2C: ERR: read_lenth is 0 ,can not malloc 
+0x00087D80: pdm_slaveboot_runtime_prepare Failure!
+0x00087F20: nosec version: not support secure frame!
+0x00088000: tcon already init!
+0x00088014: tcon init fail!
+0x00088028: tcon not init before deinit!
+0x00088084: init stt has been inited
+0x000880CC: init stt first!!
+0x000880E0: stt addr is 0
+0x00088380: user spread freq param illegal, not support!
+0x000883B0: spread_freq para invalid 
+0x000884A0: hal_tianlai_init_base_addr failed!
+0x000884C4: tianlai_v760 init successed
+0x00088510: mmcblk0
+0x0008868C: GPIO init failed!
+0x000886C0: amp init err: HI_BOARD_AMP_TYPE not define
+0x000886EC: amp init err:%#x!
+0x00088700: bootmusicsec
+0x00088710: Get first bootmusic partition parameter err! ret = %d
+0x00088748: First BootMusic Partiton is Enabled!
+0x00088770: First BootMusic Partition is disabled!
+0x00088798: Get second bootmusic partition parameter err! ret = %d
+0x000887D0: Second BootMusic Partiton is Enabled!
+0x000887F8: Second BootMusic Partiton is disabled!
+0x00088820: BootMusic is disabled!
+0x00088838: Error: Unknown bootmusic cmd, bootmusic is disabled
+0x00088870: HI_PDM_READ_BMData err! ret = %d
+0x00088894: HI_DRV_SND_Bootmusic_Init err! ret = %d
+0x000888C0: amp_init err! ret = %d
+0x00088BFC: securestore
+0x00088C2C: [%s] %d: check %s from mmc %s fail
+0x00088ED4: keypad init failed!
+0x00088F18: init keypad failed!
+0x00088F6C: strncpy_s(g_loader.data.file_type[USB_BIN].file_name, MAX_FILE_NAME, USB_UPDATE_FORCE_FILE_NAME, strlen(USB_UPDATE_FORCE_FILE_NAME))
+0x00088FF4: strncpy_s(g_loader.data.file_type[USB_BIN].file_name, MAX_FILE_NAME, USB_UPDATE_FILE_NAME, strlen(USB_UPDATE_FILE_NAME))
+0x00089070: ERROR:  Initialize loader driver failed [%x]
+0x000890A0: ui_init
+0x000890A8: INFO:  [LOADER]:Execute %s
+0x000890C4: ERROR:  [LOADER]:Execute %s wrong [%x]
+0x000890EC: init_dev
+0x00089120: get_partition_upgrad_cfg
+0x00089148: get_flash_info
+0x000891D4: reboot
+0x00089258: strncpy_s(g_loader.data.file_type[USB_BIN_SECOND].file_name, MAX_FILE_NAME, USB_UPDATE_SECOND_FILE_NAME, strlen(USB_UPDATE_SECOND_FILE_NAME))
+0x00089304: lsadc has not been init
+0x00089360: hi_adp_disp_init err! ret = %x
+0x000894F0: cur_addr
+0x000894FC: phy_addr
+0x00089508: addr_tmp
+0x00089520: optm_g_zme_load_coef_h(GZME_COEF_1, cur_addr)
+0x00089568: optm_g_zme_load_coef_h(GZME_COEF_E1, cur_addr)
+0x00089598: optm_g_zme_load_coef_h(GZME_COEF_075, cur_addr)
+0x000895C8: optm_g_zme_load_coef_h(GZME_COEF_05, cur_addr)
+0x000895F8: optm_g_zme_load_coef_h(GZME_COEF_033, cur_addr)
+0x00089628: optm_g_zme_load_coef_h(GZME_COEF_025, cur_addr)
+0x00089658: optm_g_zme_load_coef_h(GZME_COEF_0, cur_addr)
+0x00089A78: fail to init layer!
+0x00089A90: optm_gfx_set_layer_read_mode err.
+0x00089AB4: fail to init hal register!
+0x00089B98: optm_layer_recovery err.
+0x00089BF8: gp recovery failed.
+0x00089C34: wait otpc ready timeout!
+0x00089C50: addr must be aligned with 4 bytes!
+0x00089C74: otp addr 0x%x is locked!
+0x00089C90: otp write failed!
+0x00089CA4: %s,%d: OTP is not init.
+0x00089EEC: spi_sel already deinit!
+0x0008A068: this->func.download(this, (void *)&read_head)
+0x0008A27C: hi3751v
+0x0008A28F: image_header is not hi3751v, it's small configure
+0x0008A414: INFO:  ############hisi file header parase begin############
+0x0008A62C: INFO:      flash_addr_begin 0x%llx
+0x0008A650: INFO:      flash_addr_end 0x%llx
+0x0008A674: INFO:      flash_type 0x%x
+0x0008A690: INFO:      flash_index 0x%x
+0x0008A6D4: INFO:  ############hisi file header parase end  ############
+0x0008A7AC: NOTICE:  partition %d no need to upgrade
+0x0008A7D8: INFO:  partition %d, begin to upgrade
+0x0008A800: WARNING:  partition %d is duplicate partitions, skip
+0x0008A838: ERROR:  hisi load upgrade image fail. 
+0x0008A860: partition id = %d;
+0x0008A874: flash_addr_begin = 0x%llx;
+0x0008A890: flash_addr_end = 0x%llx;
+0x0008A8AC: partition_size = 0x%llx;
+0x0008A8C8: INFO:  partition %d, finish to upgrade
+0x0008A91C: ui_show_result_info(this, SHOW_WARNING, LOADER_CONTENT_FAIL_DATA)
+0x0008A960: hisi_file_show_upgrade_result(this)
+0x0008A9B4: boot_media = %d
+0x0008A9C8: MMC:   
+0x0008AB30: please reboot the machine!
+0x0008AB58: LOADER_INFO
+0x0008AD88: INFO:  [LOADER]:ui_update_indictor_text: hide ui.  
+0x0008AE00: INFO:  [LOADER]:ui_create_guage_win: hide ui.  
+0x0008AEAC: INFO:  [LOADER]:ui_destroy_guage_win: hide ui.  
+0x0008AEE0: INFO:  [LOADER]:ui_show_double_guage: hide ui.  
+0x0008B058: INFO:  [LOADER]:loader_down_load_fail: hide ui.  
+0x0008B0F0: INFO:  [LOADER]:loader_notify_info: hide ui.  
+0x0008B160: INFO:  [LOADER]:ui_show_result_info: hide ui.  
+0x0008B28C: ERROR:  ui init layer_surface is null. 
+0x0008B330: ui_grphic_init(this)
+0x0008B364: ui_update_indictor_text(this, LOADER_CONTENT_UPGRADING)
+0x0008B580: INFO:  partition %d no need to upgrade
+0x0008B678: ERROR:  burn flag in bootargs is not the same as partition num.
+0x0008B6BC: NOTICE:  burn flag in bootargs was all set as zero, no need to upgarade.
+0x0008B708: check_upgrd_partition_cfg(this)
+0x0008D057: board_init
+0x0008D0B4: fs_devread
+0x0008D0CE: insert_ddr_layout
+0x0008D0EF: gzwrite
+0x0008D0F7: cmd_ddr_handle
+0x0008D160: set_eth_phyaddr
+0x0008D170: eth_config_init
+0x0008D180: get_partition_info
+0x0008D1AB: ddr_cmd_get_entry
+0x0008D1E5: bootatf_normalize
+0x0008D22E: sdhci_init
+0x0008D253: hisi_enable_internal_clk
+0x0008D4B1: %s: mmc create fail!
+0x0008D55B: %s read: device %d block # %lu, count %lu ... 
+0x0008D58A: %ld blocks read: %s
+0x0008D5A0: %s write: device %d block # %lu, count %lu ... 
+0x0008D60E: ** Bad HW partition specification %s %s **
+0x0008D63A: bootdevice
+0x0008D665: ** Bad partition specification %s %s **
+0x0008D6AD: ** get partition failed ! **
+0x0008D6CB: ** Invalid partition %d **
+0x0008D6E7: ** No valid partitions found **
+0x0008D708: ** Invalid partition type "%.32s" (expect "U-Boot")
+0x0008D78D: initcall sequence %p failed at call %p (err=%d)
+0x0008D7BE: init_sequence_r done!
+0x0008D819: sdhci_hisi: sdhci_host malloc fail!
+0x0008D83E: hisi-sdhci
+0x0008D849: Loading Secure OS ...
+0x0008D860: Back to boot
+0x0008D86E: bl31 addr error
+0x0008D913: Set EXT_CSD_BOOT_CONFIG error!
+0x0008D933: set EXT_CSD_BOOT_BUS_WIDTH error!
+0x0008D9B9: fastboot# 
+0x0008D9C8: Command [ddr %s] is unsupport.
+0x0008D9FC: Command [ddr log %s] is unsupport.
+0x0008DA20: Set DDR training log level [%s] suc.
+0x0008DAA9: Loading from %s device %d, partition %d: Name: %.32s  Type: %.32s
+0x0008DAEC: ** Read error on %d:%d
+0x0008DBA2:    move secure os image from src addr: 0x%X to dst addr:0x%X size:%u KB
+0x0008DBEB:    move systab and strtab from src addr: 0x%X to dst addr:0x%X size:%u KB
+0x0008DC36:    move internal tasks from src addr: 0x%X to dst addr:0x%X size:%u KB
+0x0008DC83: DDR training is unsupport.
+0x0008DC9F: DDR training cmd entry[0x%08X] size[%u]byte cfg[0x%08X = 0x%08X]
+0x0008DCE0: Please config DDR training item. Bypass bit:
+0x0008DD3F: [4]Write Leveling  : 0x10
+0x0008DE45: [25]Dram Vref      : 0x2000000
+0x0008DEC2: [29]WL Write Adjust: 0x20000000
+0x0008DEE2: [30]HW Read Adjust : 0x40000000
+0x0008DF37: Write window of prebit-deskew:
+0x0008E030: Read window of prebit-deskew:
+0x0008E053: Command address window:
+0x0008E0C9: DDR training fail
+0x0008E0F4: bootargs=mem=512M console=ttyAMA0,115200 console=ttyMTD,blackbox
+0x0008E135: bootdelay=1
+0x0008E151: ipaddr=192.168.1.10
+0x0008E190: bootfile=uImage
+0x0008E1BE: phyaddr=2,1
+0x0008E3B0: boot_params
+0x0008E3BC: DRAM bank
+0x0008E3ED: TLB addr
+0x0008E3F6: relocaddr
+0x0008E446: Already done once, can not do again.
+0x0008E4B4: DDR training area: 0x%08X - 0x%08X
+0x0008E4D8: DDR training finished.
+0x0008E5B0: ** Unable to use %s %d:%d for fatwrite **
+0x0008E5DC: ** Unable to write "%s" from %s %d:%d **
+0x0008E65B: bootmode
+0x0008E664: Boot from unknown device, please check your hardware config.
+0x0008E6A7: spi-nand
+0x0008E6B1: emmc
+0x0008E6C5: version:U-Boot 2019.07 (Sep 20 2024 - 12:11:38 +0800)
+0x0008E6FB: ddrfree
+0x0008E703: DDR free region baseaddr:0x%x size:0x%x
+0x0008E784: bootfile
+0x0008E78D: ** No boot file defined **
+0x0008E7A9: ** Reading file would overwrite reserved memory **
+0x0008E7DD: %llu bytes read in %lu ms
+0x0008E7FA: fileaddr
+0x0008E803: ## Starting Secure OS at 0x%08lX ...
+0x0008E829: ## Succeed to load Secure OS
+0x0008E847: loadaddr
+0x0008E888: ## Ready for binary (ymodem) download to 0x%08lX at %d bps...
+0x0008E8CD: ## Ready for binary (xmodem) download to 0x%08lX at %d bps...
+0x0008E90C: ## Ready for binary (kermit) download to 0x%08lX at %d bps...
+0x0008E970: ## Start Addr      = 0x%08lX
+0x0008E9C0: Base Address: 0x%08lx
+0x0008EA8C: Incorrect PHY address. Range should be 0-31
+0x0008EB00: Error reading from the PHY addr=%02x reg=%02x
+0x0008EB2F: addr=%02x reg=%02x data=
+0x0008EB4E: Error writing to the PHY addr=%02x reg=%02x
+0x0008EB7B: Error reading from the PHY
+0x0008EB96:  addr=%02x
+0x0008ED40: switch to partitions #%d, %s
+0x0008ED5E: mmc%d is current device
+0x0008ED77: mmc%d(part %d) is current device
+0x0008ED9A: MMC erase: dev # %d, block # %d, count %d ... 
+0x0008EDC9: Error: card is write protected!
+0x0008EE2A: Partition configuration:
+0x0008EE8F: User partition write reliability: %s
+0x0008EEC7: No GP%i partition
+0x0008EEDB: GP%i write reliability: %s
+0x0008EEF7: Partitioning successful, power-cycle to make effective
+0x0008EF38: get mmc type error!
+0x0008EF4E: MMC read: dev # %d, block # %d, count %d ... 
+0x0008EF7C: %d blocks read: %s
+0x0008EFAD: write.ext4sp
+0x0008EFBB: MMC write ext4 sparse: dev # %d, block # %d, count %d ...
+0x0008EFF7: MMC write: dev # %d, block # %d, count %d ... 
+0x0008F044:  DDR
+0x0008F151: Boot Capacity: 
+0x0008F171: No MMC device available
+0x0008F225: -----boot standby finished -----.
+0x0008F604: [WARNING] Unexcepted DDR size, using default 512MB
+0x0008F671: Boot Media:    %s
+0x0008F684: gd:%p,DRAM addr:0x%lx,size:0x%lx,actual size:0x%llx
+0x0008F882: no eMMC available
+0x0008F895: Attempt to open non block aligned, emmc blocksize: 0x%08x, address: 0x%08llx, length: 0x%08llx
+0x0008F8F5: Attempt to open outside the flash area, emmc chipsize: 0x%08llx, address: 0x%08llx, length: 0x%08llx
+0x0008F96C: Attempt to write non block aligned data, emmc block size: 0x%08llx, offset: 0x%08llx,  length: 0x%08x
+0x0008F9D3: Attempt to write non block aligned data, emmc block size: 0x%08llx, offset: 0x%08llx, length: 0x%08x
+0x0008FA39: Attempt to write outside the flash handle area, flash handle size: 0x%08llx, offset: 0x%08llx, length: 0x%08x
+0x0008FC7A: No phy addr or mdio config in register table.
+0x0008FCE3: Excel config error:MAC0_PHY_ADDR register should be 0-31, but current is %d
+0x0008FD30: Excel config error:MAC1_PHY_ADDR register should be 0-31, but current is %d
+0x0008FED7: %s%daddr
+0x0008FEE0: %saddr
+0x0008FEEB: eth%dmacskip
+0x0008FF04: Warning: %s MAC addresses don't match:
+0x0008FF2C: Address in SROM is         %pM
+0x0008FF4C: Address in environment is  %pM
+0x0008FF6D: Warning: %s (eth%d) using random MAC address - %pM
+0x0008FFA2: Error: %s address %pM illegal value
+0x0008FFC8: Warning: %s failed to set MAC address
+0x0008FFEF: ## Secure OS Image:
+0x00090022:    Kernel Load Addresss: 0x%X
+0x000900F4: partition size %d MB not enough.
+0x00090268: error: partition size %d MB != ext4 image size %d MB
+0x000902DC: ** Error ext4fs_write() **
+0x0009031C: %s: Device read error!
+0x00090359: Recovery required
+0x00090596: error in File System init
+0x00090608: Not enough space on partition !!!
+0x00090697: %s: already exists
+0x000906BD: ** Unable to read file %s **
+0x000906DB: ** Partition %d not valid on device %d **
+0x00090794: #address-cells
+0x000907B3: bootargs
+0x000907BC: WARNING: could not set bootargs %s.
+0x00090829: hisilicon,hi3751v600-eth
+0x000908A1: ethaddr
+0x000908A9: mac-address
+0x00090A0A: hisilicon,chiptrim
+0x00090A1D: can't find dts node with compatile hisilicon,chiptrim
+0x00090A73: fdt_initrd: %s
+0x00090A83: linux,initrd-start
+0x00090A96: WARNING: could not set linux,initrd-start %s.
+0x00090AC5: WARNING: could not set linux,initrd-end %s.
+0x00090AF2: linux,initrd-end
+0x00090BBE: Error reading cluster
+0x00090C8F: MMC Device %d not found
+0x00090CB4: Can not find partition info in bootargs
+0x00090DD1: %s read outside partition %lu
+0x00090DF0:  ** %s read error **
+0x00090E06:  ** %s read error - block
+0x00090E21: * %s read error - last part
+0x00090E99: ** Unable to write file %s **
+0x00090F75: USB device descriptor short read (expected %i, got %i)
+0x00090FE1: eth%d phyaddr invalid, use default:%d
+0x00091008: eth%d phyaddr(%d) out of range, use default:%d
+0x00091038: phyaddr
+0x000912C3: Error: inflateInit2() returned %d
+0x0009142F: SPI Flash
+0x00091439: eMMC
+0x000914D7: SAMPL DLL slave not ready.
+0x0009153A: %sLoad Address: %08x
+0x00091774: no mmc device at slot %x
+0x00091793: arch/arm/lib/ddr_layout.c
+0x000918CF: ## Starting Secure OS at 0x%08lX...
+0x000918F4: ## Succeed to load SecureOS
+0x00091911: bl33 addr error
+0x0009194A: load_bootatf: %x,%x,%x
+0x00091A2E:  read failed, assuming half duplex
+0x00091ACB:  read failed, assuming 10BASE-T
+0x00091B49: mmc erase failed
+0x00091B5B: MMC: block number 0x%lx exceeds max(0x%lx)
+0x00091B87: mmc fail to send stop cmd
+0x00091BA2: mmc write failed
+0x00091BE3: DDR52
+0x00091BF6: EMMC/MMC/SD controller initialization.
+0x00091C1E: No EMMC/MMC/SD device found !
+0x00091C3D: MMC/SD Card:
+0x00091C62:     Read Block:  %d Bytes
+0x00091C7D:     Write Block: %d Bytes
+0x00091D70: eMMC >= 4.4 required for enhanced user data area
+0x00091DA2: Card does not support partitioning
+0x00091E23: GP%i partition not HC WP group size aligned
+0x00091EA9: Card does not support host controlled partition write reliability settings
+0x00091EF5: Card already partitioned
+0x00091F7D: Timeout waiting card ready
+0x00091F99: MMC: no card present
+0x00092064: \.callbacks:callbacks,\.flags:flags,baudrate:baudrate,loadaddr:loadaddr,stdin:console,stdout:console,stderr:console,serial#:serialno,
+0x000920FD: parse_mem_args(): can not find bootargs
+0x000921A9: ## Unknown partition table type %x
+0x00092201: hiusb usb phy init
+0x00092269: Journal Recovery Completed
+0x00092375:  Boot
+0x0009237B: ** Nested DOS partitions detected, stopping **
+0x000923AB: ** Can't read partition table on %d:%lu **
+0x00092490: ** SI ext2fs read block (indir 1)malloc failed. **
+0x000924C4: ** SI ext2fs read block (indir 1):malloc failed. **
+0x000924F9: ** SI ext2fs read block (indir 1)failed. **
+0x00092526: ** DI ext2fs read block (indir 2 1)malloc failed. **
+0x0009255C: ** DI ext2fs read block (indir 2 1)failed. **
+0x0009258B: ** DI ext2fs read block (indir 2 2)malloc failed. **
+0x000925C1: ** DI ext2fs read block (indir 2 2)failed. **
+0x000925F0: ** TI ext2fs read block (indir 2 1)malloc failed. **
+0x00092626: ** TI ext2fs read block (indir 2 1)failed. **
+0x00092655: ** TI ext2fs read block (indir 2 2)malloc failed. **
+0x0009268B: ** TI ext2fs read block (indir 2 2)failed. **
+0x000927A1: TLB ADDR:0x%lx
+0x00092869: DS DLL slave not ready.
+0x000928C7: %s: MMC: %d busy 
+0x0009293D: =========== REGISTER DUMP (mmc%d)===========
+0x0009296B: Sys addr: 0x%08x | Version:  0x%08x
+0x00092B60: ADMA Err:  0x%08x | ADMA Ptr: 0x%08x%08x
+0x00092B8A: ADMA Err:  0x%08x | ADMA Ptr: 0x%08x
+0x00092C2B: %s: Your controller doesn't support SDMA!!
+0x00092D80: %s: boot has not enough parameter item room.
+0x00092DAE: %s: boot has not enough parameter buffer.
+0x00092E3D: The DDR memory layout:
+0x00092E6D: DRAM actual size:
+0x00092FB6: SPINAND
+0x00092FBE: spiflash
+0x00092FC7: Hi3751v800
+0x00092FD2: Hi3751v600
+0x00092FDD: Hi3751v500
+0x00092FE8: Hi3751v520
+0x00092FF3: Hi3751v620
+0x00092FFE: Hi3751v550
+0x00093009: Hi3751v810
+0x00093014: Hi3751v350
+0x0009301F: Hi3751v560
+0x0009302A: Hi3751v560EC
+0x00093037: Hi3751v352F
+0x0009317E: start application at address 'addr'
+0x000931A2: addr [arg ...]
+0x000931B1:     - start application at address 'addr'
+0x00093312: <interface> [<dev[:part]> [addr [filename [bytes [pos]]]]]
+0x00093389:       to address 'addr' from ext4 filesystem
+0x000934DC: ext4write
+0x0009350A: <interface> <dev[:part]> <addr> <absolute filename path>
+0x00093660: fatwrite
+0x00093669: write file into a dos filesystem
+0x0009368A: <interface> <dev[:part]> <addr> <filename> [<bytes> [<offset>]]
+0x000936CA:     - write file 'filename' from the address 'addr' in RAM
+0x00093844: <interface> [<dev[:part]> [<addr> [<filename> [bytes [pos]]]]]
+0x000938BF:       to address 'addr' from dos filesystem.
+0x00093A00:       ARCH_DMA_MINALIGN then a misaligned buffer warning will
+0x00093B7B: infinite loop on address range
+0x00093B9A: [.b, .w, .l] address number_of_objects
+0x00093BC1: print or set address offset
+0x00093BDE:     - print address offset for memory commands
+0x00093C16:     - set address offset for memory commands to 'off'
+0x00093C61: address count [addr]
+0x00093C76:     - compute CRC32 checksum [save at addr]
+0x00093CB5: [.b, .w, .l] addr1 addr2 count
+0x00093D07: memory write (fill)
+0x00093D1B: [.b, .w, .l] address value [count]
+0x00093D41: memory modify (constant address)
+0x00093D62: [.b, .w, .l] address
+0x00093D7A: memory modify (auto-incrementing address)
+0x00093DB6: [.b, .w, .l] address [# of objects]
+0x00093E65: mii info   <addr>                     - display MII PHY info
+0x00093EA2: mii read   <addr> <reg>               - read  MII PHY <addr> register <reg>
+0x00093EEE: mii write  <addr> <reg> <data>        - write MII PHY <addr> register <reg>
+0x00093F3A: mii modify <addr> <reg> <data> <mask> - modify MII PHY <addr> register <reg>
+0x00093FD2: mii dump   <addr> <reg>               - pretty-print <addr> <reg> (0-5 only)
+0x0009401F: Addr and/or reg may be ranges, e.g. 2-7.
+0x00094427: mmcinfo
+0x0009442F: display MMC info
+0x00094440: - display info of the current MMC device
+0x00094469: MMC sub system
+0x00094478: info - display info of the current MMC device
+0x000944A6: mmc read <device num> addr blk# cnt
+0x000944CA: mmc write <device num> addr blk# cnt
+0x000944EF: mmc erase <device num> blk# cnt
+0x0009450F: mmc write.ext4sp <device num> addr blk# cnt
+0x0009453B: mmc rescan <device num>
+0x00094553: mmc part - lists available partition on current mmc device
+0x0009458E: mmc dev [dev] [part] - show or set current mmc device [partition]
+0x000945D0: mmc list - lists available devices
+0x000945F3: mmc hwpartition [args...] - does hardware partitioning
+0x0009469F:     [gp1|gp2|gp3|gp4 cnt [enh] [wrrel {on|off}]] - general purpose partition
+0x000946EC:     [check|set|complete] - mode, complete set partitioning completed
+0x00094731:   WARNING: Partitioning is a write-once setting once it is set to complete.
+0x0009477D:   Power cycling is required to initialize partitions after set to complete.
+0x000947C9: mmc setdsr <value> - set DSR register value
+0x000947F5: mmc reg <device num> - display registers of the current MMC device
+0x00094839: read
+0x0009484D: hwpartition
+0x00094864: gzwrite
+0x0009486C: unzip and write memory to block device
+0x00094893: <interface> <dev> <addr> length [wbuf=1M [offs=0 [outsize=0]]]
+0x000948D3: wbuf is the size in bytes (hex) of write buffer
+0x000949FE: srcaddr dstaddr [dstsize]
+0x00094A31: usbboot
+0x00094A39: boot from USB device
+0x00094A4E: loadAddr dev:part
+0x00094BE0: usb storage - show details of USB storage devices
+0x00094C12: usb dev [dev] - show or set current USB storage device
+0x00094C49: usb part [dev] - print partition table of one or all USB storage    devices
+0x00094C95: usb read addr blk# cnt - read `cnt' blocks starting at block `blk#'
+0x00094CD9:     to memory address `addr'
+0x00094CF6: usb write addr blk# cnt - write `cnt' blocks starting at block `blk#'
+0x00094D3C:     from memory address `addr'
+0x00094FFD: bootmode - get start memeory type e.g. nand/spi etc
+0x00095031: getinfo nand - get nand flash information
+0x0009505B: getinfo spi - get spi flash information
+0x000950A8: getinfo ddrfree - get free ddr baseaddr/size
+0x00095240: Kirkwood Boot Image
+0x0009525D: Freescale i.MX Boot Image
+0x00095281: NXP i.MX8 Boot Image
+0x000952A1: NXP i.MX8M Boot Image
+0x0009530E: Freescale PBL Boot Image
+0x00095358: Altera SoCFPGA CV/AV preloader
+0x00095387: Altera SoCFPGA A10 preloader
+0x000953E6: Freescale MXS Boot Image
+0x0009540A: ATMEL ROM-Boot Image
+0x00095444: LPC32XX Boot Image
+0x0009545F: Rockchip Boot Image
+0x00095478: Rockchip SD Boot Image
+0x00095495: Rockchip SPI Boot Image
+0x000954B9: Vybrid Boot Image
+0x000954D5: Xilinx Zynq Boot Image
+0x000954F8: Xilinx ZynqMP Boot Image
+0x0009551B: Xilinx ZynqMP Boot Image (bif)
+0x0009554E: Trusted Execution Environment Image
+0x00095597: pmmc
+0x000955FE: MediaTek BootROM loadable Image
+0x00095629: arm-trusted-firmware
+0x0009563E: ARM Trusted Firmware
+0x00095693: Trusted Execution Environment
+0x000956B1: u-boot
+0x000956B8: U-Boot
+0x000958C0: load secure os at address <addr>
+0x000958E1:   addr 
+0x000958E9:     - start secure os at address 'addr'
+0x00095912: bootatf32
+0x0009591C: boot atf ,kernel[32bit] and secureos from memory
+0x0009594D: [addr1 addr2 addr3 [addr4] 
+0x00095969:     - start atf at addr1
+0x00095983: Image at addr2,fdt at addr3
+0x000959A0: optional secureos at addr4
+0x000959BC: bootatf
+0x000959C4: boot atf ,kernel and secureos from memory
+0x000959FB: mmcsd
+0x00095A05: MMC legacy
+0x00095A1A: MMC High Speed (26MHz)
+0x00095A47: MMC High Speed (52MHz)
+0x00095A5E: MMC DDR52 (52MHz)
+0x00095AA7: UHS DDR50 (50MHz)
+0x00095B0A: ddr training function
+0x00095B20: training    - DDR sofeware(Gate/Dataeye/Vref) training.
+0x00095B58: ddr tr          - DDR sofeware(WL/Gate/Dataeye/Vref) training.
+0x00095B97: ddr wl          - DDR Write leveling training.
+0x00095BC6: ddr gate        - DDR gate training.
+0x00095BEB: ddr dataeye     - DDR dataeye training and display training result.
+0x00095C2F: ddr vref        - DDR vref training.
+0x00095C54: ddr dpmc        - DDR dpmc training.
+0x00095C79: ddr hw          - DDR hardware training.
+0x00095CA2: ddr mpr         - DDR Multi-Purpose Register training.
+0x00095CD9: ddr ac          - DDR address command training.
+0x00095D09: ddr lpca        - LPDDR command address training.
+0x00095D3B: ddr dcc         - DDR Duty Correction Control training.
+0x00095D73: ddr pcode       - DDR io pcode training.
+0x00095D9C: ddr console     - DDR do training in SRAM.
+0x00095DC7: ddr log [level] - DDR log level. [info,debug,warning,error,fatal]
+0x00095F1B: FDT_ERR_BADMAGIC
+0x00096010: nvidia,tegra20-nand
+0x000960DC: samsung,exynos-dwmmc
+0x000961A4: allwinner,sun4i-a10-nand
+0x00096232: altr,socfpga-fpga2sdram0-bridge
+0x00096252: altr,socfpga-fpga2sdram1-bridge
+0x00096272: altr,socfpga-fpga2sdram2-bridge
+0x000962C1: altr,socfpga-a10-clk-init
+0x000962FC: ipaddr
+0x0009646F: hiusb read otp trim: %#x
+0x00096504: input partition number: %d is larger than %d!
+0x00096596: Boot 
+0x000965B4: Mass Storage, 
+0x00096672:    - Interfaces: %d %s%s%dmA
+0x00096845: file_fat_read_at read failed, ret=0x%x
+0x000968DD: Mass Storage
+0x00096A6F: lowlevel init failed
+0x00096A85: USB error: all controllers failed lowlevel init
+0x00096B4F: usb_new_device: Cannot read configuration, skipping device %04x:%04x
+0x00096E46:       USB device not accepting new address (error=%lX)
+0x00096E8E:  %s (%s, %dmA)
+0x00096F74: cmd 0x%02X returned 0x%02X 0x%02X 0x%02X 0x%02X (NOT READY)
+0x00096FF4: Device NOT ready
+0x0009702F: READ_CAP ERROR
+0x0009703F: No storage devices, perhaps not 'usb start'ed..?
+0x00097071:        scanning usb for storage devices... 
+0x0009709D: max USB Storage Device reached: %d stopping
+0x000970CA: %d Storage Device(s) found
+0x000970E6: USB Storage Transport unknown / not yet implemented
+0x00097142: version:U-Boot 2019.07 (Sep 20 2024 - 12:11:38 +0800)
+0x00098060: Write DQ/DQS OE Byte0
+0x00098090: Write DQ/DQS OE Byte1
+0x000980C0: Write DQ/DQS OE Byte2
+0x000980F0: Write DQ/DQS OE Byte3
+0x00098540: DRAM Vref Byte0
+0x00098570: DRAM Vref Byte1
+0x000985A0: DRAM Vref Byte2
+0x000985D0: DRAM Vref Byte3
+0x00098BA0: Write DQ/DQS OE Byte0
+0x00098BD0: Write DQ/DQS OE Byte1
+0x00098C00: Write DQ/DQS OE Byte2
+0x00098C30: Write DQ/DQS OE Byte3
+0x00099080: DRAM Vref Byte0
+0x000990B0: DRAM Vref Byte1
+0x000990E0: DRAM Vref Byte2
+0x00099110: DRAM Vref Byte3
+0x0009938C: bootargs
+0x000993AC: bootargs_second
+0x000A36CC: ddr_mpr_training_func
+0x000A36E2: ddr_mpr_training_func
+0x000A36F8: ddr_training_console
+0x000A370D: ddr_training_boot_func
+0x000A3724: ddr_pcode_training_func
+0x000A373C: ddr_training_cfg_set_dmc
+0x000A3755: ddr_training_cfg_set_rank
+0x000A376F: ddr_ddrt_get_test_addr
+0x000A3792: ddr_training_check_bypass
+0x000A37AC: ddr_training_switch_axi
+0x000A37C4: ddr_dmc_sfc_cmd
+0x000A37E8: ddr_training_cmd_func
+0x000A37FE: ddr_training_easr
+0x000A3810: ddr_training_ctrl_easr
+0x000A3827: ddr_training_cmd_entry
+0x000A383E: ddr_phy_get_byte_num
+0x000A3853: ddr_rdqs_sync_rank_rdq
+0x000A386A: ddr_get_rank_size
+0x000A387C: ddr_ddrt_init
+0x000A388A: ddr_ddrt_test
+0x000A3898: ddr_adjust_trend_check
+0x000A38AF: ddr_rdqs_sync
+0x000A38BD: ddr_adjust_move_win
+0x000A38D1: ddr_adjust_byte
+0x000A38E1: ddr_adjust_dataeye
+0x000A38F4: ddr_dataeye_check_dq
+0x000A3909: ddr_dataeye_find_dq
+0x000A391D: ddr_dataeye_deskew
+0x000A3930: ddr_dataeye_process
+0x000A3944: ddr_dataeye_training
+0x000A3959: ddr_hw_training_process
+0x000A3971: ddr_hw_training_by_rank
+0x000A3989: ddr_dpmc_training_func
+0x000A39A0: ddr_vref_set
+0x000A39AD: ddr_vref_get
+0x000A39BA: ddr_vref_find_best
+0x000A39CD: ddr_vref_cal
+0x000A39DA: ddr_vref_training
+0x000A39EC: ddr_wl_bdl_sync
+0x000A39FC: ddr_wl_error
+0x000A3A09: ddr_wl_process
+0x000A3A18: ddr_write_leveling
+0x000A3A2B: ddr_gate_find_phase
+0x000A3A3F: ddr_gate_find_bdl
+0x000A3A51: ddr_gate_training
+0x000A3A63: ddr_gating_func
+0x000A3A73: ddr_ac_training_func
+0x000A3A88: ddr_lpca_training_func
+0x000A3A9F: ddr_dcc_training_func
+0x000A3AB5: ddr_pcode_training
+0x000A3AC8: Not support DDR AC training.
+0x000A3AE5: DDR dataeye adjust PHY[%x][%x] DMC[%x][%x] Rank[%x]
+0x000A3C21: DDR dataeye dq check type not set.
+0x000A3D07: DDR dataeye training PHY[%x][%x] DMC[%x][%x] Rank[%x]
+0x000A3D57: DDRT test address[%x] out of range[%x, %x]
+0x000A3D90: DDRT ADDR[%x = %x]
+0x000A3DA3: DDRT wait timeout.
+0x000A3DCC: Not support DDR dpmc training.
+0x000A3DEB: DDR Gate training.
+0x000A3EE9: Not support LPDDR CA training.
+0x000A3F08: Not support DDR pcode training.
+0x000A3FAA: phy[0] total_byte_num[%x] dram_type[%x]
+0x000A4050: DDR training [%x] is disable, rank[%x] cfg[%x]
+0x000A407F: DDR Training Version: V2.1.8 20190409
+0x000A40A5: DDR training command entry. Sysctl[%x = %x]
+0x000A40F9: Byte[%x] Write[%x][%x] Read[%x][%x]
+0x000A4197: [%x = %x] Write DQ/DQS OE Byte(%x)
+0x000A423E: [%x = %x] DRAM Vref Byte(%x)
+0x000A4286: [%x = %x] ACADDRBDL(%x)
+0x000A429E: DDR training result[%x]
+0x000A42B6: DDR training cmd[%x]
+0x000A42CB: Not support DDR MPR training.
+0x000A42E9: Not support DDR training console.
+0x000A440C: DDR Vref[%x] training PHY[%x][%x] DMC[%x][%x] Rank[%x]
+0x000A44C2: DDR Write Leveling training.
+
+CONSTANT REFERENCES:
+0xF9830000: 0x00017928
+0x14017B54: 0x000A6FE8
+
+LAST 128 BYTES:
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+
+ANALYSIS STATUS: OK
+
+===========================================================================
+FILE: atf.img
+SIZE: 2097152 bytes
+SHA256: f4291c768078e8c22b8801118862b3998285f948c5c493f8319378e41847ae4b
+
+FIRST 256 BYTES:
+53 44 4b 5f 56 45 52 21 48 98 00 00 00 00 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+KEY STRINGS:
+0x000047A4: /home/d00429222/v350/HiDPTSmartSDKV2R1_SampleBack_forSTR/Code/source/kernel/atf-2.0/plat/hisilicon/hi3751v350/resume_entry_32bit
+0x00005939: HISI System Off: operation not handled.
+0x00005A11: Error initializing runtime service %s
+0x00005A4E: Unexpected affinity info state
+
+CONSTANT REFERENCES:
+
+LAST 128 BYTES:
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+
+ANALYSIS STATUS: OK
+
+END OF REPORT
