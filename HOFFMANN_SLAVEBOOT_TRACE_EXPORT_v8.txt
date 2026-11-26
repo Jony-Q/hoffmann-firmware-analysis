@@ -1,0 +1,1085 @@
+HOFFMANN SLAVEBOOT TRACE EXPORT v8
+Program=slaveboot.img Language=ARM:LE:32:v7
+Image base=00000000 max=001fffff
+READ ONLY: no program bytes, instructions, functions, symbols, or properties changed.
+BLOCK ram 00000000..001fffff size=0x00200000
+
+===== CALLBACK TABLE RESOLUTION: FUN_0005c5f8 =====
+literal 0x0005C9D8 = 0x0008D780
+literal 0x0005C9DC = 0x00042698
+literal 0x0005C9E0 = 0x00000128
+literal 0x0005C9E4 = 0x00000000
+literal 0x0005C9E8 = 0x00000178
+literal 0x0005C9EC = 0x0000006C
+literal 0x0005C9F0 = 0x0002C8EC
+literal 0x0005C9F4 = 0x000000EC
+literal 0x0005C9F8 = 0x0008D6E8
+literal 0x0005C9FC = 0x0000012C
+literal 0x0005CA00 = 0x00000038
+literal 0x0005CA04 = 0x000001A4
+literal 0x0005CA08 = 0x000000F8
+literal 0x0005CA0C = 0x00000084
+literal 0x0005CA10 = 0x0000008C
+literal 0x0005CA14 = 0x000001E0
+literal 0x0005CA18 = 0x000001D0
+literal 0x0005CA1C = 0x000000CC
+literal 0x0005CA20 = 0x0000014C
+literal 0x0005CA24 = 0x000001CC
+literal 0x0005CA28 = 0x00000134
+
+Table base candidate: PC(0x5C620)+literal[0x5C9DC] = 0x0005C628
+Pointer entries loaded by FUN_0005c5f8:
+context+0x000002C8 index_literal=0x0005C9E0 index=0x00000128 slot=0x0005C750 ptr=0xEBFE9ABA normalized=0xEBFE9ABA
+context+0x000002CC index_literal=0x0005C9E4 index=0x00000000 slot=0x0005C628 ptr=0xE2853A01 normalized=0xE2853A01
+context+0x000002D0 index_literal=0x0005C9E8 index=0x00000178 slot=0x0005C7A0 ptr=0xEBFFFF90 normalized=0xEBFFFF90
+context+0x0000030C index_literal=0x0005C9EC index=0x0000006C slot=0x0005C694 ptr=0xE3A0C000 normalized=0xE3A0C000
+context+0x000002D8 index_literal=0x0005C9F4 index=0x000000EC slot=0x0005C714 ptr=0xE794E003 normalized=0xE794E003
+context+0x000002DC index_literal=0x0005C9FC index=0x0000012C slot=0x0005C754 ptr=0xE59532C8 normalized=0xE59532C8
+context+0x000002E0 index_literal=0x0005CA00 index=0x00000038 slot=0x0005C660 ptr=0x1A00006C normalized=0x1A00006C
+context+0x000002E4 index_literal=0x0005CA04 index=0x000001A4 slot=0x0005C7CC ptr=0xE08F3003 normalized=0xE08F3003
+context+0x000002EC index_literal=0x0005CA08 index=0x000000F8 slot=0x0005C720 ptr=0xE794E003 normalized=0xE794E003
+context+0x000002F0 index_literal=0x0005CA0C index=0x00000084 slot=0x0005C6AC ptr=0xE59F234C normalized=0xE59F234C
+context+0x000002F4 index_literal=0x0005CA10 index=0x0000008C slot=0x0005C6B4 ptr=0xE585E2D8 normalized=0xE585E2D8
+context+0x000002F8 index_literal=0x0005CA14 index=0x000001E0 slot=0x0005C808 ptr=0xE3A04000 normalized=0xE3A04000
+context+0x000002FC index_literal=0x0005CA18 index=0x000001D0 slot=0x0005C7F8 ptr=0xE59332EC normalized=0xE59332EC
+context+0x00000300 index_literal=0x0005CA1C index=0x000000CC slot=0x0005C6F4 ptr=0xE59F3314 normalized=0xE59F3314
+context+0x00000304 index_literal=0x0005CA20 index=0x0000014C slot=0x0005C774 ptr=0xE2803A01 normalized=0xE2803A01
+context+0x000002E8 index_literal=0x0005CA24 index=0x000001CC slot=0x0005C7F4 ptr=0xE2803A01 normalized=0xE2803A01
+context+0x00000308 index_literal=0x0005CA28 index=0x00000134 slot=0x0005C75C ptr=0x0A000009 normalized=0x0A000009
+
+===== TARGET STRINGS AND DATA XREFS =====
+
+STRING 000783dc : loader_burn_write_data_raw
+  xref from=00039814 type=PARAM
+
+STRING 00078418 : loader_burn_write_raw_data
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+STRING 0007e620 : hisi_file_load_header
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+STRING 0007e638 : hisi_file_header_parase
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+STRING 0007e668 : hisi_file_verify_header
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+STRING 0007e680 : hisi_file_load_upgrade_data
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+STRING 0007f348 : get_partition_upgrad_cfg
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+STRING 00089120 : get_partition_upgrad_cfg
+  xref from=0005cc5c type=PARAM function=FUN_0005ca9c entry=0005ca9c
+  xref from=0005cc40 type=PARAM function=FUN_0005ca9c entry=0005ca9c
+
+STRING 0008a284 : WARNING:  
+image_header is not hi3751v, it's small configure
+
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+STRING 0008a3d4 : ERROR:  check header len failed, header len=%d
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+STRING 0008a768 : ERROR:  header crc check failed, act_crc = 0x%x, calc crc = 0x%x
+
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+STRING 0008aa74 : CRC error.
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+STRING 0008aa80 : invalid data.
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+STRING 0008b5c8 : burn_flag
+  no direct data xrefs; inspect nearby pointer tables / literal references
+
+===== PARSER / LOADER CANDIDATE RANGES =====
+
+-- range 0x0006C780..0x0006C840 --
+  0x0006C780  0xE59F3020
+  0x0006C784  0xE59F0020
+  0x0006C788  0xE08F1001
+  0x0006C78C  0xE08F3003
+  0x0006C790  0xE281104C
+  0x0006C794  0xE08F0000
+  0x0006C798  0xEBFE8F89
+  0x0006C79C  0xE3E00000
+  0x0006C7A0  0xE8BD8010
+  0x0006C7A4  0x00011E2C
+  0x0006C7A8  0x0001DC0C
+  0x0006C7AC  0x00014FAC
+  0x0006C7B0  0xE92D4DF0
+  0x0006C7B4  0xE24DD078
+  0x0006C7B8  0xE3A04000
+  0x0006C7BC  0xE28D6028
+  0x0006C7C0  0xE3A0A050
+  0x0006C7C4  0xE1A05000
+  0x0006C7C8  0xE1A01004
+  0x0006C7CC  0xE1A0200A
+  0x0006C7D0  0xE1A00006
+  0x0006C7D4  0xE58D4014
+  0x0006C7D8  0xE2858A01
+  0x0006C7DC  0xE28D7018
+  0x0006C7E0  0xEBFE5A96
+  0x0006C7E4  0xE28D3014
+  0x0006C7E8  0xE58D4020
+  0x0006C7EC  0xE58D6018
+  0x0006C7F0  0xE1A00005
+  0x0006C7F4  0xE58DA01C
+  0x0006C7F8  0xE1A01007
+  0x0006C7FC  0xE59822DC
+  0x0006C800  0xE58D3024
+  0x0006C804  0xE12FFF32
+  0x0006C808  0xE2504000
+  0x0006C80C  0x1A000041
+  0x0006C810  0xE59DB014
+  0x0006C814  0xE35B0050
+  0x0006C818  0x1A000037
+  0x0006C81C  0xE59DA030
+  0x0006C820  0xE6BFAF3A
+  0x0006C824  0xE24A3050
+  0x0006C828  0xE3530E7B
+  0x0006C82C  0xE58D3008
+  0x0006C830  0x8A000049
+  0x0006C834  0xE28A103F
+  0x0006C838  0xE3A00040
+  0x0006C83C  0xE3C1103F
+
+-- range 0x0006CA40..0x0006CB20 --
+  0x0006CA40  0xE58D6000
+  0x0006CA44  0xE08F3003
+  0x0006CA48  0xE2811064
+  0x0006CA4C  0xE08F0000
+  0x0006CA50  0xEBFE8EDB
+  0x0006CA54  0xEAFFFF9E
+  0x0006CA58  0x0001DADC
+  0x0006CA5C  0x00011C80
+  0x0006CA60  0x0001D724
+  0x0006CA64  0x00015BC0
+  0x0006CA68  0x0001DA58
+  0x0006CA6C  0x0001DA1C
+  0x0006CA70  0x00011BF4
+  0x0006CA74  0x0001DA38
+  0x0006CA78  0x00014D74
+  0x0006CA7C  0x00011BB0
+  0x0006CA80  0x00014D54
+  0x0006CA84  0x00014D58
+  0x0006CA88  0x00011B78
+  0x0006CA8C  0x0001D61C
+  0x0006CA90  0x00015ABC
+  0x0006CA94  0xE92D4DF0
+  0x0006CA98  0xE24DDE86
+  0x0006CA9C  0xE28D6040
+  0x0006CAA0  0xE1A07000
+  0x0006CAA4  0xE300281E
+  0x0006CAA8  0xE3A01000
+  0x0006CAAC  0xE1A00006
+  0x0006CAB0  0xE28D5020
+  0x0006CAB4  0xEBFE59E1
+  0x0006CAB8  0xE3A02020
+  0x0006CABC  0xE3A01000
+  0x0006CAC0  0xE1A00005
+  0x0006CAC4  0xEBFE59DD
+  0x0006CAC8  0xE5973090
+  0x0006CACC  0xE58D300C
+  0x0006CAD0  0xEBFFBEC4
+  0x0006CAD4  0xE3500027
+  0x0006CAD8  0xCA00012E
+  0x0006CADC  0xEBFFBEC1
+  0x0006CAE0  0xE3500027
+  0x0006CAE4  0xCA000127
+  0x0006CAE8  0xEBFFBEBE
+  0x0006CAEC  0xE3500027
+  0x0006CAF0  0xDA000007
+  0x0006CAF4  0xE59D300C
+  0x0006CAF8  0xE59F04A8
+  0x0006CAFC  0xE1D310B0
+  0x0006CB00  0xE1D330B2
+  0x0006CB04  0xE08F0000
+  0x0006CB08  0xE1811803
+  0x0006CB0C  0xE6BF1F31
+  0x0006CB10  0xEBFE8EAB
+  0x0006CB14  0xEBFFBEB3
+  0x0006CB18  0xE3500027
+  0x0006CB1C  0xDA000007
+
+-- range 0x0006D0E0..0x0006D1A0 --
+  uxth r12,r12
+  cmp r6,r12
+  add r6,r6,#0x1
+  bge 0x0006d124
+  bl 0x0003003c
+  subs r11,r0,#0x0
+  beq 0x0006d088
+  bl 0x0005c5e8
+  cmp r0,#0x9
+  ble 0x0006d088
+  str r11,[sp,#0x0]
+  mov r2,#0xa7
+  ldr r3,[sp,#0xc]
+  ldr r1,[sp,#0x10]
+  ldr r0,[sp,#0x14]
+  bl 0x000105c4
+  b 0x0006d088
+  mov r0,#0x0
+  add sp,sp,#0x830
+  add sp,sp,#0x8
+  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+
+-- range 0x0006D2E0..0x0006D3C0 --
+  0x0006D2E0  0x0001D4FC
+  0x0006D2E4  0x00011334
+  0x0006D2E8  0x0001D4B4
+  0x0006D2EC  0x00015274
+  0x0006D2F0  0x0001D444
+  0x0006D2F4  0xE59F3020
+  0x0006D2F8  0xE3A02000
+  0x0006D2FC  0xE58020A4
+  0x0006D300  0xE1A00002
+  0x0006D304  0xE08F3003
+  0x0006D308  0xE5832004
+  0x0006D30C  0xE5832008
+  0x0006D310  0xE5832000
+  0x0006D314  0xE583200C
+  0x0006D318  0xE12FFF1E
+  0x0006D31C  0x0007F230
+  0x0006D320  0xE92D4DF0
+  0x0006D324  0xE24DDE87
+  0x0006D328  0xE28DB050
+  0x0006D32C  0xE1A0A000
+  0x0006D330  0xE300281E
+  0x0006D334  0xE3A01000
+  0x0006D338  0xE1A0000B
+  0x0006D33C  0xE28D5030
+  0x0006D340  0xEBFE57BE
+  0x0006D344  0xE3A01000
+  0x0006D348  0xE1A00005
+  0x0006D34C  0xE3A02020
+  0x0006D350  0xE59F84B8
+  0x0006D354  0xEBFE57B9
+  0x0006D358  0xE59A1090
+  0x0006D35C  0xE3A03000
+  0x0006D360  0xE08F8008
+  0x0006D364  0xE58D302C
+  0x0006D368  0xE1510003
+  0x0006D36C  0xE58D101C
+  0x0006D370  0x0A00010D
+  0x0006D374  0xE59F2498
+  0x0006D378  0xE2811016
+  0x0006D37C  0xE58D3014
+  0x0006D380  0xE59F3490
+  0x0006D384  0xE08F2002
+  0x0006D388  0xE58D1018
+  0x0006D38C  0xE28220C4
+  0x0006D390  0xE08F3003
+  0x0006D394  0xE58D2024
+  0x0006D398  0xE28330C4
+  0x0006D39C  0xE58D3020
+  0x0006D3A0  0xE59D301C
+  0x0006D3A4  0xE1D321B4
+  0x0006D3A8  0xE1A03422
+  0x0006D3AC  0xE1833402
+  0x0006D3B0  0xE59D2014
+  0x0006D3B4  0xE6FF3073
+  0x0006D3B8  0xE1520003
+  0x0006D3BC  0xAA000111
+
+-- range 0x000748E0..0x00074CC0 --
+  stmdb sp!,{r4,lr}
+  bl 0x00066f30
+  mov r0,#0x0
+  ldmia sp!,{r4,pc}
+  stmdb sp!,{r4,lr}
+  bl 0x00066f54
+  mov r0,#0x0
+  ldmia sp!,{r4,pc}
+  stmdb sp!,{r4,r5,r6,lr}
+  cpy r4,r0
+  cpy r5,r1
+  bl 0x00074918
+  cmp r0,#0x0
+  bne 0x00074960
+  cpy r1,r5
+  cpy r0,r4
+  ldmia sp!,{r4,r5,r6,lr}
+  b 0x00066f78
+  mvn r0,#0x0
+  ldmia sp!,{r4,r5,r6,pc}
+  stmdb sp!,{r4,lr}
+  cpy r4,r0
+  bl 0x00074918
+  cmp r0,#0x0
+  bne 0x00074988
+  cpy r0,r4
+  ldmia sp!,{r4,lr}
+  b 0x0006702c
+  mvn r0,#0x0
+  ldmia sp!,{r4,pc}
+  stmdb sp!,{r4,r5,r6,lr}
+  cpy r4,r0
+  cpy r5,r1
+  bl 0x00074918
+  cmp r0,#0x0
+  bne 0x000749b8
+  cpy r1,r5
+  cpy r0,r4
+  ldmia sp!,{r4,r5,r6,lr}
+  b 0x00066fd0
+  mvn r0,#0x0
+  ldmia sp!,{r4,r5,r6,pc}
+  stmdb sp!,{r4,lr}
+  cpy r4,r0
+  bl 0x00074918
+  cmp r0,#0x0
+  bne 0x000749e0
+  cpy r0,r4
+  ldmia sp!,{r4,lr}
+  b 0x00067028
+  mov r0,#0xff
+  ldmia sp!,{r4,pc}
+  b 0x00074968
+  add r3,r0,#0x1000
+  ldr r3,[r3,#0x2bc]
+  cmp r3,#0x0
+  movwne r2,#0x12b0
+  movne r3,#0x1
+  ldrne r0,[r0,r2]
+  andne r0,r0,r3, lsl r1
+  moveq r0,#0x1
+  bx lr
+  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  sub sp,sp,#0x860
+  sub sp,sp,#0x8
+  cpy r5,r0
+  add r3,sp,#0x48
+  movw r2,#0x81e
+  cpy r0,r3
+  mov r1,#0x0
+  str r3,[sp,#0xc]
+  add r7,sp,#0x28
+  bl 0x00003240
+  ldr r3,[0x74c08]
+  mov r2,#0x20
+  cpy r0,r7
+  mov r1,#0x0
+  add r3,pc,r3
+  str r3,[sp,#0x24]
+  bl 0x00003240
+  mov r3,#0x0
+  ldr r2,[r5,#0x90]
+  str r3,[r5,#0xa4]
+  cpy r11,r3
+  ldr r3,[0x74c0c]
+  add r8,r2,#0x16
+  str r2,[sp,#0x18]
+  add r3,pc,r3
+  str r3,[sp,#0x1c]
+  ldr r3,[0x74c10]
+  add r3,pc,r3
+  str r3,[sp,#0x20]
+  ldr r3,[sp,#0x18]
+  ldrh r2,[r3,#0x14]
+  mov r3,r2, lsr #0x8
+  orr r3,r3,r2, lsl #0x8
+  uxth r3,r3
+  cmp r11,r3
+  bge 0x00074bfc
+  movw r3,#0x81e
+  cpy r2,r8
+  cpy r1,r3
+  ldr r0,[sp,#0xc]
+  bl 0x0003003c
+  subs r4,r0,#0x0
+  bne 0x00074bb8
+  ldr r3,[r5,#0x98]
+  cmp r3,#0x0
+  beq 0x00074b9c
+  ldr r3,[0x74c14]
+  mov r4,#0x0
+  add r3,pc,r3
+  str r3,[sp,#0x10]
+  ldr r3,[sp,#0xc]
+  add r6,r3,#0x1e
+  ldr r3,[0x74c18]
+  add r3,pc,r3
+  str r3,[sp,#0x14]
+  b 0x00074b3c
+  cpy r1,r4
+  cpy r0,r5
+  bl 0x000749f8
+  cmp r0,#0x0
+  beq 0x00074b80
+  ldr r2,[sp,#0x28]
+  ldr r3,[r5,#0xa4]
+  rev r2,r2
+  add r3,r3,r2
+  str r3,[r5,#0xa4]
+  ldr r3,[r5,#0x98]
+  add r4,r4,#0x1
+  add r6,r6,#0x20
+  cmp r3,r4
+  bls 0x00074b9c
+  mov r3,#0x20
+  cpy r2,r6
+  cpy r1,r3
+  cpy r0,r7
+  bl 0x0003003c
+  subs r10,r0,#0x0
+  beq 0x00074b00
+  bl 0x0005c5e8
+  cmp r0,#0x9
+  ble 0x00074b00
+  str r10,[sp,#0x0]
+  mov r2,#0x6b
+  ldr r3,[sp,#0x1c]
+  ldr r1,[sp,#0x10]
+  ldr r0,[sp,#0x14]
+  bl 0x000105c4
+  b 0x00074b00
+  bl 0x0005c5e8
+  cmp r0,#0x27
+  ble 0x00074b28
+  cpy r1,r4
+  ldr r0,[sp,#0x20]
+  bl 0x000105c4
+  b 0x00074b28
+  bl 0x0005c5e8
+  cmp r0,#0x27
+  bgt 0x00074be8
+  add r8,r8,#0x810
+  add r11,r11,#0x1
+  add r8,r8,#0xe
+  b 0x00074a94
+  bl 0x0005c5e8
+  cmp r0,#0x9
+  ble 0x00074acc
+  ldr r1,[0x74c1c]
+  mov r2,#0x66
+  ldr r0,[0x74c20]
+  str r4,[sp,#0x0]
+  ldr r3,[sp,#0x24]
+  add r1,pc,r1
+  add r0,pc,r0
+  bl 0x000105c4
+  b 0x00074acc
+  ldr r0,[0x74c24]
+  ldr r1,[r5,#0xa4]
+  add r0,pc,r0
+  bl 0x000105c4
+  b 0x00074ba8
+  add sp,sp,#0x860
+  add sp,sp,#0x8
+  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+
+-- range 0x00037980..0x00037A80 --
+  0x00037980  0xEBFF630F
+  0x00037984  0xE59F202C
+  0x00037988  0xE59F302C
+  0x0003798C  0xE796E002
+  0x00037990  0xE08F3003
+  0x00037994  0xE783E104
+  0x00037998  0xEAFFFFD0
+  0x0003799C  0x00067414
+  0x000379A0  0x000A78A0
+  0x000379A4  0x00049D98
+  0x000379A8  0x0000009C
+  0x000379AC  0x000A782C
+  0x000379B0  0x00049D9C
+  0x000379B4  0x00049D40
+  0x000379B8  0x00000014
+  0x000379BC  0x000A77E0
+  0x000379C0  0xE59F3008
+  0x000379C4  0xE08F3003
+  0x000379C8  0xE5930100
+  0x000379CC  0xE12FFF1E
+  0x000379D0  0x000A77AC
+  0x000379D4  0xE59F3008
+  0x000379D8  0xE08F3003
+  0x000379DC  0xE5930180
+  0x000379E0  0xE12FFF1E
+  0x000379E4  0x000A7798
+  0x000379E8  0xE92D4DF0
+  0x000379EC  0xE24DDD23
+  0x000379F0  0xE28D30A0
+  0x000379F4  0xE1A04000
+  0x000379F8  0xE300281E
+  0x000379FC  0xE3A01000
+  0x00037A00  0xE58D0054
+  0x00037A04  0xE28DA060
+  0x00037A08  0xE1A00003
+  0x00037A0C  0xE58D3028
+  0x00037A10  0xEBFF2E0A
+  0x00037A14  0xE3A02020
+  0x00037A18  0xE1A0000A
+  0x00037A1C  0xE3A01000
+  0x00037A20  0xEBFF2E06
+  0x00037A24  0xE5942090
+  0x00037A28  0xE3520000
+  0x00037A2C  0xE58D2050
+  0x00037A30  0x0A00015A
+  0x00037A34  0xE59F35E4
+  0x00037A38  0xE2822016
+  0x00037A3C  0xE1A0B00A
+  0x00037A40  0xE58D204C
+  0x00037A44  0xE3A02000
+  0x00037A48  0xE08F3003
+  0x00037A4C  0xE58D2048
+  0x00037A50  0xE2833014
+  0x00037A54  0xE58D3044
+  0x00037A58  0xE59D3050
+  0x00037A5C  0xE1D321B4
+  0x00037A60  0xE1A03422
+  0x00037A64  0xE1833402
+  0x00037A68  0xE59D2048
+  0x00037A6C  0xE6FF3073
+  0x00037A70  0xE1520003
+  0x00037A74  0xAA000157
+  0x00037A78  0xE300381E
+  0x00037A7C  0xE59D204C
+
+-- range 0x000374E0..0x00037610 --
+  ldr r2,[0x37524]
+  mov r1,#0x1
+  ldr r12,[0x37528]
+  cpy r0,r1
+  mov r3,#0x3e
+  add r2,pc,r2
+  add r12,pc,r12
+  add r2,r2,#0xc
+  str r12,[sp,#0x0]
+  bl 0x000372f8
+  add sp,sp,#0x88
+  ldmia sp!,{r4,r5,r6,pc}
+  stmdb sp!,{r4,lr}
+  cpy r4,r0
+  cpy r0,r1
+  bl 0x00010cac
+  str r0,[r4,#0x0]
+  mov r0,#0x0
+  ldmia sp!,{r4,pc}
+  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  sub sp,sp,#0x50
+  rev r10,r3
+  ldr r3,[sp,#0x74]
+  rev r11,r2
+  cpy r6,r0
+  ldr r1,[sp,#0x70]
+  cpy r2,r10
+  ldr r8,[sp,#0x78]
+  rev r4,r3
+  rev r5,r1
+  subs r1,r4,r10
+  sbc r3,r5,r11
+  rev r8,r8
+  str r1,[sp,#0x0]
+  cpy r0,r8
+  str r3,[sp,#0x4]
+  mov r1,#0x0
+  cpy r3,r11
+  bl 0x00055484
+  cmn r0,#0x1
+  cpy r7,r0
+  beq 0x000376e0
+  add r1,sp,#0x8
+  bl 0x00056094
+  cmp r0,#0x0
+  bne 0x00037818
+  ldrd r2,r3,[sp,#0x8]
+  cmp r5,r3
+  cmpeq r4,r2
+  bhi 0x0003770c
+  ldr r3,[sp,#0x7c]
+  mov r5,#0x0
+  ldr r2,[sp,#0x80]
+  mov r4,#0x0
+  strd r4,r5,[r6,#0x28]
+  rev r3,r3
+  str r8,[r6,#0x14]
+  movs r3,r3, lsr #0x10
+  str r2,[r6,#0x4]
+  str r7,[r6,#0x0]
+  str r0,[r6,#0x10]
+  ldr r5,[sp,#0x18]
+  beq 0x000376f8
+  ldr r4,[sp,#0x1c]
+  mov r10,#0x1
+  ldr r3,[sp,#0x20]
+  cpy r0,r5
+  str r10,[r6,#0x20]
+  cpy r1,r4
+  add r4,r4,r3
+
+-- range 0x0005C9C0..0x0005CAE0 --
+  cpy r2,r4
+  ldr r0,[0x5ca98]
+  add r1,pc,r1
+  add r0,pc,r0
+  bl 0x000105c4
+  b 0x0005c950
+  ldr r3,[0x5cc6c]
+  stmdb sp!,{r4,lr}
+  add r3,pc,r3
+  add r3,r3,#0x1000
+  ldr r3,[r3,#0x2f0]
+  cmp r3,#0x0
+  beq 0x0005cae0
+  bl 0x0005c5e8
+  cmp r0,#0x27
+  bgt 0x0005cba8
+  ldr r0,[0x5cc70]
+  add r0,pc,r0
+  add r3,r0,#0x1000
+  ldr r3,[r3,#0x2f0]
+  blx r3
+  subs r4,r0,#0x0
+  bne 0x0005cb6c
+  ldr r3,[0x5cc74]
+
+-- range 0x0005DD80..0x0005E460 --
+  bl 0x0005db04
+  bl 0x00056aac
+  bl 0x0003a020
+  bl 0x0005dbc4
+  bl 0x0005dcac
+  bl 0x00056c38
+  cpy r0,r4
+  bl 0x0005707c
+  ldr r3,[sp,#0x4]
+  cmp r3,#0x0
+  beq 0x0005ddb0
+  bl 0x00056d38
+  bl 0x00039c4c
+  mov r0,#0x2
+  bl 0x0003ec64
+  mov r0,#0x0
+  add sp,sp,#0x8
+  ldmia sp!,{r4,pc}
+  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  sub sp,sp,#0x1100
+  sub sp,sp,#0x10
+  cpy r6,r0
+  add r4,sp,#0x110
+  cpy r7,r1
+  sub r0,r4,#0x110
+  movw r2,#0x1110
+  mov r1,#0x0
+  bl 0x00003240
+  cmp r7,#0x0
+  cmpne r6,#0x0
+  beq 0x0005df78
+  add r5,r6,#0x1600
+  movw r3,#0x1110
+  cpy r11,sp
+  add r5,r5,#0x28
+  mov r12,#0x15
+  cpy r2,r5
+  cpy r0,r11
+  cpy r1,r3
+  str r12,[r4,#0x4c8]
+  bl 0x0003003c
+  subs r8,r0,#0x0
+  bne 0x0005df78
+  ldr r3,[r4,#0x4c8]
+  cmp r3,#0x15
+  beq 0x0005dea4
+  cpy r0,r8
+  add sp,sp,#0x1100
+  add sp,sp,#0x10
+  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+  ldr r3,[r7,#0x8]
+  str r3,[r4,#0x4c8]
+  cmp r3,#0x14
+  addls pc,pc,r3, lsl #0x2
+  b 0x0005dfb4
+  b 0x0005dfa4
+  b 0x0005dfa4
+  b 0x0005dfa4
+  b 0x0005dfa4
+  b 0x0005df80
+  b 0x0005df80
+  b 0x0005df80
+  b 0x0005df80
+  b 0x0005df0c
+  b 0x0005df0c
+  b 0x0005df90
+  b 0x0005df90
+  b 0x0005df0c
+  b 0x0005df0c
+  b 0x0005dfb4
+  b 0x0005dfb4
+  b 0x0005df0c
+  b 0x0005df0c
+  b 0x0005df0c
+  b 0x0005df0c
+  b 0x0005df0c
+  mov r3,#0x3
+  str r3,[r4,#-0xd4]
+  str r3,[r4,#-0xd0]
+  ldr r10,[r7,#0x0]
+  cmp r10,#0x1
+  bne 0x0005df78
+  ldr r12,[r7,#0x4]
+  cmp r12,#0x8
+  bhi 0x0005df78
+  movw r3,#0x1110
+  cpy r2,r11
+  cpy r0,r5
+  cpy r1,r3
+  str r10,[r4,#-0xf4]
+  str r12,[r4,#-0xf0]
+  bl 0x0003003c
+  cmp r0,#0x0
+  bne 0x0005df78
+  ldr r3,[r4,#0x4c8]
+  cmp r3,#0x11
+  bne 0x0005de94
+  ldr r3,[r4,#0x4c4]
+  cmp r3,#0x11
+  addne r6,r6,#0x1000
+  cpyne r8,r0
+  strne r10,[r6,#0x49c]
+  b 0x0005de94
+  mvn r8,#0x0
+  b 0x0005de94
+  mov r3,#0x2
+  str r3,[r4,#-0xd4]
+  str r3,[r4,#-0xd0]
+  b 0x0005df18
+  mov r2,#0x3
+  mov r3,#0x2
+  str r2,[r4,#-0xd4]
+  str r3,[r4,#-0xd0]
+  b 0x0005df18
+  mov r3,#0x4
+  str r3,[r4,#-0xd4]
+  str r3,[r4,#-0xd0]
+  b 0x0005df18
+  mov r3,#0x1
+  str r3,[r4,#-0xd4]
+  str r3,[r4,#-0xd0]
+  b 0x0005df18
+  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  ldr r2,[r3,#0x4e4]
+  sub sp,sp,#0x30
+  ldr r6,[r3,#0xc00]
+  cmp r2,#0x1
+  subeq r5,r6,#0x10
+  beq 0x0005e2b0
+  ldr r2,[r3,#0x644]
+  ldr r12,[r3,#0x648]
+  ldr r4,[r3,#0x658]
+  ldr r8,[r3,#0x654]
+  mov r2,r2, lsl #0x3
+  cmp r12,r2
+  bcs 0x0005e454
+  mov lr,r12, lsl #0x1
+  cmp r2,lr
+  bls 0x0005e428
+  add lr,lr,r12
+  cmp r2,lr
+  bls 0x0005e0b4
+  mov r5,r12, lsl #0x2
+  cmp r2,r5
+  bls 0x0005e51c
+  add r5,r5,r12
+  cmp r2,r5
+  bls 0x0005e0b4
+  cmp r2,lr, lsl #0x1
+  bls 0x0005e0b4
+  mov lr,r12, lsl #0x3
+  sub r5,lr,r12
+  cmp r2,r5
+  bls 0x0005e0b4
+  cmp r2,lr
+  bls 0x0005e4fc
+  add lr,lr,r12
+  cmp r2,lr
+  bls 0x0005e0b4
+  mov lr,#0xa
+  mul lr,lr,r12
+  cmp r2,lr
+  bls 0x0005e0b4
+  mov lr,#0xb
+  mul lr,lr,r12
+  cmp r2,lr
+  mov r2,#0x4
+  ldr r12,[r3,#0x660]
+  str r2,[r3,#0x4c4]
+  mov lr,#0x4
+  ldr r2,[r3,#0x65c]
+  sub r5,r6,#0x10
+  add r11,r2,#0x3f
+  cmp r5,#0x4
+  str r11,[sp,#0xc]
+  movls r7,#0x1
+  movhi r7,#0x0
+  strls r7,[r0,#0x24]
+  strls r7,[sp,#0x14]
+  strhi r7,[sp,#0x14]
+  strhi r7,[r0,#0x24]
+  cmp lr,#0x0
+  movne r7,#0x0
+  streq lr,[r0,#0x28]
+  strne r7,[r0,#0x28]
+  cmp r2,#0x2
+  ldrb r7,[r3,#0x63c]
+  cpycs r10,r2
+  movcc r10,#0x2
+  cmp r12,#0x2
+  str r10,[sp,#0x4]
+  cpycs r10,r12
+  movcc r10,#0x2
+  cmp r7,#0x1
+  str r10,[sp,#0x0]
+  bic r7,r11,#0x3f
+  beq 0x0005e4b0
+  add r8,r8,#0xf
+  add r11,r2,#0xf
+  mov r10,r8, lsr #0x4
+  bic r8,r8,#0xf
+  str r8,[sp,#0x20]
+  bic r8,r11,#0xf
+  str r10,[sp,#0x18]
+  str r8,[sp,#0x2c]
+  ldrb r8,[r3,#0x63d]
+  cmp r8,#0x1
+  beq 0x0005e4d4
+  add r8,r4,#0xf
+  add r4,r12,#0xf
+  mov r11,r8, lsr #0x4
+  bic r4,r4,#0xf
+  bic r8,r8,#0xf
+  str r11,[sp,#0x1c]
+  str r8,[sp,#0x24]
+  ldr r11,[r3,#0xbfc]
+  ldr r8,[r3,#0x49c]
+  sub r11,r11,#0x11
+  cmp r11,#0x3
+  addls pc,pc,r11, lsl #0x2
+  b 0x0005e54c
+  b 0x0005e3e0
+  b 0x0005e3a4
+  b 0x0005e358
+  b 0x0005e1a0
+  mov r10,r7, lsl #0x1
+  cmp r8,#0x1
+  moveq r11,r4, lsr #0x1
+  cpyne r11,r4
+  str r10,[sp,#0x8]
+  ldreq r10,[sp,#0xc]
+  biceq r10,r10,#0x8000003f
+  streq r10,[sp,#0x8]
+  ldr r10,[sp,#0x8]
+  mul r10,r11,r10
+  str r10,[sp,#0x28]
+  ldr r10,[sp,#0x0]
+  str r10,[sp,#0xc]
+  ldr r10,[sp,#0x4]
+  str r10,[sp,#0x10]
+  cmp r8,#0x1
+  beq 0x0005e46c
+  ldr r6,[r0,#0x38]
+  add r0,r0,#0x1500
+  add r0,r0,#0x18
+  cmp r6,#0x1
+  movne r6,#0x0
+  strne r2,[r3,#0x620]
+  strne r12,[r3,#0x624]
+  strne r6,[r3,#0x618]
+  strne r6,[r3,#0x61c]
+  cmp r0,#0x0
+  beq 0x0005e228
+  ldr r2,[r3,#0x664]
+  ldr r0,[sp,#0x2c]
+  mul r2,r2,r0
+  add r2,r2,#0xf
+  bic r2,r2,#0xf
+  str r2,[r3,#0x518]
+  ldr r2,[sp,#0x14]
+
+===== FUNCTIONS DISCOVERED FROM CALLBACKS / STRING XREFS =====
+
+===== FUNCTION FUN_0005ca9c @ 0005ca9c =====
+Body=[[0005ca9c, 0005cc6b]]
+  ldr r3,[0x5cc6c]
+  stmdb sp!,{r4,lr}
+  add r3,pc,r3
+  add r3,r3,#0x1000
+  ldr r3,[r3,#0x2f0]
+  cmp r3,#0x0
+  beq 0x0005cae0
+  bl 0x0005c5e8
+  cmp r0,#0x27
+  bgt 0x0005cba8
+  ldr r0,[0x5cc70]
+  add r0,pc,r0
+  add r3,r0,#0x1000
+  ldr r3,[r3,#0x2f0]
+  blx r3
+  subs r4,r0,#0x0
+  bne 0x0005cb6c
+  ldr r3,[0x5cc74]
+  add r3,pc,r3
+  add r3,r3,#0x1000
+  ldr r3,[r3,#0x2f4]
+  cmp r3,#0x0
+  beq 0x0005cb20
+  bl 0x0005c5e8
+  cmp r0,#0x27
+  bgt 0x0005cc20
+  ldr r0,[0x5cc78]
+  add r0,pc,r0
+  add r3,r0,#0x1000
+  ldr r3,[r3,#0x2f4]
+  blx r3
+  subs r4,r0,#0x0
+  bne 0x0005cbc0
+  ldr r3,[0x5cc7c]
+  add r3,pc,r3
+  add r3,r3,#0x1000
+  ldr r3,[r3,#0x2e8]
+  cmp r3,#0x0
+  beq 0x0005cb60
+  bl 0x0005c5e8
+  cmp r0,#0x27
+  bgt 0x0005cc38
+  ldr r0,[0x5cc80]
+  add r0,pc,r0
+  add r3,r0,#0x1000
+  ldr r3,[r3,#0x2e8]
+  blx r3
+  subs r4,r0,#0x0
+  bne 0x0005cbfc
+  mov r4,#0x0
+  cpy r0,r4
+  ldmia sp!,{r4,pc}
+  bl 0x0005c5e8
+  cmp r0,#0x9
+  ble 0x0005cb90
+  ldr r1,[0x5cc84]
+  cpy r2,r4
+  ldr r0,[0x5cc88]
+  add r1,pc,r1
+  add r0,pc,r0
+  bl 0x000105c4
+  ldr r3,[0x5cc8c]
+  cpy r0,r4
+  add r3,pc,r3
+  add r3,r3,#0x1000
+  str r4,[r3,#0x2c0]
+  ldmia sp!,{r4,pc}
+  ldr r1,[0x5cc90]
+  ldr r0,[0x5cc94]
+  add r1,pc,r1
+  add r0,pc,r0
+  bl 0x000105c4
+  b 0x0005cac4
+  bl 0x0005c5e8
+  cmp r0,#0x9
+  ble 0x0005cbe4
+  ldr r1,[0x5cc98]
+  cpy r2,r4
+  ldr r0,[0x5cc9c]
+  add r1,pc,r1
+  add r0,pc,r0
+  bl 0x000105c4
+  ldr r3,[0x5cca0]
+  cpy r0,r4
+  add r3,pc,r3
+  add r3,r3,#0x1000
+  str r4,[r3,#0x2c0]
+  ldmia sp!,{r4,pc}
+  bl 0x0005c5e8
+  cmp r0,#0x9
+  bgt 0x0005cc50
+  ldr r3,[0x5cca4]
+  cpy r0,r4
+  add r3,pc,r3
+  add r3,r3,#0x1000
+  str r4,[r3,#0x2c0]
+  ldmia sp!,{r4,pc}
+  ldr r1,[0x5cca8]
+  ldr r0,[0x5ccac]
+  add r1,pc,r1
+  add r0,pc,r0
+  bl 0x000105c4
+  b 0x0005cb04
+  ldr r1,[0x5ccb0]
+  ldr r0,[0x5ccb4]
+  add r1,pc,r1
+  add r0,pc,r0
+  bl 0x000105c4
+  b 0x0005cb44
+  ldr r1,[0x5ccb8]
+  cpy r2,r4
+  ldr r0,[0x5ccbc]
+  add r1,pc,r1
+  add r0,pc,r0
+  bl 0x000105c4
+  b 0x0005cc08
+  XREF from=0005d4a4 type=UNCONDITIONAL_CALL caller=FUN_0006dadc
+  XREF from=0005d3e0 type=UNCONDITIONAL_CALL caller=FUN_0005d390
+  XREF from=0005d338 type=UNCONDITIONAL_CALL caller=FUN_0005d2c8
+  XREF from=0005d548 type=UNCONDITIONAL_CALL caller=FUN_0005d4c4
+[C DECOMPILATION]
+
+int FUN_0005ca9c(void)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  if (*(int *)(DAT_0005cc6c + 0x5dd9c) != 0) {
+    iVar1 = FUN_0005c5e8();
+    if (0x27 < iVar1) {
+      FUN_000105c4(DAT_0005cc94 + 0x5cbbc,DAT_0005cc90 + 0x5cbb8);
+    }
+    iVar1 = (**(code **)(DAT_0005cc70 + 0x5ddc0))();
+    if (iVar1 != 0) {
+      iVar2 = FUN_0005c5e8();
+      if (9 < iVar2) {
+        FUN_000105c4(DAT_0005cc88 + 0x5cb90,DAT_0005cc84 + 0x5cb8c,iVar1);
+      }
+      *(int *)(DAT_0005cc8c + 0x5de60) = iVar1;
+      return iVar1;
+    }
+  }
+  if (*(int *)(DAT_0005cc74 + 0x5dde0) != 0) {
+    iVar1 = FUN_0005c5e8();
+    if (0x27 < iVar1) {
+      FUN_000105c4(DAT_0005ccac + 0x5cc34,DAT_0005cca8 + 0x5cc30);
+    }
+    iVar1 = (**(code **)(DAT_0005cc78 + 0x5de04))();
+    if (iVar1 != 0) {
+      iVar2 = FUN_0005c5e8();
+      if (9 < iVar2) {
+        FUN_000105c4(DAT_0005cc9c + 0x5cbe4,DAT_0005cc98 + 0x5cbe0,iVar1);
+      }
+      *(int *)(DAT_0005cca0 + 0x5deb4) = iVar1;
+      return iVar1;
+    }
+  }
+  if (*(int *)(DAT_0005cc7c + 0x5de14) != 0) {
+    iVar1 = FUN_0005c5e8();
+    if (0x27 < iVar1) {
+      FUN_000105c4(DAT_0005ccb4 + 0x5cc4c,DAT_0005ccb0 + 0x5cc48);
+    }
+    iVar1 = (**(code **)(DAT_0005cc80 + 0x5de38))();
+    if (iVar1 != 0) {
+      iVar2 = FUN_0005c5e8();
+      if (9 < iVar2) {
+        FUN_000105c4(DAT_0005ccbc + 0x5cc68,DAT_0005ccb8 + 0x5cc64,iVar1);
+      }
+      *(int *)(DAT_0005cca4 + 0x5ded8) = iVar1;
+      return iVar1;
+    }
+  }
+  return 0;
+}
+
+
+
+TOTAL UNIQUE FUNCTIONS EXPORTED=1
+END OF V8 REPORT
