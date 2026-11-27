@@ -1,0 +1,4089 @@
+HOFFMANN SLAVEBOOT CALLBACK TARGETS v11
+Program: slaveboot.img
+Language: ARM:LE:32:v7
+Image base: 00000000
+Minimum address: 00000000
+Maximum address: 001fffff
+
+This script analyzes the original slaveboot image.
+It may add disassembly and function definitions to the
+Ghidra analysis database.
+It does NOT modify firmware bytes or the TV.
+
+==================================================
+CALLBACK TABLE ANALYSIS
+==================================================
+Table base: 0x0009ECC0
+Relocation base: 0x14000000
+Callback count: 17
+
+--------------------------------------------------
+NAME: callback_2C8
+CONTEXT OFFSET: 0x000002C8
+TABLE OFFSET: 0x00000128
+TABLE SLOT: 0x0009EDE8
+RAW POINTER: 0x14073814
+NORMALIZED POINTER: 0x00073814
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x00073814
+TARGET ADDRESS: 00073814
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: callback_2C8
+  ENTRY: 00073814
+  BODY: [[00073814, 00073a2f]]
+  ----- FUNCTION INSTRUCTIONS -----
+  00073814  stmdb sp!,{r4,r5,r6,lr}
+  00073818  sub sp,sp,#0x8
+  0007381c  cpy r4,r0
+  00073820  add r5,r4,#0x1000
+  00073824  bl 0x0005892c
+  00073828  subs r3,r0,#0x0
+  0007382c  str r0,[r5,#0x2a8]
+  00073830  bne 0x00073874
+  00073834  bl 0x0005c5e8
+  00073838  cmp r0,#0x9
+  0007383c  bgt 0x00073970
+  00073840  mov r0,#0x0
+  00073844  bl 0x00073800
+  00073848  cpy r0,r4
+  0007384c  bl 0x00072500
+  00073850  subs r5,r0,#0x0
+  00073854  beq 0x00073920
+  00073858  bl 0x0005c5e8
+  0007385c  cmp r0,#0x9
+  00073860  bgt 0x00073a00
+  00073864  mvn r4,#0x0
+  00073868  cpy r0,r4
+  0007386c  add sp,sp,#0x8
+  00073870  ldmia sp!,{r4,r5,r6,pc}
+  00073874  mov r2,#0xff000000
+  00073878  mov r1,#0x0
+  0007387c  bl 0x00057844
+  00073880  subs r6,r0,#0x0
+  00073884  beq 0x000738d8
+  00073888  bl 0x0005c5e8
+  0007388c  cmp r0,#0x9
+  00073890  bgt 0x000739d4
+  00073894  bl 0x0005c5e8
+  00073898  cmp r0,#0x9
+  0007389c  ble 0x00073864
+  000738a0  ldr r1,[0x73a30]
+  000738a4  mvn r4,#0x0
+  000738a8  ldr r3,[0x73a34]
+  000738ac  movw r2,#0x2ba
+  000738b0  ldr r0,[0x73a38]
+  000738b4  add r1,pc,r1
+  000738b8  str r4,[sp,#0x0]
+  000738bc  add r3,pc,r3
+  000738c0  add r1,r1,#0x70
+  000738c4  add r0,pc,r0
+  000738c8  bl 0x000105c4
+  000738cc  cpy r0,r4
+  000738d0  add sp,sp,#0x8
+  000738d4  ldmia sp!,{r4,r5,r6,pc}
+  000738d8  ldr r0,[r5,#0x2a8]
+  000738dc  bl 0x00058958
+  000738e0  subs r5,r0,#0x0
+  000738e4  beq 0x00073848
+  000738e8  bl 0x0005c5e8
+  000738ec  cmp r0,#0x9
+  000738f0  ble 0x00073894
+  000738f4  ldr r1,[0x73a3c]
+  000738f8  mov r2,#0x230
+  000738fc  ldr r3,[0x73a40]
+  00073900  ldr r0,[0x73a44]
+  00073904  add r1,pc,r1
+  00073908  str r5,[sp,#0x0]
+  0007390c  add r3,pc,r3
+  00073910  add r1,r1,#0x60
+  00073914  add r0,pc,r0
+  00073918  bl 0x000105c4
+  0007391c  b 0x00073894
+  00073920  mov r1,#0xd
+  00073924  cpy r0,r4
+  00073928  bl 0x0007241c
+  0007392c  subs r5,r0,#0x0
+  00073930  beq 0x00073980
+  00073934  bl 0x0005c5e8
+  00073938  cmp r0,#0x9
+  0007393c  ble 0x00073864
+  00073940  ldr r1,[0x73a48]
+  00073944  mov r2,#0x2bc
+  00073948  ldr r3,[0x73a4c]
+  0007394c  mvn r4,#0x0
+  00073950  ldr r0,[0x73a50]
+  00073954  add r1,pc,r1
+  00073958  str r5,[sp,#0x0]
+  0007395c  add r3,pc,r3
+  00073960  add r1,r1,#0x70
+  00073964  add r0,pc,r0
+  00073968  bl 0x000105c4
+  0007396c  b 0x00073868
+  00073970  ldr r0,[0x73a54]
+  00073974  add r0,pc,r0
+  00073978  bl 0x000105c4
+  0007397c  b 0x00073840
+  00073980  cpy r0,r4
+  00073984  cpy r2,r5
+  00073988  cpy r1,r5
+  0007398c  bl 0x000727b0
+  00073990  subs r4,r0,#0x0
+  00073994  beq 0x00073868
+  00073998  bl 0x0005c5e8
+  0007399c  cmp r0,#0x9
+  000739a0  ble 0x00073864
+  000739a4  ldr r1,[0x73a58]
+  000739a8  movw r2,#0x2bd
+  000739ac  ldr r3,[0x73a5c]
+  000739b0  ldr r0,[0x73a60]
+  000739b4  add r1,pc,r1
+  000739b8  str r4,[sp,#0x0]
+  000739bc  add r3,pc,r3
+  000739c0  add r1,r1,#0x70
+  000739c4  add r0,pc,r0
+  000739c8  mvn r4,#0x0
+  000739cc  bl 0x000105c4
+  000739d0  b 0x00073868
+  000739d4  ldr r1,[0x73a64]
+  000739d8  movw r2,#0x22f
+  000739dc  ldr r3,[0x73a68]
+  000739e0  ldr r0,[0x73a6c]
+  000739e4  add r1,pc,r1
+  000739e8  str r6,[sp,#0x0]
+  000739ec  add r3,pc,r3
+  000739f0  add r1,r1,#0x60
+  000739f4  add r0,pc,r0
+  000739f8  bl 0x000105c4
+  000739fc  b 0x00073894
+  00073a00  ldr r1,[0x73a70]
+  00073a04  movw r2,#0x2bb
+  00073a08  ldr r3,[0x73a74]
+  00073a0c  mvn r4,#0x0
+  00073a10  ldr r0,[0x73a78]
+  00073a14  add r1,pc,r1
+  00073a18  str r5,[sp,#0x0]
+  00073a1c  add r3,pc,r3
+  00073a20  add r1,r1,#0x70
+  00073a24  add r0,pc,r0
+  00073a28  bl 0x000105c4
+  00073a2c  b 0x00073868
+  Instruction count: 135
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 callback_2C8(int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  iVar1 = FUN_0005892c();
+  *(int *)(param_1 + 0x12a8) = iVar1;
+  if (iVar1 == 0) {
+    iVar1 = FUN_0005c5e8();
+    if (9 < iVar1) {
+      FUN_000105c4(iRam00073a54 + 0x7397c);
+    }
+    func_0x00073800(0);
+LAB_00073848:
+    iVar1 = func_0x00072500(param_1);
+    if (iVar1 == 0) {
+      iVar1 = func_0x0007241c(param_1,0xd);
+      if (iVar1 == 0) {
+        iVar1 = func_0x000727b0(param_1,0,0);
+        if (iVar1 == 0) {
+          return 0;
+        }
+        iVar2 = FUN_0005c5e8();
+        if (9 < iVar2) {
+          FUN_000105c4(iRam00073a60 + 0x739cc,iRam00073a58 + 0x73a2c,0x2bd,iRam00073a5c + 0x739c4,
+                       iVar1);
+          return 0xffffffff;
+        }
+      }
+      else {
+        iVar2 = FUN_0005c5e8();
+        if (9 < iVar2) {
+          FUN_000105c4(iRam00073a50 + 0x7396c,iRam00073a48 + 0x739cc,700,iRam00073a4c + 0x73964,
+                       iVar1);
+          return 0xffffffff;
+        }
+      }
+    }
+    else {
+      iVar2 = FUN_0005c5e8();
+      if (9 < iVar2) {
+        FUN_000105c4(iRam00073a78 + 0x73a2c,iRam00073a70 + 0x73a8c,699,iRam00073a74 + 0x73a24,iVar1)
+        ;
+        return 0xffffffff;
+      }
+    }
+  }
+  else {
+    iVar1 = FUN_00057844(iVar1,0,0xff000000);
+    if (iVar1 == 0) {
+      iVar1 = thunk_FUN_00058600(*(undefined4 *)(param_1 + 0x12a8));
+      if (iVar1 == 0) goto LAB_00073848;
+      iVar2 = FUN_0005c5e8();
+      if (9 < iVar2) {
+        FUN_000105c4(iRam00073a44 + 0x7391c,iRam00073a3c + 0x7396c,0x230,iRam00073a40 + 0x73914,
+                     iVar1);
+      }
+    }
+    else {
+      iVar2 = FUN_0005c5e8();
+      if (9 < iVar2) {
+        FUN_000105c4(iRam00073a6c + 0x739fc,iRam00073a64 + 0x73a4c,0x22f,iRam00073a68 + 0x739f4,
+                     iVar1);
+      }
+    }
+    iVar1 = FUN_0005c5e8();
+    if (9 < iVar1) {
+      FUN_000105c4(iRam00073a38 + 0x738cc,iRam00073a30 + 0x7392c,0x2ba,iRam00073a34 + 0x738c4,
+                   0xffffffff);
+      return 0xffffffff;
+    }
+  }
+  return 0xffffffff;
+}
+
+
+
+--------------------------------------------------
+NAME: callback_2CC
+CONTEXT OFFSET: 0x000002CC
+TABLE OFFSET: 0x00000000
+TABLE SLOT: 0x0009ECC0
+RAW POINTER: 0x14073750
+NORMALIZED POINTER: 0x00073750
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x00073750
+TARGET ADDRESS: 00073750
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: callback_2CC
+  ENTRY: 00073750
+  BODY: [[00073750, 000737ef]]
+  ----- FUNCTION INSTRUCTIONS -----
+  00073750  stmdb sp!,{r4,r5,r6,lr}
+  00073754  sub sp,sp,#0x8
+  00073758  cpy r4,r0
+  0007375c  cpy r5,r1
+  00073760  cpy r6,r2
+  00073764  bl 0x0007240c
+  00073768  cmp r0,#0x1
+  0007376c  beq 0x00073798
+  00073770  bl 0x0005c5e8
+  00073774  cmp r0,#0x27
+  00073778  bgt 0x00073788
+  0007377c  mov r0,#0x0
+  00073780  add sp,sp,#0x8
+  00073784  ldmia sp!,{r4,r5,r6,pc}
+  00073788  ldr r0,[0x737f0]
+  0007378c  add r0,pc,r0
+  00073790  bl 0x000105c4
+  00073794  b 0x0007377c
+  00073798  cpy r0,r4
+  0007379c  cpy r2,r6
+  000737a0  cpy r1,r5
+  000737a4  bl 0x000727b0
+  000737a8  subs r4,r0,#0x0
+  000737ac  beq 0x0007377c
+  000737b0  bl 0x0005c5e8
+  000737b4  cmp r0,#0x9
+  000737b8  mvnle r0,#0x0
+  000737bc  ble 0x00073780
+  000737c0  ldr r1,[0x737f4]
+  000737c4  mov r2,#0x2cc
+  000737c8  ldr r3,[0x737f8]
+  000737cc  ldr r0,[0x737fc]
+  000737d0  add r1,pc,r1
+  000737d4  str r4,[sp,#0x0]
+  000737d8  add r3,pc,r3
+  000737dc  add r1,r1,#0x4c
+  000737e0  add r0,pc,r0
+  000737e4  bl 0x000105c4
+  000737e8  mvn r0,#0x0
+  000737ec  b 0x00073780
+  Instruction count: 40
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 callback_2CC(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  iVar1 = func_0x0007240c();
+  if (iVar1 == 1) {
+    iVar1 = func_0x000727b0(param_1,param_2,param_3);
+    if (iVar1 != 0) {
+      iVar2 = FUN_0005c5e8();
+      if (iVar2 < 10) {
+        return 0xffffffff;
+      }
+      FUN_000105c4(iRam000737fc + 0x737e8,iRam000737f4 + 0x73824,0x2cc,iRam000737f8 + 0x737e0,iVar1)
+      ;
+      return 0xffffffff;
+    }
+  }
+  else {
+    iVar1 = FUN_0005c5e8();
+    if (0x27 < iVar1) {
+      FUN_000105c4(iRam000737f0 + 0x73794);
+    }
+  }
+  return 0;
+}
+
+
+
+--------------------------------------------------
+NAME: callback_2D0
+CONTEXT OFFSET: 0x000002D0
+TABLE OFFSET: 0x00000178
+TABLE SLOT: 0x0009EE38
+RAW POINTER: 0x140723A4
+NORMALIZED POINTER: 0x000723A4
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x000723A4
+TARGET ADDRESS: 000723a4
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: callback_2D0
+  ENTRY: 000723a4
+  BODY: [[000723a4, 00072407]]
+  ----- FUNCTION INSTRUCTIONS -----
+  000723a4  stmdb sp!,{r4,r5,lr}
+  000723a8  add r5,r0,#0x1000
+  000723ac  ldr r12,[r5,#0x2c4]
+  000723b0  cpy r2,r0
+  000723b4  sub sp,sp,#0x8c
+  000723b8  ldr r3,[r0,#0xa4]
+  000723bc  add r4,sp,#0x8
+  000723c0  ldr r1,[0x72408]
+  000723c4  cpy r0,r4
+  000723c8  add r2,r2,r12, lsl #0x6
+  000723cc  add r1,pc,r1
+  000723d0  mov r3,r3, lsr #0x14
+  000723d4  add r2,r2,#0x10
+  000723d8  bl 0x000311c8
+  000723dc  mov r3,#0xff
+  000723e0  ldr r0,[r5,#0x2ac]
+  000723e4  movt r3,#0xff8f
+  000723e8  cpy r1,r4
+  000723ec  str r3,[sp,#0x0]
+  000723f0  mov r2,#0xf
+  000723f4  mov r3,#0x3
+  000723f8  bl 0x00071fc8
+  000723fc  mov r0,#0x0
+  00072400  add sp,sp,#0x8c
+  00072404  ldmia sp!,{r4,r5,pc}
+  Instruction count: 25
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 callback_2D0(int param_1)
+
+{
+  undefined1 auStack_90 [132];
+  
+  FUN_000311c8(auStack_90,iRam00072408 + 0x723d4,param_1 + *(int *)(param_1 + 0x12c4) * 0x40 + 0x10,
+               *(uint *)(param_1 + 0xa4) >> 0x14);
+  func_0x00071fc8(*(undefined4 *)(param_1 + 0x12ac),auStack_90,0xf,3,0xff8f00ff);
+  return 0;
+}
+
+
+
+--------------------------------------------------
+NAME: callback_30C
+CONTEXT OFFSET: 0x0000030C
+TABLE OFFSET: 0x0000006C
+TABLE SLOT: 0x0009ED2C
+RAW POINTER: 0x1405C544
+NORMALIZED POINTER: 0x0005C544
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x0005C544
+TARGET ADDRESS: 0005c544
+MEMORY BLOCK: ram
+  FUNCTION: FUN_0005c544
+  ENTRY: 0005c544
+  BODY: [[0005c544, 0005c5db]]
+  ----- FUNCTION INSTRUCTIONS -----
+  0005c544  stmdb sp!,{r4,r5,lr}
+  0005c548  mov r0,#0xd
+  0005c54c  sub sp,sp,#0xc
+  0005c550  bl 0x0003eb10
+  0005c554  cmp r0,#0x0
+  0005c558  bne 0x0005c598
+  0005c55c  ldr r5,[0x5c5dc]
+  0005c560  add r5,pc,r5
+  0005c564  bl 0x0001050c
+  0005c568  cmp r0,#0x0
+  0005c56c  beq 0x0005c564
+  0005c570  bl 0x000104c4
+  0005c574  uxtb r4,r0
+  0005c578  cpy r0,r5
+  0005c57c  cpy r1,r4
+  0005c580  bl 0x000311f0
+  0005c584  cmp r4,#0x3
+  0005c588  bne 0x0005c564
+  0005c58c  ldr r0,[0x5c5e0]
+  0005c590  add r0,pc,r0
+  0005c594  bl 0x000311f0
+  0005c598  mov r0,#0xe
+  0005c59c  bl 0x0003eb10
+  0005c5a0  cmp r0,#0x0
+  0005c5a4  bne 0x0005c5c0
+  0005c5a8  mov r3,#0x1
+  0005c5ac  add r1,sp,#0x8
+  0005c5b0  str r3,[r1,#-0x4]!
+  0005c5b4  mov r2,#0x4
+  0005c5b8  mov r0,#0x23
+  0005c5bc  bl 0x0004e474
+  0005c5c0  ldr r0,[0x5c5e4]
+  0005c5c4  mov r1,#0x0
+  0005c5c8  add r0,pc,r0
+  0005c5cc  bl 0x00011aac
+  0005c5d0  mov r0,#0x0
+  0005c5d4  add sp,sp,#0xc
+  0005c5d8  ldmia sp!,{r4,r5,pc}
+  Instruction count: 38
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 FUN_0005c544(void)
+
+{
+  char cVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 local_14 [2];
+  
+  iVar2 = FUN_0003eb10(0xd);
+  if (iVar2 == 0) {
+    iVar2 = DAT_0005c5dc + 0x5c568;
+    do {
+      do {
+        iVar3 = FUN_0001050c();
+      } while (iVar3 == 0);
+      cVar1 = FUN_000104c4();
+      FUN_000311f0(iVar2,cVar1);
+    } while (cVar1 != '\x03');
+    FUN_000311f0(DAT_0005c5e0 + 0x5c598);
+  }
+  iVar2 = FUN_0003eb10(0xe);
+  if (iVar2 == 0) {
+    local_14[0] = 1;
+    FUN_0004e474(0x23,local_14,4);
+  }
+  FUN_00011aac(DAT_0005c5e4 + 0x5c5d0,0);
+  return 0;
+}
+
+
+
+--------------------------------------------------
+NAME: file_open
+CONTEXT OFFSET: 0x000002D8
+TABLE OFFSET: 0x000000EC
+TABLE SLOT: 0x0009EDAC
+RAW POINTER: 0x14039E38
+NORMALIZED POINTER: 0x00039E38
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x00039E38
+TARGET ADDRESS: 00039e38
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: file_open
+  ENTRY: 00039e38
+  BODY: [[00039e38, 00039f17]]
+  ----- FUNCTION INSTRUCTIONS -----
+  00039e38  stmdb sp!,{r4,r5,r6,lr}
+  00039e3c  cpy r4,r0
+  00039e40  ldr r5,[0x39f18]
+  00039e44  sub sp,sp,#0x8
+  00039e48  add r5,pc,r5
+  00039e4c  ldr r3,[r5,#0x0]
+  00039e50  cmp r3,#0x0
+  00039e54  bne 0x00039e74
+  00039e58  mov r0,#0x5
+  00039e5c  bl 0x0000edb4
+  00039e60  bl 0x0000ec68
+  00039e64  subs r6,r0,#0x0
+  00039e68  moveq r3,#0x1
+  00039e6c  streq r3,[r5,#0x0]
+  00039e70  bne 0x00039eb4
+  00039e74  add r3,r4,#0x1000
+  00039e78  ldr r0,[r3,#0x2c4]
+  00039e7c  add r0,r4,r0, lsl #0x6
+  00039e80  add r0,r0,#0x10
+  00039e84  bl 0x0000ecbc
+  00039e88  subs r4,r0,#0x0
+  00039e8c  cpyeq r0,r4
+  00039e90  bne 0x00039e9c
+  00039e94  add sp,sp,#0x8
+  00039e98  ldmia sp!,{r4,r5,r6,pc}
+  00039e9c  bl 0x0005c5e8
+  00039ea0  cmp r0,#0x9
+  00039ea4  bgt 0x00039ee8
+  00039ea8  mvn r0,#0x0
+  00039eac  add sp,sp,#0x8
+  00039eb0  ldmia sp!,{r4,r5,r6,pc}
+  00039eb4  bl 0x0005c5e8
+  00039eb8  cmp r0,#0x9
+  00039ebc  ble 0x00039ea8
+  00039ec0  ldr r3,[0x39f1c]
+  00039ec4  mov r2,#0x43
+  00039ec8  ldr r1,[0x39f20]
+  00039ecc  ldr r0,[0x39f24]
+  00039ed0  str r6,[sp,#0x0]
+  00039ed4  add r3,pc,r3
+  00039ed8  add r1,pc,r1
+  00039edc  add r0,pc,r0
+  00039ee0  bl 0x000105c4
+  00039ee4  b 0x00039ea8
+  00039ee8  ldr r3,[0x39f28]
+  00039eec  mov r2,#0x47
+  00039ef0  ldr r1,[0x39f2c]
+  00039ef4  ldr r0,[0x39f30]
+  00039ef8  str r4,[sp,#0x0]
+  00039efc  add r3,pc,r3
+  00039f00  add r1,pc,r1
+  00039f04  add r0,pc,r0
+  00039f08  bl 0x000105c4
+  00039f0c  mvn r0,#0x0
+  00039f10  add sp,sp,#0x8
+  00039f14  ldmia sp!,{r4,r5,r6,pc}
+  Instruction count: 56
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 file_open(int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  int *piVar3;
+  
+  piVar3 = (int *)(iRam00039f18 + 0x39e50);
+  if (*piVar3 == 0) {
+    func_0x0000edb4(5);
+    iVar1 = func_0x0000ec68();
+    if (iVar1 != 0) {
+      iVar2 = FUN_0005c5e8();
+      if (iVar2 < 10) {
+        return 0xffffffff;
+      }
+      FUN_000105c4(iRam00039f24 + 0x39ee4,iRam00039f20 + 0x39ee0,0x43,iRam00039f1c + 0x39edc,iVar1);
+      return 0xffffffff;
+    }
+    *piVar3 = 1;
+  }
+  iVar1 = func_0x0000ecbc(param_1 + *(int *)(param_1 + 0x12c4) * 0x40 + 0x10);
+  if (iVar1 == 0) {
+    return 0;
+  }
+  iVar2 = FUN_0005c5e8(iVar1);
+  if (iVar2 < 10) {
+    return 0xffffffff;
+  }
+  FUN_000105c4(iRam00039f30 + 0x39f0c,iRam00039f2c + 0x39f08,0x47,iRam00039f28 + 0x39f04,iVar1);
+  return 0xffffffff;
+}
+
+
+
+--------------------------------------------------
+NAME: file_read
+CONTEXT OFFSET: 0x000002DC
+TABLE OFFSET: 0x0000012C
+TABLE SLOT: 0x0009EDEC
+RAW POINTER: 0x14039D68
+NORMALIZED POINTER: 0x00039D68
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x00039D68
+TARGET ADDRESS: 00039d68
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: file_read
+  ENTRY: 00039d68
+  BODY: [[00039d68, 00039e2b]]
+  ----- FUNCTION INSTRUCTIONS -----
+  00039d68  stmdb sp!,{r4,r5,r6,lr}
+  00039d6c  ldr r4,[r1,#0x4]
+  00039d70  cmp r4,#0x0
+  00039d74  bne 0x00039d8c
+  00039d78  bl 0x0005c5e8
+  00039d7c  cmp r0,#0x27
+  00039d80  bgt 0x00039e00
+  00039d84  mov r0,#0x0
+  00039d88  ldmia sp!,{r4,r5,r6,pc}
+  00039d8c  add r2,r0,#0x1000
+  00039d90  cpy r3,r4
+  00039d94  ldr r12,[r2,#0x2c4]
+  00039d98  cpy r5,r1
+  00039d9c  ldr r2,[r1,#0x8]
+  00039da0  ldr r1,[r1,#0x0]
+  00039da4  add r0,r0,r12, lsl #0x6
+  00039da8  add r0,r0,#0x10
+  00039dac  bl 0x0000ed48
+  00039db0  subs r4,r0,#0x0
+  00039db4  ldr r3,[r5,#0xc]
+  00039db8  ble 0x00039de4
+  00039dbc  str r4,[r3,#0x0]
+  00039dc0  bl 0x0005c5e8
+  00039dc4  cmp r0,#0x27
+  00039dc8  ble 0x00039d84
+  00039dcc  ldr r0,[0x39e2c]
+  00039dd0  ldr r1,[r5,#0x8]
+  00039dd4  add r0,pc,r0
+  00039dd8  bl 0x000105c4
+  00039ddc  mov r0,#0x0
+  00039de0  ldmia sp!,{r4,r5,r6,pc}
+  00039de4  mov r2,#0x0
+  00039de8  str r2,[r3,#0x0]
+  00039dec  bl 0x0005c5e8
+  00039df0  cmp r0,#0x9
+  00039df4  bgt 0x00039e14
+  00039df8  mvn r0,#0x0
+  00039dfc  ldmia sp!,{r4,r5,r6,pc}
+  00039e00  ldr r0,[0x39e30]
+  00039e04  add r0,pc,r0
+  00039e08  bl 0x000105c4
+  00039e0c  cpy r0,r4
+  00039e10  ldmia sp!,{r4,r5,r6,pc}
+  00039e14  ldr r0,[0x39e34]
+  00039e18  cpy r1,r4
+  00039e1c  add r0,pc,r0
+  00039e20  bl 0x000105c4
+  00039e24  mvn r0,#0x0
+  00039e28  ldmia sp!,{r4,r5,r6,pc}
+  Instruction count: 49
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 file_read(int param_1,undefined4 *param_2)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  if (param_2[1] == 0) {
+    iVar1 = FUN_0005c5e8();
+    if (0x27 < iVar1) {
+      FUN_000105c4(iRam00039e30 + 0x39e0c);
+      return 0;
+    }
+  }
+  else {
+    iVar1 = func_0x0000ed48(param_1 + *(int *)(param_1 + 0x12c4) * 0x40 + 0x10,*param_2,param_2[2],
+                            param_2[1]);
+    if (iVar1 < 1) {
+      *(int *)param_2[3] = 0;
+      iVar2 = FUN_0005c5e8();
+      if (iVar2 < 10) {
+        return 0xffffffff;
+      }
+      FUN_000105c4(iRam00039e34 + 0x39e24,iVar1);
+      return 0xffffffff;
+    }
+    *(int *)param_2[3] = iVar1;
+    iVar1 = FUN_0005c5e8();
+    if (0x27 < iVar1) {
+      FUN_000105c4(iRam00039e2c + 0x39ddc,param_2[2]);
+      return 0;
+    }
+  }
+  return 0;
+}
+
+
+
+--------------------------------------------------
+NAME: record_stage_handler
+CONTEXT OFFSET: 0x000002E0
+TABLE OFFSET: 0x00000038
+TABLE SLOT: 0x0009ECF8
+RAW POINTER: 0x140379E8
+NORMALIZED POINTER: 0x000379E8
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x000379E8
+TARGET ADDRESS: 000379e8
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: record_stage_handler
+  ENTRY: 000379e8
+  BODY: [[000379e8, 0003801f]]
+  ----- FUNCTION INSTRUCTIONS -----
+  000379e8  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  000379ec  sub sp,sp,#0x8c0
+  000379f0  add r3,sp,#0xa0
+  000379f4  cpy r4,r0
+  000379f8  movw r2,#0x81e
+  000379fc  mov r1,#0x0
+  00037a00  str r0,[sp,#0x54]
+  00037a04  add r10,sp,#0x60
+  00037a08  cpy r0,r3
+  00037a0c  str r3,[sp,#0x28]
+  00037a10  bl 0x00003240
+  00037a14  mov r2,#0x20
+  00037a18  cpy r0,r10
+  00037a1c  mov r1,#0x0
+  00037a20  bl 0x00003240
+  00037a24  ldr r2,[r4,#0x90]
+  00037a28  cmp r2,#0x0
+  00037a2c  str r2,[sp,#0x50]
+  00037a30  beq 0x00037fa0
+  00037a34  ldr r3,[0x38020]
+  00037a38  add r2,r2,#0x16
+  00037a3c  cpy r11,r10
+  00037a40  str r2,[sp,#0x4c]
+  00037a44  mov r2,#0x0
+  00037a48  add r3,pc,r3
+  00037a4c  str r2,[sp,#0x48]
+  00037a50  add r3,r3,#0x14
+  00037a54  str r3,[sp,#0x44]
+  00037a58  ldr r3,[sp,#0x50]
+  00037a5c  ldrh r2,[r3,#0x14]
+  00037a60  mov r3,r2, lsr #0x8
+  00037a64  orr r3,r3,r2, lsl #0x8
+  00037a68  ldr r2,[sp,#0x48]
+  00037a6c  uxth r3,r3
+  00037a70  cmp r2,r3
+  00037a74  bge 0x00037fd8
+  00037a78  movw r3,#0x81e
+  00037a7c  ldr r2,[sp,#0x4c]
+  00037a80  cpy r1,r3
+  00037a84  ldr r0,[sp,#0x28]
+  00037a88  bl 0x0003003c
+  00037a8c  subs r4,r0,#0x0
+  00037a90  bne 0x00037ec4
+  00037a94  ldr r1,[sp,#0x28]
+  00037a98  ldrh r2,[r1,#0x1c]
+  00037a9c  mov r3,r2, lsr #0x8
+  00037aa0  orr r3,r3,r2, lsl #0x8
+  00037aa4  uxth r3,r3
+  00037aa8  cmp r3,#0x0
+  00037aac  str r3,[sp,#0x3c]
+  00037ab0  ble 0x00037d10
+  00037ab4  add r2,r1,#0x1e
+  00037ab8  ldr r3,[0x38024]
+  00037abc  str r2,[sp,#0x18]
+  00037ac0  mov r10,#0x0
+  00037ac4  ldr r2,[sp,#0x54]
+  00037ac8  add r8,sp,#0x80
+  00037acc  add r3,pc,r3
+  00037ad0  add r3,r3,#0x100
+  00037ad4  add r2,r2,#0xa8
+  00037ad8  str r3,[sp,#0x38]
+  00037adc  str r2,[sp,#0x1c]
+  00037ae0  mov r3,#0x20
+  00037ae4  ldr r2,[sp,#0x18]
+  00037ae8  cpy r1,r3
+  00037aec  cpy r0,r11
+  00037af0  bl 0x0003003c
+  00037af4  subs r4,r0,#0x0
+  00037af8  bne 0x00037d44
+  00037afc  mov r2,#0x20
+  00037b00  mov r1,#0x0
+  00037b04  cpy r0,r8
+  00037b08  bl 0x00003240
+  00037b0c  ldr r3,[sp,#0x28]
+  00037b10  mov r2,#0x80
+  00037b14  mov r1,#0x0
+  00037b18  ldr r0,[sp,#0x38]
+  00037b1c  ldrh r3,[r3,#0x1c]
+  00037b20  mov r7,r3, lsr #0x8
+  00037b24  orr r7,r7,r3, lsl #0x8
+  00037b28  bl 0x00003240
+  00037b2c  bl 0x0005c5e8
+  00037b30  cmp r0,#0x27
+  00037b34  uxth r7,r7
+  00037b38  bgt 0x00037d30
+  00037b3c  add r5,r10,#0x1
+  00037b40  ldr lr,[r11,#0x10]
+  00037b44  cmp r7,r5
+  00037b48  str r5,[sp,#0x24]
+  00037b4c  ldr r2,[r11,#0x14]
+  00037b50  beq 0x00037cb8
+  00037b54  ldr r3,[0x38028]
+  00037b58  rev r0,r2
+  00037b5c  rev r1,lr
+  00037b60  add r3,pc,r3
+  00037b64  str r10,[r3,#0x100]!
+  00037b68  strd r0,r1,[r3,#0x8]
+  00037b6c  ble 0x00037cb8
+  00037b70  ldr r2,[0x3802c]
+  00037b74  cpy r4,r3
+  00037b78  str r3,[sp,#0x40]
+  00037b7c  ldr r3,[0x38030]
+  00037b80  add r2,pc,r2
+  00037b84  str r10,[sp,#0x2c]
+  00037b88  str r2,[sp,#0x30]
+  00037b8c  add r3,pc,r3
+  00037b90  ldr r2,[0x38034]
+  00037b94  str r3,[sp,#0x20]
+  00037b98  ldr r3,[sp,#0x18]
+  00037b9c  add r2,pc,r2
+  00037ba0  str r2,[sp,#0x34]
+  00037ba4  add r6,r3,#0x20
+  00037ba8  b 0x00037c50
+  00037bac  ldrd r0,r1,[r8,#0x8]
+  00037bb0  ldrd r2,r3,[r11,#0x8]
+  00037bb4  cmp r1,r3
+  00037bb8  cmpeq r0,r2
+  00037bbc  bne 0x00037ca4
+  00037bc0  ldr r2,[sp,#0x98]
+  00037bc4  ldr r3,[sp,#0x78]
+  00037bc8  cmp r2,r3
+  00037bcc  bne 0x00037ca4
+  00037bd0  ldrd r2,r3,[r8,#0x10]
+  00037bd4  str r5,[r4,#0x10]
+  00037bd8  rev r2,r2
+  00037bdc  rev r3,r3
+  00037be0  str r2,[r4,#0x1c]
+  00037be4  str r3,[r4,#0x18]
+  00037be8  bl 0x0005c5e8
+  00037bec  cmp r0,#0x27
+  00037bf0  bgt 0x00037c94
+  00037bf4  bl 0x0005c5e8
+  00037bf8  cmp r0,#0x27
+  00037bfc  ble 0x00037c14
+  00037c00  ldr r1,[sp,#0x80]
+  00037c04  ldr r0,[0x38038]
+  00037c08  rev r1,r1
+  00037c0c  add r0,pc,r0
+  00037c10  bl 0x000105c4
+  00037c14  bl 0x0005c5e8
+  00037c18  cmp r0,#0x27
+  00037c1c  ble 0x00037c3c
+  00037c20  ldr r3,[r8,#0x10]
+  00037c24  ldr r2,[r8,#0x14]
+  00037c28  ldr r0,[0x3803c]
+  00037c2c  rev r3,r3
+  00037c30  rev r2,r2
+  00037c34  add r0,pc,r0
+  00037c38  bl 0x000105c4
+  00037c3c  add r5,r5,#0x1
+  00037c40  add r6,r6,#0x20
+  00037c44  cmp r7,r5
+  00037c48  add r4,r4,#0x10
+  00037c4c  beq 0x00037d78
+  00037c50  mov r3,#0x20
+  00037c54  cpy r2,r6
+  00037c58  cpy r1,r3
+  00037c5c  cpy r0,r8
+  00037c60  bl 0x0003003c
+  00037c64  subs r10,r0,#0x0
+  00037c68  beq 0x00037bac
+  00037c6c  bl 0x0005c5e8
+  00037c70  cmp r0,#0x9
+  00037c74  ble 0x00037bac
+  00037c78  str r10,[sp,#0x0]
+  00037c7c  mov r2,#0xa8
+  00037c80  ldr r3,[sp,#0x30]
+  00037c84  ldr r1,[sp,#0x44]
+  00037c88  ldr r0,[sp,#0x34]
+  00037c8c  bl 0x000105c4
+  00037c90  b 0x00037bac
+  00037c94  cpy r1,r5
+  00037c98  ldr r0,[sp,#0x20]
+  00037c9c  bl 0x000105c4
+  00037ca0  b 0x00037bf4
+  00037ca4  cmp r7,r5
+  00037ca8  ldr r10,[sp,#0x2c]
+  00037cac  beq 0x00037d7c
+  00037cb0  ldr lr,[r11,#0x10]
+  00037cb4  ldr r2,[r11,#0x14]
+  00037cb8  ldr r12,[sp,#0x7c]
+  00037cbc  ldr r1,[sp,#0x78]
+  00037cc0  str r10,[sp,#0x10]
+  00037cc4  str lr,[sp,#0x0]
+  00037cc8  str r2,[sp,#0x4]
+  00037ccc  ldrd r2,r3,[r11,#0x8]
+  00037cd0  ldr r0,[sp,#0x1c]
+  00037cd4  str r12,[sp,#0xc]
+  00037cd8  str r1,[sp,#0x8]
+  00037cdc  bl 0x00037548
+  00037ce0  cmp r0,#0x0
+  00037ce4  bne 0x00037ef8
+  00037ce8  ldr r3,[sp,#0x18]
+  00037cec  ldr r10,[sp,#0x24]
+  00037cf0  add r3,r3,#0x20
+  00037cf4  str r3,[sp,#0x18]
+  00037cf8  ldr r3,[sp,#0x3c]
+  00037cfc  cmp r3,r10
+  00037d00  ldr r3,[sp,#0x1c]
+  00037d04  add r3,r3,#0x48
+  00037d08  str r3,[sp,#0x1c]
+  00037d0c  bne 0x00037ae0
+  00037d10  ldr r3,[sp,#0x4c]
+  00037d14  ldr r2,[sp,#0x48]
+  00037d18  add r3,r3,#0x810
+  00037d1c  add r2,r2,#0x1
+  00037d20  add r3,r3,#0xe
+  00037d24  str r2,[sp,#0x48]
+  00037d28  str r3,[sp,#0x4c]
+  00037d2c  b 0x00037a58
+  00037d30  ldr r0,[0x38040]
+  00037d34  cpy r1,r10
+  00037d38  add r0,pc,r0
+  00037d3c  bl 0x000105c4
+  00037d40  b 0x00037b3c
+  00037d44  bl 0x0005c5e8
+  00037d48  cmp r0,#0x9
+  00037d4c  ble 0x00037afc
+  00037d50  ldr r3,[0x38044]
+  00037d54  mov r2,#0xe0
+  00037d58  ldr r1,[0x38048]
+  00037d5c  ldr r0,[0x3804c]
+  00037d60  str r4,[sp,#0x0]
+  00037d64  add r3,pc,r3
+  00037d68  add r1,pc,r1
+  00037d6c  add r0,pc,r0
+  00037d70  bl 0x000105c4
+  00037d74  b 0x00037afc
+  00037d78  ldr r10,[sp,#0x2c]
+  00037d7c  mov r0,#0x0
+  00037d80  bl 0x00017ce4
+  00037d84  cmp r0,#0x0
+  00037d88  beq 0x00037f94
+  00037d8c  ldrd r4,r5,[r0,#0x98]
+  00037d90  mov r2,#0x20
+  00037d94  mov r1,#0x0
+  00037d98  cpy r0,r8
+  00037d9c  bl 0x00003240
+  00037da0  bl 0x0005c5e8
+  00037da4  cmp r0,#0x1d
+  00037da8  bgt 0x00037f40
+  00037dac  mov r12,#0x0
+  00037db0  ldr r0,[sp,#0x40]
+  00037db4  b 0x00037dc4
+  00037db8  add r12,r12,#0x1
+  00037dbc  cmp r12,#0x8
+  00037dc0  beq 0x00037f14
+  00037dc4  ldrd r2,r3,[r0,#0x8]
+  00037dc8  add r0,r0,#0x10
+  00037dcc  cmp r5,r3
+  Instruction count: 250
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+int record_stage_handler(int param_1)
+
+{
+  ushort uVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  undefined4 uVar6;
+  int iVar7;
+  int iVar8;
+  int iVar9;
+  uint uVar10;
+  uint uVar11;
+  uint *puVar12;
+  int iVar13;
+  uint *puVar14;
+  uint uVar15;
+  uint uVar16;
+  undefined1 *puVar17;
+  uint uVar18;
+  bool bVar19;
+  undefined8 uVar20;
+  undefined1 *puStack_8c8;
+  int iStack_8c4;
+  int iStack_898;
+  int iStack_894;
+  undefined1 auStack_880 [8];
+  int iStack_878;
+  int iStack_874;
+  uint uStack_870;
+  uint uStack_86c;
+  int iStack_868;
+  undefined4 uStack_864;
+  uint auStack_860 [2];
+  int iStack_858;
+  int iStack_854;
+  uint uStack_850;
+  uint uStack_84c;
+  int iStack_848;
+  undefined4 uStack_844;
+  undefined1 auStack_840 [28];
+  ushort uStack_824;
+  undefined1 auStack_822 [2050];
+  
+  FUN_00003240(auStack_840,0,0x81e);
+  FUN_00003240(auStack_880,0,0x20);
+  iVar7 = *(int *)(param_1 + 0x90);
+  if (iVar7 == 0) {
+    iVar7 = FUN_0005c5e8();
+    if (9 < iVar7) {
+      FUN_000105c4(iRam0003807c + 0x37fd4,iRam00038078 + 0x37fd0,0xd5,iRam00038074 + 0x37fcc);
+    }
+    return -1;
+  }
+  iStack_894 = iVar7 + 0x16;
+  iStack_898 = 0;
+  iVar9 = iRam00038020 + 0x37a64;
+LAB_00037a58:
+  if ((int)((uint)(*(ushort *)(iVar7 + 0x14) >> 8) | (*(ushort *)(iVar7 + 0x14) & 0xff) << 8) <=
+      iStack_898) {
+    return 0;
+  }
+  iVar2 = FUN_0003003c(auStack_840,0x81e,iStack_894);
+  if ((iVar2 != 0) && (iVar3 = FUN_0005c5e8(), 9 < iVar3)) {
+    FUN_000105c4(iRam00038064 + 0x37ef4,iRam00038060 + 0x37ef0,0xda,iRam0003805c + 0x37eec,iVar2);
+  }
+  uVar10 = (uint)(uStack_824 >> 8) | (uStack_824 & 0xff) << 8;
+  if (uVar10 != 0) {
+    puStack_8c8 = auStack_822;
+    iVar2 = iRam00038024 + 0x37bd4;
+    iStack_8c4 = param_1 + 0xa8;
+    uVar18 = 0;
+    do {
+      iVar3 = FUN_0003003c(auStack_880,0x20,puStack_8c8);
+      if ((iVar3 != 0) && (iVar8 = FUN_0005c5e8(), 9 < iVar8)) {
+        FUN_000105c4(iRam0003804c + 0x37d74,iRam00038048 + 0x37d70,0xe0,iRam00038044 + 0x37d6c,iVar3
+                    );
+      }
+      FUN_00003240(auStack_860,0,0x20);
+      uVar11 = (uint)uStack_824;
+      uVar1 = uStack_824 >> 8;
+      FUN_00003240(iVar2,0,0x80);
+      iVar3 = FUN_0005c5e8();
+      uVar11 = (uint)uVar1 | (uVar11 & 0xff) << 8;
+      if (0x27 < iVar3) {
+        FUN_000105c4(iRam00038040 + 0x37d40,uVar18);
+      }
+      iVar3 = iRam00038028;
+      uVar15 = uVar18 + 1;
+      if (uVar11 != uVar15) {
+        puVar12 = (uint *)(iRam00038028 + 0x37c68);
+        *puVar12 = uVar18;
+        *(uint *)(iVar3 + 0x37c70) =
+             uStack_86c << 0x18 | (uStack_86c >> 8 & 0xff) << 0x10 |
+             (uStack_86c >> 0x10 & 0xff) << 8 | uStack_86c >> 0x18;
+        *(uint *)(iVar3 + 0x37c74) =
+             uStack_870 << 0x18 | (uStack_870 >> 8 & 0xff) << 0x10 |
+             (uStack_870 >> 0x10 & 0xff) << 8 | uStack_870 >> 0x18;
+        if ((int)uVar15 < (int)uVar11) {
+          iVar3 = iRam0003802c + 0x37b88;
+          iVar13 = iRam00038030 + 0x37b94;
+          iVar8 = iRam00038034 + 0x37ba4;
+          puVar14 = puVar12;
+          uVar16 = uVar15;
+          puVar17 = puStack_8c8;
+          while( true ) {
+            puVar17 = puVar17 + 0x20;
+            iVar4 = FUN_0003003c(auStack_860,0x20,puVar17);
+            if ((iVar4 != 0) && (iVar5 = FUN_0005c5e8(), 9 < iVar5)) {
+              FUN_000105c4(iVar8,iVar9,0xa8,iVar3,iVar4);
+            }
+            if ((iStack_854 != iStack_874 || iStack_858 != iStack_878) || (iStack_848 != iStack_868)
+               ) break;
+            puVar14[4] = uVar16;
+            puVar14[7] = uStack_850 << 0x18 | (uStack_850 >> 8 & 0xff) << 0x10 |
+                         (uStack_850 >> 0x10 & 0xff) << 8 | uStack_850 >> 0x18;
+            puVar14[6] = uStack_84c << 0x18 | (uStack_84c >> 8 & 0xff) << 0x10 |
+                         (uStack_84c >> 0x10 & 0xff) << 8 | uStack_84c >> 0x18;
+            iVar4 = FUN_0005c5e8();
+            if (0x27 < iVar4) {
+              FUN_000105c4(iVar13,uVar16);
+            }
+            iVar4 = FUN_0005c5e8();
+            if (0x27 < iVar4) {
+              FUN_000105c4(iRam00038038 + 0x37c14,
+                           auStack_860[0] << 0x18 | (auStack_860[0] >> 8 & 0xff) << 0x10 |
+                           (auStack_860[0] >> 0x10 & 0xff) << 8 | auStack_860[0] >> 0x18);
+            }
+            uVar20 = FUN_0005c5e8();
+            if (0x27 < (int)uVar20) {
+              FUN_000105c4(iRam0003803c + 0x37c3c,(int)((ulonglong)uVar20 >> 0x20),
+                           uStack_84c << 0x18 | (uStack_84c >> 8 & 0xff) << 0x10 |
+                           (uStack_84c >> 0x10 & 0xff) << 8 | uStack_84c >> 0x18,
+                           uStack_850 << 0x18 | (uStack_850 >> 8 & 0xff) << 0x10 |
+                           (uStack_850 >> 0x10 & 0xff) << 8 | uStack_850 >> 0x18);
+            }
+            uVar16 = uVar16 + 1;
+            puVar14 = puVar14 + 4;
+            if (uVar11 == uVar16) goto LAB_00037d7c;
+          }
+          if (uVar11 == uVar16) {
+LAB_00037d7c:
+            iVar2 = FUN_00017ce4(0);
+            if (iVar2 == 0) {
+              uVar10 = 0;
+              uVar11 = 0;
+            }
+            else {
+              uVar10 = *(uint *)(iVar2 + 0x98);
+              uVar11 = *(uint *)(iVar2 + 0x9c);
+            }
+            FUN_00003240(auStack_860,0,0x20);
+            iVar2 = FUN_0005c5e8();
+            if (0x1d < iVar2) {
+              uVar6 = FUN_0002dd04(uVar10,uVar11);
+              FUN_000105c4(iRam0003806c + 0x37f70,uVar6,uVar10,uVar11,0x1f400000,0);
+            }
+            iVar2 = iRam00038050;
+            iVar3 = 0;
+            goto LAB_00037dc4;
+          }
+        }
+      }
+      iVar3 = FUN_00037548(iStack_8c4,iStack_868,iStack_878,iStack_874,uStack_870,uStack_86c,
+                           iStack_868,uStack_864,uVar18);
+      if (iVar3 != 0) {
+        iVar7 = FUN_0005c5e8();
+        if (iVar7 < 10) {
+          return iVar3;
+        }
+        FUN_000105c4(iRam00038070 + 0x37f88,iVar3,uVar18);
+        return iVar3;
+      }
+      puStack_8c8 = puStack_8c8 + 0x20;
+      iStack_8c4 = iStack_8c4 + 0x48;
+      uVar18 = uVar15;
+    } while (uVar10 != uVar15);
+  }
+  goto LAB_00037d10;
+LAB_00037dc4:
+  uVar15 = puVar12[2];
+  uVar16 = puVar12[3];
+  puVar12 = puVar12 + 4;
+  bVar19 = uVar16 <= uVar11;
+  if (uVar11 == uVar16) {
+    bVar19 = uVar15 <= uVar10;
+  }
+  if (uVar15 == 0 && uVar16 == 0) {
+    bVar19 = false;
+  }
+  if ((bVar19) && (uVar11 == uVar16 + (uVar10 < uVar15) && uVar10 - uVar15 < 0x1f400000))
+  goto code_r0x00037e0c;
+  iVar3 = iVar3 + 1;
+  if (iVar3 == 8) {
+    iVar2 = -1;
+    goto LAB_00037f1c;
+  }
+  goto LAB_00037dc4;
+code_r0x00037e0c:
+  iVar8 = *(int *)(iRam00038050 + iVar3 * 0x10 + 0x37f2c);
+  iVar3 = FUN_0003003c(auStack_860,0x20,auStack_822 + iVar8 * 0x20);
+  *(int *)(iVar2 + 0x37fac) = iVar8;
+  if ((iVar3 != 0) && (iVar2 = FUN_0005c5e8(), 9 < iVar2)) {
+    FUN_000105c4(iRam00038088 + 0x3801c,iRam00038080 + 0x3803c,0xc5,iRam00038084 + 0x38014,iVar3);
+  }
+  uVar20 = FUN_0005c5e8();
+  if (0x1d < (int)uVar20) {
+    FUN_000105c4(iRam00038054 + 0x37e70,(int)((ulonglong)uVar20 >> 0x20),
+                 uStack_84c << 0x18 | (uStack_84c >> 8 & 0xff) << 0x10 |
+                 (uStack_84c >> 0x10 & 0xff) << 8 | uStack_84c >> 0x18,
+                 uStack_850 << 0x18 | (uStack_850 >> 8 & 0xff) << 0x10 |
+                 (uStack_850 >> 0x10 & 0xff) << 8 | uStack_850 >> 0x18);
+  }
+  iVar2 = param_1 + *(int *)(iRam00038058 + 0x37f84) * 0x48;
+  iVar2 = FUN_00037548(iVar2 + 0xa8,iVar2,iStack_858,iStack_854,uStack_850,uStack_84c,iStack_848,
+                       uStack_844,*(int *)(iRam00038058 + 0x37f84));
+  if (iVar2 != 0) {
+LAB_00037f1c:
+    iVar7 = FUN_0005c5e8();
+    if (iVar7 < 10) {
+      return iVar2;
+    }
+    FUN_000105c4(iRam00038068 + 0x37f3c,iVar2,uVar18);
+    return iVar2;
+  }
+LAB_00037d10:
+  iStack_898 = iStack_898 + 1;
+  iStack_894 = iStack_894 + 0x81e;
+  goto LAB_00037a58;
+}
+
+
+
+--------------------------------------------------
+NAME: callback_2E4
+CONTEXT OFFSET: 0x000002E4
+TABLE OFFSET: 0x000001A4
+TABLE SLOT: 0x0009EE64
+RAW POINTER: 0x14037894
+NORMALIZED POINTER: 0x00037894
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x00037894
+TARGET ADDRESS: 00037894
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: callback_2E4
+  ENTRY: 00037894
+  BODY: [[00037894, 0003799b]]
+  ----- FUNCTION INSTRUCTIONS -----
+  00037894  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  00037898  subs r8,r3,#0x0
+  0003789c  ldr r6,[0x3799c]
+  000378a0  ldr r10,[sp,#0x20]
+  000378a4  add r6,pc,r6
+  000378a8  bne 0x000378c0
+  000378ac  bl 0x0005c5e8
+  000378b0  cmp r0,#0x27
+  000378b4  bgt 0x00037904
+  000378b8  mov r0,#0x0
+  000378bc  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+  000378c0  ldr r3,[0x379a0]
+  000378c4  cpy r5,r0
+  000378c8  cpy r4,r1
+  000378cc  cpy r7,r2
+  000378d0  add r3,pc,r3
+  000378d4  ldr lr,[r3,r1,lsl #0x2]
+  000378d8  cmp lr,#0x0
+  000378dc  beq 0x00037918
+  000378e0  add r4,r4,r4, lsl #0x3
+  000378e4  cpy r3,r10
+  000378e8  cpy r2,r8
+  000378ec  add r4,r5,r4, lsl #0x3
+  000378f0  cpy r1,r7
+  000378f4  cpy r12,lr
+  000378f8  add r0,r4,#0xa8
+  000378fc  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  00037900  bx r12
+  00037904  ldr r0,[0x379a4]
+  00037908  add r0,pc,r0
+  0003790c  bl 0x000105c4
+  00037910  mov r0,#0x0
+  00037914  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+  00037918  cpy r1,r8
+  0003791c  cpy r0,r2
+  00037920  bl 0x0003864c
+  00037924  cmp r0,#0x1
+  00037928  beq 0x00037968
+  0003792c  bl 0x0005c5e8
+  00037930  cmp r0,#0x27
+  00037934  bgt 0x00037954
+  00037938  ldr r2,[0x379a8]
+  0003793c  ldr r3,[0x379ac]
+  00037940  ldr r2,[r6,r2]
+  00037944  add r3,pc,r3
+  00037948  cpy lr,r2
+  0003794c  str r2,[r3,r4,lsl #0x2]
+  00037950  b 0x000378e0
+  00037954  ldr r0,[0x379b0]
+  00037958  cpy r1,r4
+  0003795c  add r0,pc,r0
+  00037960  bl 0x000105c4
+  00037964  b 0x00037938
+  00037968  bl 0x0005c5e8
+  0003796c  cmp r0,#0x27
+  00037970  ble 0x00037984
+  00037974  ldr r0,[0x379b4]
+  00037978  cpy r1,r4
+  0003797c  add r0,pc,r0
+  00037980  bl 0x000105c4
+  00037984  ldr r2,[0x379b8]
+  00037988  ldr r3,[0x379bc]
+  0003798c  ldr lr,[r6,r2]
+  00037990  add r3,pc,r3
+  00037994  str lr,[r3,r4,lsl #0x2]
+  00037998  b 0x000378e0
+  Instruction count: 66
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 callback_2E4(int param_1,int param_2,undefined4 param_3,int param_4,undefined4 param_5)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  int iVar3;
+  code *UNRECOVERED_JUMPTABLE;
+  
+  iVar3 = iRam0003799c + 0x378ac;
+  if (param_4 != 0) {
+    UNRECOVERED_JUMPTABLE = *(code **)(iRam000379a0 + 0x378d8 + param_2 * 4);
+    if (UNRECOVERED_JUMPTABLE == Reset) {
+      iVar2 = FUN_0003864c(param_3,param_4);
+      if (iVar2 == 1) {
+        iVar2 = FUN_0005c5e8();
+        if (0x27 < iVar2) {
+          FUN_000105c4(iRam000379b4 + 0x37984,param_2);
+        }
+        UNRECOVERED_JUMPTABLE = *(code **)(iVar3 + iRam000379b8);
+        *(code **)(iRam000379bc + 0x37998 + param_2 * 4) = UNRECOVERED_JUMPTABLE;
+      }
+      else {
+        iVar2 = FUN_0005c5e8();
+        if (0x27 < iVar2) {
+          FUN_000105c4(iRam000379b0 + 0x37964,param_2);
+        }
+        UNRECOVERED_JUMPTABLE = *(code **)(iVar3 + iRam000379a8);
+        *(code **)(iRam000379ac + 0x3794c + param_2 * 4) = UNRECOVERED_JUMPTABLE;
+      }
+    }
+                    /* WARNING: Could not recover jumptable at 0x00037900. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    uVar1 = (*UNRECOVERED_JUMPTABLE)(param_1 + param_2 * 0x48 + 0xa8,param_3,param_4,param_5);
+    return uVar1;
+  }
+  iVar3 = FUN_0005c5e8();
+  if (iVar3 < 0x28) {
+    return 0;
+  }
+  FUN_000105c4(iRam000379a4 + 0x37910);
+  return 0;
+}
+
+
+
+--------------------------------------------------
+NAME: callback_2EC
+CONTEXT OFFSET: 0x000002EC
+TABLE OFFSET: 0x000000F8
+TABLE SLOT: 0x0009EDB8
+RAW POINTER: 0x1406C734
+NORMALIZED POINTER: 0x0006C734
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x0006C734
+TARGET ADDRESS: 0006c734
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: callback_2EC
+  ENTRY: 0006c734
+  BODY: [[0006c734, 0006c7a3]]
+  ----- FUNCTION INSTRUCTIONS -----
+  0006c734  stmdb sp!,{r4,lr}
+  0006c738  mov r1,#0x1000000
+  0006c73c  cpy r4,r0
+  0006c740  mov r0,#0x40
+  0006c744  bl 0x000113a0
+  0006c748  cmp r0,#0x0
+  0006c74c  beq 0x0006c764
+  0006c750  mov r3,#0x1000000
+  0006c754  str r0,[r4,#0x9c]
+  0006c758  str r3,[r4,#0xa0]
+  0006c75c  mov r0,#0x0
+  0006c760  ldmia sp!,{r4,pc}
+  0006c764  bl 0x0005c5e8
+  0006c768  cmp r0,#0x9
+  0006c76c  bgt 0x0006c778
+  0006c770  mvn r0,#0x0
+  0006c774  ldmia sp!,{r4,pc}
+  0006c778  ldr r1,[0x6c7a4]
+  0006c77c  mov r2,#0x30
+  0006c780  ldr r3,[0x6c7a8]
+  0006c784  ldr r0,[0x6c7ac]
+  0006c788  add r1,pc,r1
+  0006c78c  add r3,pc,r3
+  0006c790  add r1,r1,#0x4c
+  0006c794  add r0,pc,r0
+  0006c798  bl 0x000105c4
+  0006c79c  mvn r0,#0x0
+  0006c7a0  ldmia sp!,{r4,pc}
+  Instruction count: 28
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 callback_2EC(int param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_000113a0(0x40,0x1000000);
+  if (iVar1 != 0) {
+    *(int *)(param_1 + 0x9c) = iVar1;
+    *(undefined4 *)(param_1 + 0xa0) = 0x1000000;
+    return 0;
+  }
+  iVar1 = FUN_0005c5e8();
+  if (iVar1 < 10) {
+    return 0xffffffff;
+  }
+  FUN_000105c4(iRam0006c7ac + 0x6c79c,iRam0006c7a4 + 0x6c7dc,0x30,iRam0006c7a8 + 0x6c794);
+  return 0xffffffff;
+}
+
+
+
+--------------------------------------------------
+NAME: header_reader
+CONTEXT OFFSET: 0x000002F0
+TABLE OFFSET: 0x00000084
+TABLE SLOT: 0x0009ED44
+RAW POINTER: 0x1406C7B0
+NORMALIZED POINTER: 0x0006C7B0
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x0006C7B0
+TARGET ADDRESS: 0006c7b0
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: header_reader
+  ENTRY: 0006c7b0
+  BODY: [[0006c7b0, 0006ca57]]
+  ----- FUNCTION INSTRUCTIONS -----
+  0006c7b0  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  0006c7b4  sub sp,sp,#0x78
+  0006c7b8  mov r4,#0x0
+  0006c7bc  add r6,sp,#0x28
+  0006c7c0  mov r10,#0x50
+  0006c7c4  cpy r5,r0
+  0006c7c8  cpy r1,r4
+  0006c7cc  cpy r2,r10
+  0006c7d0  cpy r0,r6
+  0006c7d4  str r4,[sp,#0x14]
+  0006c7d8  add r8,r5,#0x1000
+  0006c7dc  add r7,sp,#0x18
+  0006c7e0  bl 0x00003240
+  0006c7e4  add r3,sp,#0x14
+  0006c7e8  str r4,[sp,#0x20]
+  0006c7ec  str r6,[sp,#0x18]
+  0006c7f0  cpy r0,r5
+  0006c7f4  str r10,[sp,#0x1c]
+  0006c7f8  cpy r1,r7
+  0006c7fc  ldr r2,[r8,#0x2dc]
+  0006c800  str r3,[sp,#0x24]
+  0006c804  blx r2
+  0006c808  subs r4,r0,#0x0
+  0006c80c  bne 0x0006c918
+  0006c810  ldr r11,[sp,#0x14]
+  0006c814  cmp r11,#0x50
+  0006c818  bne 0x0006c8fc
+  0006c81c  ldr r10,[sp,#0x30]
+  0006c820  rev r10,r10
+  0006c824  sub r3,r10,#0x50
+  0006c828  cmp r3,#0x7b0
+  0006c82c  str r3,[sp,#0x8]
+  0006c830  bhi 0x0006c95c
+  0006c834  add r1,r10,#0x3f
+  0006c838  mov r0,#0x40
+  0006c83c  bic r1,r1,#0x3f
+  0006c840  bl 0x000113a0
+  0006c844  subs r3,r0,#0x0
+  0006c848  str r3,[sp,#0xc]
+  0006c84c  beq 0x0006c9a0
+  0006c850  cpy r3,r10
+  0006c854  cpy r2,r4
+  0006c858  cpy r1,r10
+  0006c85c  bl 0x000301fc
+  0006c860  cpy r2,r6
+  0006c864  cpy r3,r11
+  0006c868  cpy r1,r10
+  0006c86c  ldr r0,[sp,#0xc]
+  0006c870  bl 0x0003003c
+  0006c874  subs r6,r0,#0x0
+  0006c878  bne 0x0006c9e8
+  0006c87c  ldr r1,[sp,#0x8]
+  0006c880  ldr r3,[sp,#0xc]
+  0006c884  cmp r1,#0x0
+  0006c888  add r3,r3,#0x50
+  0006c88c  beq 0x0006c9d8
+  0006c890  mov r0,#0x50
+  0006c894  mov r2,#0x0
+  0006c898  str r3,[sp,#0x18]
+  0006c89c  str r1,[sp,#0x1c]
+  0006c8a0  cpy r1,r7
+  0006c8a4  str r0,[sp,#0x20]
+  0006c8a8  cpy r0,r5
+  0006c8ac  ldr r3,[r8,#0x2dc]
+  0006c8b0  str r2,[sp,#0x24]
+  0006c8b4  blx r3
+  0006c8b8  subs r6,r0,#0x0
+  0006c8bc  bne 0x0006ca20
+  0006c8c0  ldr r3,[sp,#0x24]
+  0006c8c4  ldr r2,[sp,#0x8]
+  0006c8c8  ldr r3,[r3,#0x0]
+  0006c8cc  cmp r2,r3
+  0006c8d0  beq 0x0006c9d8
+  0006c8d4  ldr r0,[sp,#0xc]
+  0006c8d8  bl 0x00010a6c
+  0006c8dc  bl 0x0005c5e8
+  0006c8e0  cmp r0,#0x9
+  0006c8e4  ble 0x0006c908
+  0006c8e8  ldr r0,[0x6ca58]
+  0006c8ec  cpy r1,r10
+  0006c8f0  add r0,pc,r0
+  0006c8f4  bl 0x000105c4
+  0006c8f8  b 0x0006c908
+  0006c8fc  bl 0x0005c5e8
+  0006c900  cmp r0,#0x9
+  0006c904  bgt 0x0006c980
+  0006c908  mvn r4,#0x0
+  0006c90c  cpy r0,r4
+  0006c910  add sp,sp,#0x78
+  0006c914  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+  0006c918  bl 0x0005c5e8
+  0006c91c  cmp r0,#0x9
+  0006c920  ble 0x0006c908
+  0006c924  ldr r1,[0x6ca5c]
+  0006c928  mov r2,#0x46
+  0006c92c  ldr r3,[0x6ca60]
+  0006c930  ldr r0,[0x6ca64]
+  0006c934  add r1,pc,r1
+  0006c938  str r4,[sp,#0x0]
+  0006c93c  add r3,pc,r3
+  0006c940  mvn r4,#0x0
+  0006c944  add r1,r1,#0x64
+  0006c948  add r0,pc,r0
+  0006c94c  bl 0x000105c4
+  0006c950  cpy r0,r4
+  0006c954  add sp,sp,#0x78
+  0006c958  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+  0006c95c  bl 0x0005c5e8
+  0006c960  cmp r0,#0x9
+  0006c964  ble 0x0006c908
+  0006c968  ldr r0,[0x6ca68]
+  0006c96c  cpy r1,r10
+  0006c970  mvn r4,#0x0
+  0006c974  add r0,pc,r0
+  0006c978  bl 0x000105c4
+  0006c97c  b 0x0006c90c
+  0006c980  ldr r0,[0x6ca6c]
+  0006c984  mvn r4,#0x0
+  0006c988  ldr r1,[sp,#0x14]
+  0006c98c  add r0,pc,r0
+  0006c990  bl 0x000105c4
+  0006c994  cpy r0,r4
+  0006c998  add sp,sp,#0x78
+  0006c99c  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+  0006c9a0  bl 0x0005c5e8
+  0006c9a4  cmp r0,#0x9
+  0006c9a8  ble 0x0006c908
+  0006c9ac  ldr r1,[0x6ca70]
+  0006c9b0  mov r2,#0x53
+  0006c9b4  ldr r3,[0x6ca74]
+  0006c9b8  mvn r4,#0x0
+  0006c9bc  ldr r0,[0x6ca78]
+  0006c9c0  add r1,pc,r1
+  0006c9c4  add r3,pc,r3
+  0006c9c8  add r1,r1,#0x64
+  0006c9cc  add r0,pc,r0
+  0006c9d0  bl 0x000105c4
+  0006c9d4  b 0x0006c90c
+  0006c9d8  ldr r3,[sp,#0xc]
+  0006c9dc  str r10,[r5,#0x94]
+  0006c9e0  str r3,[r5,#0x90]
+  0006c9e4  b 0x0006c90c
+  0006c9e8  bl 0x0005c5e8
+  0006c9ec  cmp r0,#0x9
+  0006c9f0  ble 0x0006c87c
+  0006c9f4  ldr r1,[0x6ca7c]
+  0006c9f8  mov r2,#0x57
+  0006c9fc  ldr r3,[0x6ca80]
+  0006ca00  ldr r0,[0x6ca84]
+  0006ca04  add r1,pc,r1
+  0006ca08  str r6,[sp,#0x0]
+  0006ca0c  add r3,pc,r3
+  0006ca10  add r1,r1,#0x64
+  0006ca14  add r0,pc,r0
+  0006ca18  bl 0x000105c4
+  0006ca1c  b 0x0006c87c
+  0006ca20  bl 0x0005c5e8
+  0006ca24  cmp r0,#0x9
+  0006ca28  ble 0x0006c8d4
+  0006ca2c  ldr r1,[0x6ca88]
+  0006ca30  mov r2,#0x5e
+  0006ca34  ldr r3,[0x6ca8c]
+  0006ca38  ldr r0,[0x6ca90]
+  0006ca3c  add r1,pc,r1
+  0006ca40  str r6,[sp,#0x0]
+  0006ca44  add r3,pc,r3
+  0006ca48  add r1,r1,#0x64
+  0006ca4c  add r0,pc,r0
+  0006ca50  bl 0x000105c4
+  0006ca54  b 0x0006c8d4
+  Instruction count: 170
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 header_reader(int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  uint uVar4;
+  uint uVar5;
+  int iStack_84;
+  undefined1 *puStack_80;
+  uint uStack_7c;
+  undefined4 uStack_78;
+  uint *puStack_74;
+  undefined1 auStack_70 [8];
+  uint uStack_68;
+  
+  iStack_84 = 0;
+  FUN_00003240(auStack_70,0,0x50);
+  puStack_74 = (uint *)&iStack_84;
+  uStack_78 = 0;
+  uStack_7c = 0x50;
+  puStack_80 = auStack_70;
+  iVar1 = (**(code **)(param_1 + 0x12dc))(param_1,&puStack_80);
+  if (iVar1 == 0) {
+    if (iStack_84 == 0x50) {
+      uVar5 = uStack_68 << 0x18 | (uStack_68 >> 8 & 0xff) << 0x10 | (uStack_68 >> 0x10 & 0xff) << 8
+              | uStack_68 >> 0x18;
+      uVar4 = uVar5 - 0x50;
+      if (uVar4 < 0x7b1) {
+        iVar1 = FUN_000113a0(0x40,uVar5 + 0x3f & 0xffffffc0);
+        if (iVar1 == 0) {
+          iVar1 = FUN_0005c5e8();
+          if (9 < iVar1) {
+            FUN_000105c4(iRam0006ca78 + 0x6c9d4,iRam0006ca70 + 0x6ca2c,0x53,iRam0006ca74 + 0x6c9cc);
+            return 0xffffffff;
+          }
+        }
+        else {
+          FUN_000301fc(iVar1,uVar5,0,uVar5);
+          iVar2 = FUN_0003003c(iVar1,uVar5,auStack_70,0x50);
+          if ((iVar2 != 0) && (iVar3 = FUN_0005c5e8(), 9 < iVar3)) {
+            FUN_000105c4(iRam0006ca84 + 0x6ca1c,iRam0006ca7c + 0x6ca70,0x57,iRam0006ca80 + 0x6ca14,
+                         iVar2);
+          }
+          puStack_80 = (undefined1 *)(iVar1 + 0x50);
+          if (uVar4 == 0) {
+LAB_0006c9d8:
+            *(uint *)(param_1 + 0x94) = uVar5;
+            *(int *)(param_1 + 0x90) = iVar1;
+            return 0;
+          }
+          uStack_78 = 0x50;
+          puStack_74 = (uint *)0x0;
+          uStack_7c = uVar4;
+          iVar2 = (**(code **)(param_1 + 0x12dc))(param_1,&puStack_80);
+          if (iVar2 == 0) {
+            if (uVar4 == *puStack_74) goto LAB_0006c9d8;
+          }
+          else {
+            iVar3 = FUN_0005c5e8();
+            if (9 < iVar3) {
+              FUN_000105c4(iRam0006ca90 + 0x6ca54,iRam0006ca88 + 0x6caa8,0x5e,iRam0006ca8c + 0x6ca4c
+                           ,iVar2);
+            }
+          }
+          FUN_00010a6c(iVar1);
+          iVar1 = FUN_0005c5e8();
+          if (9 < iVar1) {
+            FUN_000105c4(iRam0006ca58 + 0x6c8f8,uVar5);
+          }
+        }
+      }
+      else {
+        iVar1 = FUN_0005c5e8();
+        if (9 < iVar1) {
+          FUN_000105c4(iRam0006ca68 + 0x6c97c,uVar5);
+          return 0xffffffff;
+        }
+      }
+    }
+    else {
+      iVar1 = FUN_0005c5e8();
+      if (9 < iVar1) {
+        FUN_000105c4(iRam0006ca6c + 0x6c994,iStack_84);
+        return 0xffffffff;
+      }
+    }
+  }
+  else {
+    iVar2 = FUN_0005c5e8();
+    if (9 < iVar2) {
+      FUN_000105c4(iRam0006ca64 + 0x6c950,iRam0006ca5c + 0x6c9a0,0x46,iRam0006ca60 + 0x6c944,iVar1);
+      return 0xffffffff;
+    }
+  }
+  return 0xffffffff;
+}
+
+
+
+--------------------------------------------------
+NAME: header_validator
+CONTEXT OFFSET: 0x000002F4
+TABLE OFFSET: 0x0000008C
+TABLE SLOT: 0x0009ED4C
+RAW POINTER: 0x1406D140
+NORMALIZED POINTER: 0x0006D140
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x0006D140
+TARGET ADDRESS: 0006d140
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: header_validator
+  ENTRY: 0006d140
+  BODY: [[0006d140, 0006d2d3]]
+  ----- FUNCTION INSTRUCTIONS -----
+  0006d140  stmdb sp!,{r4,r5,r6,r7,r8,lr}
+  0006d144  sub sp,sp,#0x8
+  0006d148  ldr r4,[r0,#0x90]
+  0006d14c  cmp r4,#0x0
+  0006d150  beq 0x0006d20c
+  0006d154  cpy r5,r0
+  0006d158  bl 0x0006ca94
+  0006d15c  ldrh r3,[r4,#0x0]
+  0006d160  movw r2,#0x4f4c
+  0006d164  ldrh r1,[r4,#0x2]
+  0006d168  movt r2,#0x4441
+  0006d16c  orr r3,r3,r1, lsl #0x10
+  0006d170  cmp r3,r2
+  0006d174  bne 0x0006d2a8
+  0006d178  add r3,r5,#0x1000
+  0006d17c  cpy r0,r5
+  0006d180  ldr r3,[r3,#0x2d0]
+  0006d184  blx r3
+  0006d188  subs r5,r0,#0x0
+  0006d18c  beq 0x0006d1ac
+  0006d190  bl 0x0005c5e8
+  0006d194  cmp r0,#0x9
+  0006d198  bgt 0x0006d270
+  0006d19c  mvn r5,#0x0
+  0006d1a0  cpy r0,r5
+  0006d1a4  add sp,sp,#0x8
+  0006d1a8  ldmia sp!,{r4,r5,r6,r7,r8,pc}
+  0006d1ac  ldrh r3,[r4,#0x6]
+  0006d1b0  ldrh r6,[r4,#0x4]
+  0006d1b4  strh r5,[r4,#0x6]
+  0006d1b8  strh r5,[r4,#0x4]
+  0006d1bc  orr r6,r6,r3, lsl #0x10
+  0006d1c0  bl 0x00003bf0
+  0006d1c4  ldrh r3,[r4,#0xa]
+  0006d1c8  cpy r1,r4
+  0006d1cc  ldrh r2,[r4,#0x8]
+  0006d1d0  mvn r0,#0x0
+  0006d1d4  rev r8,r6
+  0006d1d8  orr r2,r2,r3, lsl #0x10
+  0006d1dc  rev r2,r2
+  0006d1e0  bl 0x00039b3c
+  0006d1e4  cpy r7,r0
+  0006d1e8  bl 0x00003c7c
+  0006d1ec  cmp r7,r8
+  0006d1f0  bne 0x0006d244
+  0006d1f4  mov r3,r6, lsr #0x10
+  0006d1f8  cpy r0,r5
+  0006d1fc  strh r6,[r4,#0x4]
+  0006d200  strh r3,[r4,#0x6]
+  0006d204  add sp,sp,#0x8
+  0006d208  ldmia sp!,{r4,r5,r6,r7,r8,pc}
+  0006d20c  bl 0x0005c5e8
+  0006d210  cmp r0,#0x9
+  0006d214  ble 0x0006d19c
+  0006d218  ldr r1,[0x6d2d4]
+  0006d21c  mov r2,#0xb9
+  0006d220  ldr r3,[0x6d2d8]
+  0006d224  mvn r5,#0x0
+  0006d228  ldr r0,[0x6d2dc]
+  0006d22c  add r1,pc,r1
+  0006d230  add r3,pc,r3
+  0006d234  add r1,r1,#0xac
+  0006d238  add r0,pc,r0
+  0006d23c  bl 0x000105c4
+  0006d240  b 0x0006d1a0
+  0006d244  bl 0x0005c5e8
+  0006d248  cmp r0,#0x9
+  0006d24c  movle r5,#0x100
+  0006d250  ble 0x0006d1a0
+  0006d254  ldr r0,[0x6d2e0]
+  0006d258  cpy r2,r7
+  0006d25c  cpy r1,r6
+  0006d260  mov r5,#0x100
+  0006d264  add r0,pc,r0
+  0006d268  bl 0x000105c4
+  0006d26c  b 0x0006d1a0
+  0006d270  ldr r1,[0x6d2e4]
+  0006d274  mov r2,#0xc1
+  0006d278  ldr r3,[0x6d2e8]
+  0006d27c  ldr r0,[0x6d2ec]
+  0006d280  add r1,pc,r1
+  0006d284  str r5,[sp,#0x0]
+  0006d288  add r3,pc,r3
+  0006d28c  mvn r5,#0x0
+  0006d290  add r1,r1,#0xac
+  0006d294  add r0,pc,r0
+  0006d298  bl 0x000105c4
+  0006d29c  cpy r0,r5
+  0006d2a0  add sp,sp,#0x8
+  0006d2a4  ldmia sp!,{r4,r5,r6,r7,r8,pc}
+  0006d2a8  bl 0x0005c5e8
+  0006d2ac  cmp r0,#0x9
+  0006d2b0  ble 0x0006d19c
+  0006d2b4  ldrh r3,[r4,#0x0]
+  0006d2b8  mvn r5,#0x0
+  0006d2bc  ldrh r1,[r4,#0x2]
+  0006d2c0  ldr r0,[0x6d2f0]
+  0006d2c4  orr r1,r3,r1, lsl #0x10
+  0006d2c8  add r0,pc,r0
+  0006d2cc  bl 0x000105c4
+  0006d2d0  b 0x0006d1a0
+  Instruction count: 101
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 header_validator(int param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  uint uVar4;
+  int *piVar5;
+  
+  piVar5 = *(int **)(param_1 + 0x90);
+  if (piVar5 == (int *)0x0) {
+    iVar2 = FUN_0005c5e8();
+    if (9 < iVar2) {
+      FUN_000105c4(iRam0006d2dc + 0x6d240,iRam0006d2d4 + 0x6d2e0,0xb9,iRam0006d2d8 + 0x6d238);
+      return 0xffffffff;
+    }
+  }
+  else {
+    func_0x0006ca94();
+    if (*piVar5 == 0x44414f4c) {
+      iVar2 = (**(code **)(param_1 + 0x12d0))(param_1);
+      if (iVar2 == 0) {
+        uVar1 = piVar5[1];
+        *(undefined2 *)((int)piVar5 + 6) = 0;
+        *(undefined2 *)(piVar5 + 1) = 0;
+        FUN_00003bf0();
+        uVar4 = piVar5[2];
+        uVar4 = func_0x00039b3c(0xffffffff,piVar5,
+                                uVar4 << 0x18 | (uVar4 >> 8 & 0xff) << 0x10 |
+                                (uVar4 >> 0x10 & 0xff) << 8 | uVar4 >> 0x18);
+        thunk_FUN_000029d4();
+        if (uVar4 == (uVar1 << 0x18 | (uVar1 >> 8 & 0xff) << 0x10 | (uVar1 >> 0x10 & 0xff) << 8 |
+                     uVar1 >> 0x18)) {
+          *(short *)(piVar5 + 1) = (short)uVar1;
+          *(short *)((int)piVar5 + 6) = (short)(uVar1 >> 0x10);
+          return 0;
+        }
+        iVar2 = FUN_0005c5e8();
+        if (iVar2 < 10) {
+          return 0x100;
+        }
+        FUN_000105c4(iRam0006d2e0 + 0x6d26c,uVar1,uVar4);
+        return 0x100;
+      }
+      iVar3 = FUN_0005c5e8();
+      if (9 < iVar3) {
+        FUN_000105c4(iRam0006d2ec + 0x6d29c,iRam0006d2e4 + 0x6d334,0xc1,iRam0006d2e8 + 0x6d290,iVar2
+                    );
+        return 0xffffffff;
+      }
+    }
+    else {
+      iVar2 = FUN_0005c5e8();
+      if (9 < iVar2) {
+        FUN_000105c4(iRam0006d2f0 + 0x6d2d0,*piVar5);
+        return 0xffffffff;
+      }
+    }
+  }
+  return 0xffffffff;
+}
+
+
+
+--------------------------------------------------
+NAME: callback_2F8
+CONTEXT OFFSET: 0x000002F8
+TABLE OFFSET: 0x000001E0
+TABLE SLOT: 0x0009EEA0
+RAW POINTER: 0x1406D024
+NORMALIZED POINTER: 0x0006D024
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x0006D024
+TARGET ADDRESS: 0006d024
+MEMORY BLOCK: ram
+  No function defined; attempting function creation.
+  FUNCTION: callback_2F8
+  ENTRY: 0006d024
+  BODY: [[0006d024, 0006d133]]
+  ----- FUNCTION INSTRUCTIONS -----
+  0006d024  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  0006d028  sub sp,sp,#0x830
+  0006d02c  sub sp,sp,#0x8
+  0006d030  cpy r5,r0
+  0006d034  add r8,sp,#0x18
+  0006d038  movw r2,#0x81e
+  0006d03c  cpy r4,r1
+  0006d040  cpy r0,r8
+  0006d044  mov r1,#0x0
+  0006d048  mov r6,#0x0
+  0006d04c  bl 0x00003240
+  0006d050  ldr r2,[0x6d134]
+  0006d054  movw r10,#0x81e
+  0006d058  ldr r3,[0x6d138]
+  0006d05c  ldr r7,[r5,#0x90]
+  0006d060  add r2,pc,r2
+  0006d064  str r2,[sp,#0xc]
+  0006d068  add r3,pc,r3
+  0006d06c  ldr r2,[0x6d13c]
+  0006d070  add r3,r3,#0x94
+  0006d074  add r5,r7,#0x16
+  0006d078  str r3,[sp,#0x10]
+  0006d07c  add r2,pc,r2
+  0006d080  str r2,[sp,#0x14]
+  0006d084  b 0x0006d0c0
+  0006d088  add r0,sp,#0x1c
+  0006d08c  ldr r12,[sp,#0x18]
+  0006d090  ldmia r0,{r0,r1,r2}
+  0006d094  ldr r3,[sp,#0x28]
+  0006d098  rev r12,r12
+  0006d09c  str r12,[r4,#0x0]
+  0006d0a0  rev r0,r0
+  0006d0a4  rev r1,r1
+  0006d0a8  rev r2,r2
+  0006d0ac  rev r3,r3
+  0006d0b0  str r0,[r4,#0x4]
+  0006d0b4  str r1,[r4,#0x8]
+  0006d0b8  str r2,[r4,#0xc]
+  0006d0bc  str r3,[r4,#0x10]
+  0006d0c0  ldrh lr,[r7,#0x14]
+  0006d0c4  movw r3,#0x81e
+  0006d0c8  cpy r2,r5
+  0006d0cc  cpy r1,r3
+  0006d0d0  cpy r0,r8
+  0006d0d4  add r5,r5,r10
+  0006d0d8  mov r12,lr, lsr #0x8
+  0006d0dc  orr r12,r12,lr, lsl #0x8
+  0006d0e0  uxth r12,r12
+  0006d0e4  cmp r6,r12
+  0006d0e8  add r6,r6,#0x1
+  0006d0ec  bge 0x0006d124
+  0006d0f0  bl 0x0003003c
+  0006d0f4  subs r11,r0,#0x0
+  0006d0f8  beq 0x0006d088
+  0006d0fc  bl 0x0005c5e8
+  0006d100  cmp r0,#0x9
+  0006d104  ble 0x0006d088
+  0006d108  str r11,[sp,#0x0]
+  0006d10c  mov r2,#0xa7
+  0006d110  ldr r3,[sp,#0xc]
+  0006d114  ldr r1,[sp,#0x10]
+  0006d118  ldr r0,[sp,#0x14]
+  0006d11c  bl 0x000105c4
+  0006d120  b 0x0006d088
+  0006d124  mov r0,#0x0
+  0006d128  add sp,sp,#0x830
+  0006d12c  add sp,sp,#0x8
+  0006d130  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+  Instruction count: 68
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 callback_2F8(int param_1,uint *param_2)
+
+{
+  ushort uVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  int iVar8;
+  int iVar9;
+  uint uStack_840;
+  uint uStack_83c;
+  uint uStack_838;
+  uint uStack_834;
+  uint uStack_830;
+  
+  FUN_00003240(&uStack_840,0,0x81e);
+  iVar9 = *(int *)(param_1 + 0x90);
+  iVar4 = DAT_0006d134 + 0x6d068;
+  iVar6 = DAT_0006d138 + 0x6d104;
+  iVar5 = DAT_0006d13c + 0x6d084;
+  iVar7 = iVar9 + 0x16;
+  iVar8 = 0;
+  while( true ) {
+    uVar1 = *(ushort *)(iVar9 + 0x14);
+    if ((int)((uint)(uVar1 >> 8) | (uVar1 & 0xff) << 8) <= iVar8) break;
+    iVar2 = FUN_0003003c(&uStack_840,0x81e,iVar7);
+    if ((iVar2 != 0) && (iVar3 = FUN_0005c5e8(), 9 < iVar3)) {
+      FUN_000105c4(iVar5,iVar6,0xa7,iVar4,iVar2);
+    }
+    *param_2 = uStack_840 << 0x18 | (uStack_840 >> 8 & 0xff) << 0x10 |
+               (uStack_840 >> 0x10 & 0xff) << 8 | uStack_840 >> 0x18;
+    param_2[1] = uStack_83c << 0x18 | (uStack_83c >> 8 & 0xff) << 0x10 |
+                 (uStack_83c >> 0x10 & 0xff) << 8 | uStack_83c >> 0x18;
+    param_2[2] = uStack_838 << 0x18 | (uStack_838 >> 8 & 0xff) << 0x10 |
+                 (uStack_838 >> 0x10 & 0xff) << 8 | uStack_838 >> 0x18;
+    param_2[3] = uStack_834 << 0x18 | (uStack_834 >> 8 & 0xff) << 0x10 |
+                 (uStack_834 >> 0x10 & 0xff) << 8 | uStack_834 >> 0x18;
+    param_2[4] = uStack_830 << 0x18 | (uStack_830 >> 8 & 0xff) << 0x10 |
+                 (uStack_830 >> 0x10 & 0xff) << 8 | uStack_830 >> 0x18;
+    iVar7 = iVar7 + 0x81e;
+    iVar8 = iVar8 + 1;
+  }
+  return 0;
+}
+
+
+
+--------------------------------------------------
+NAME: block_handler
+CONTEXT OFFSET: 0x000002FC
+TABLE OFFSET: 0x000001D0
+TABLE SLOT: 0x0009EE90
+RAW POINTER: 0x1406D320
+NORMALIZED POINTER: 0x0006D320
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x0006D320
+TARGET ADDRESS: 0006d320
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: block_handler
+  ENTRY: 0006d320
+  BODY: [[0006d320, 0006d80f]]
+  ----- FUNCTION INSTRUCTIONS -----
+  0006d320  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  0006d324  sub sp,sp,#0x870
+  0006d328  add r11,sp,#0x50
+  0006d32c  cpy r10,r0
+  0006d330  movw r2,#0x81e
+  0006d334  mov r1,#0x0
+  0006d338  cpy r0,r11
+  0006d33c  add r5,sp,#0x30
+  0006d340  bl 0x00003240
+  0006d344  mov r1,#0x0
+  0006d348  cpy r0,r5
+  0006d34c  mov r2,#0x20
+  0006d350  ldr r8,[0x6d810]
+  0006d354  bl 0x00003240
+  0006d358  ldr r1,[r10,#0x90]
+  0006d35c  mov r3,#0x0
+  0006d360  add r8,pc,r8
+  0006d364  str r3,[sp,#0x2c]
+  0006d368  cmp r1,r3
+  0006d36c  str r1,[sp,#0x1c]
+  0006d370  beq 0x0006d7ac
+  0006d374  ldr r2,[0x6d814]
+  0006d378  add r1,r1,#0x16
+  0006d37c  str r3,[sp,#0x14]
+  0006d380  ldr r3,[0x6d818]
+  0006d384  add r2,pc,r2
+  0006d388  str r1,[sp,#0x18]
+  0006d38c  add r2,r2,#0xc4
+  0006d390  add r3,pc,r3
+  0006d394  str r2,[sp,#0x24]
+  0006d398  add r3,r3,#0xc4
+  0006d39c  str r3,[sp,#0x20]
+  0006d3a0  ldr r3,[sp,#0x1c]
+  0006d3a4  ldrh r2,[r3,#0x14]
+  0006d3a8  mov r3,r2, lsr #0x8
+  0006d3ac  orr r3,r3,r2, lsl #0x8
+  0006d3b0  ldr r2,[sp,#0x14]
+  0006d3b4  uxth r3,r3
+  0006d3b8  cmp r2,r3
+  0006d3bc  bge 0x0006d808
+  0006d3c0  movw r3,#0x81e
+  0006d3c4  mov r2,#0x0
+  0006d3c8  cpy r1,r3
+  0006d3cc  cpy r0,r11
+  0006d3d0  bl 0x000301fc
+  0006d3d4  movw r3,#0x81e
+  0006d3d8  ldr r2,[sp,#0x18]
+  0006d3dc  cpy r1,r3
+  0006d3e0  cpy r0,r11
+  0006d3e4  bl 0x0003003c
+  0006d3e8  subs r4,r0,#0x0
+  0006d3ec  bne 0x0006d75c
+  0006d3f0  ldr r3,[0x6d81c]
+  0006d3f4  mov r4,#0x0
+  0006d3f8  ldr r7,[0x6d820]
+  0006d3fc  add r3,pc,r3
+  0006d400  str r3,[sp,#0xc]
+  0006d404  add r7,pc,r7
+  0006d408  ldr r3,[0x6d824]
+  0006d40c  add r3,pc,r3
+  0006d410  str r3,[sp,#0x10]
+  0006d414  b 0x0006d574
+  0006d418  bl 0x0005c5e8
+  0006d41c  cmp r0,#0x27
+  0006d420  bgt 0x0006d624
+  0006d424  mov r3,#0x20
+  0006d428  mov r2,#0x0
+  0006d42c  cpy r1,r3
+  0006d430  cpy r0,r5
+  0006d434  bl 0x000301fc
+  0006d438  mov r3,#0x20
+  0006d43c  add r2,r11,#0x1e
+  0006d440  add r2,r2,r4, lsl #0x5
+  0006d444  cpy r1,r3
+  0006d448  cpy r0,r5
+  0006d44c  bl 0x0003003c
+  0006d450  subs r6,r0,#0x0
+  0006d454  bne 0x0006d5f4
+  0006d458  bl 0x000379c0
+  0006d45c  cpy r6,r0
+  0006d460  bl 0x000379d4
+  0006d464  adds r3,r0,#0x0
+  0006d468  movne r3,#0x1
+  0006d46c  cmp r6,#0x0
+  0006d470  moveq r3,#0x0
+  0006d474  cmp r4,r6
+  0006d478  movlt r3,#0x0
+  0006d47c  andge r3,r3,#0x1
+  0006d480  cmp r3,#0x0
+  0006d484  bne 0x0006d5c8
+  0006d488  sub r0,r5,#0x4
+  0006d48c  ldr r2,[sp,#0x34]
+  0006d490  str r0,[sp,#0x0]
+  0006d494  cpy r3,r4
+  0006d498  ldr r1,[sp,#0x30]
+  0006d49c  cpy r0,r10
+  0006d4a0  bl 0x0006bf20
+  0006d4a4  cmp r0,#0x0
+  0006d4a8  bne 0x0006d7e8
+  0006d4ac  bl 0x0005c5e8
+  0006d4b0  cmp r0,#0x27
+  0006d4b4  bgt 0x0006d638
+  0006d4b8  ldr r3,[0x6d828]
+  0006d4bc  add r6,r4,#0x1
+  0006d4c0  ldr r4,[r8,r3]
+  0006d4c4  cpy r0,r4
+  0006d4c8  bl 0x0002f64c
+  0006d4cc  cpy r2,r6
+  0006d4d0  cpy r1,r7
+  0006d4d4  add r0,r4,r0
+  0006d4d8  bl 0x000311c8
+  0006d4dc  cpy r0,r4
+  0006d4e0  bl 0x0002f64c
+  0006d4e4  ldr r3,[r5,#0x8]
+  0006d4e8  add r0,r4,r0
+  0006d4ec  ldr r2,[r5,#0xc]
+  0006d4f0  ldr r1,[sp,#0xc]
+  0006d4f4  rev r3,r3
+  0006d4f8  rev r2,r2
+  0006d4fc  bl 0x000311c8
+  0006d500  cpy r0,r4
+  0006d504  bl 0x0002f64c
+  0006d508  ldr r3,[r5,#0x10]
+  0006d50c  add r0,r4,r0
+  0006d510  ldr r2,[r5,#0x14]
+  0006d514  ldr r1,[sp,#0x10]
+  0006d518  rev r3,r3
+  0006d51c  rev r2,r2
+  0006d520  bl 0x000311c8
+  0006d524  cpy r0,r4
+  0006d528  bl 0x0002f64c
+  0006d52c  ldr r2,[r5,#0x14]
+  0006d530  add r0,r4,r0
+  0006d534  ldr lr,[r5,#0xc]
+  0006d538  ldr r3,[r5,#0x10]
+  0006d53c  ldr r12,[r5,#0x8]
+  0006d540  rev r2,r2
+  0006d544  rev lr,lr
+  0006d548  ldr r1,[0x6d82c]
+  0006d54c  subs r2,r2,lr
+  0006d550  rev r3,r3
+  0006d554  mov r2,r2, lsr #0x14
+  0006d558  rev r12,r12
+  0006d55c  sbc r3,r3,r12
+  0006d560  orr r2,r2,r3, lsl #0xc
+  0006d564  add r1,pc,r1
+  0006d568  mov r3,r3, lsr #0x14
+  0006d56c  bl 0x000311c8
+  0006d570  cpy r4,r6
+  0006d574  ldrh r2,[r11,#0x1c]
+  0006d578  mov r3,r2, lsr #0x8
+  0006d57c  orr r3,r3,r2, lsl #0x8
+  0006d580  uxth r3,r3
+  0006d584  cmp r4,r3
+  0006d588  bge 0x0006d78c
+  0006d58c  cpy r1,r4
+  0006d590  cpy r0,r10
+  0006d594  bl 0x000749f8
+  0006d598  cmp r0,#0x0
+  0006d59c  bne 0x0006d418
+  0006d5a0  bl 0x0005c5e8
+  0006d5a4  cmp r0,#0x13
+  0006d5a8  addle r6,r4,#0x1
+  0006d5ac  ble 0x0006d570
+  0006d5b0  ldr r0,[0x6d830]
+  0006d5b4  cpy r1,r4
+  0006d5b8  add r6,r4,#0x1
+  0006d5bc  add r0,pc,r0
+  0006d5c0  bl 0x000105c4
+  0006d5c4  b 0x0006d570
+  0006d5c8  cmp r4,r0
+  0006d5cc  add r6,r4,#0x1
+  0006d5d0  beq 0x0006d64c
+  0006d5d4  bl 0x0005c5e8
+  0006d5d8  cmp r0,#0x1d
+  0006d5dc  ble 0x0006d570
+  0006d5e0  ldr r0,[0x6d834]
+  0006d5e4  cpy r1,r4
+  0006d5e8  add r0,pc,r0
+  0006d5ec  bl 0x000105c4
+  0006d5f0  b 0x0006d570
+  0006d5f4  bl 0x0005c5e8
+  0006d5f8  cmp r0,#0x9
+  0006d5fc  ble 0x0006d458
+  0006d600  ldr r3,[0x6d838]
+  0006d604  movw r2,#0x1b9
+  0006d608  ldr r0,[0x6d83c]
+  0006d60c  str r6,[sp,#0x0]
+  0006d610  add r3,pc,r3
+  0006d614  ldr r1,[sp,#0x20]
+  0006d618  add r0,pc,r0
+  0006d61c  bl 0x000105c4
+  0006d620  b 0x0006d458
+  0006d624  ldr r0,[0x6d840]
+  0006d628  cpy r1,r4
+  0006d62c  add r0,pc,r0
+  0006d630  bl 0x000105c4
+  0006d634  b 0x0006d424
+  0006d638  ldr r0,[0x6d844]
+  0006d63c  cpy r1,r4
+  0006d640  add r0,pc,r0
+  0006d644  bl 0x000105c4
+  0006d648  b 0x0006d4b8
+  0006d64c  bl 0x000379c0
+  0006d650  sub r12,r5,#0x4
+  0006d654  cpy r3,r0
+  0006d658  ldr r2,[sp,#0x34]
+  0006d65c  cpy r0,r10
+  0006d660  ldr r1,[sp,#0x30]
+  0006d664  str r12,[sp,#0x0]
+  0006d668  bl 0x0006bf20
+  0006d66c  subs r7,r0,#0x0
+  0006d670  bne 0x0006d740
+  0006d674  ldr r3,[0x6d828]
+  0006d678  ldr r4,[r8,r3]
+  0006d67c  cpy r0,r4
+  0006d680  bl 0x0002f64c
+  0006d684  ldr r1,[0x6d848]
+  0006d688  cpy r2,r6
+  0006d68c  add r0,r4,r0
+  0006d690  add r1,pc,r1
+  0006d694  bl 0x000311c8
+  0006d698  cpy r0,r4
+  0006d69c  bl 0x0002f64c
+  0006d6a0  ldr r3,[sp,#0x38]
+  0006d6a4  add r0,r4,r0
+  0006d6a8  ldr r2,[sp,#0x3c]
+  0006d6ac  ldr r1,[0x6d84c]
+  0006d6b0  rev r3,r3
+  0006d6b4  rev r2,r2
+  0006d6b8  add r1,pc,r1
+  0006d6bc  bl 0x000311c8
+  0006d6c0  cpy r0,r4
+  0006d6c4  bl 0x0002f64c
+  0006d6c8  ldr r3,[r5,#0x10]
+  0006d6cc  add r0,r4,r0
+  0006d6d0  ldr r2,[sp,#0x44]
+  0006d6d4  ldr r1,[0x6d850]
+  0006d6d8  rev r3,r3
+  0006d6dc  rev r2,r2
+  0006d6e0  add r1,pc,r1
+  0006d6e4  bl 0x000311c8
+  0006d6e8  cpy r0,r4
+  0006d6ec  bl 0x0002f64c
+  0006d6f0  ldr r2,[sp,#0x44]
+  0006d6f4  add r0,r4,r0
+  0006d6f8  ldr r12,[sp,#0x3c]
+  0006d6fc  ldr r3,[r5,#0x10]
+  0006d700  ldr lr,[sp,#0x38]
+  0006d704  rev r2,r2
+  Instruction count: 250
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+int block_handler(int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 uVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  uint uVar8;
+  int iVar9;
+  int iVar10;
+  uint uVar11;
+  int iVar12;
+  int iVar13;
+  uint uVar14;
+  int iStack_87c;
+  int iStack_878;
+  undefined4 uStack_864;
+  undefined4 uStack_860;
+  undefined4 uStack_85c;
+  uint uStack_858;
+  uint uStack_854;
+  uint uStack_850;
+  uint uStack_84c;
+  undefined1 auStack_840 [28];
+  ushort uStack_824;
+  undefined1 auStack_822 [2050];
+  
+  FUN_00003240(auStack_840,0,0x81e);
+  iVar5 = DAT_0006d810;
+  FUN_00003240(&uStack_860,0,0x20);
+  iVar6 = *(int *)(param_1 + 0x90);
+  uStack_864 = 0;
+  if (iVar6 == 0) {
+    iVar5 = FUN_0005c5e8();
+    if (iVar5 < 10) {
+      iVar5 = -1;
+    }
+    else {
+      iVar5 = -1;
+      FUN_000105c4(DAT_0006d86c + 0x6d7e4,DAT_0006d864 + 0x6d89c,0x1a4,DAT_0006d868 + 0x6d7dc);
+    }
+  }
+  else {
+    iStack_878 = iVar6 + 0x16;
+    iVar7 = DAT_0006d814 + 0x6d450;
+    iVar9 = DAT_0006d818 + 0x6d45c;
+    for (iStack_87c = 0;
+        iStack_87c <
+        (int)((uint)(*(ushort *)(iVar6 + 0x14) >> 8) | (*(ushort *)(iVar6 + 0x14) & 0xff) << 8);
+        iStack_87c = iStack_87c + 1) {
+      FUN_000301fc(auStack_840,0x81e,0);
+      iVar1 = FUN_0003003c(auStack_840,0x81e,iStack_878);
+      if ((iVar1 != 0) && (iVar10 = FUN_0005c5e8(), 9 < iVar10)) {
+        FUN_000105c4(DAT_0006d860 + 0x6d788,iVar7,0x1ab,DAT_0006d85c + 0x6d780,iVar1);
+      }
+      iVar1 = DAT_0006d81c + 0x6d404;
+      iVar13 = DAT_0006d820 + 0x6d40c;
+      iVar10 = DAT_0006d824 + 0x6d414;
+      for (iVar12 = 0; iVar12 < (int)((uint)(uStack_824 >> 8) | (uStack_824 & 0xff) << 8);
+          iVar12 = iVar12 + 1) {
+        iVar3 = FUN_000749f8(param_1,iVar12);
+        if (iVar3 == 0) {
+          iVar3 = FUN_0005c5e8();
+          if (0x13 < iVar3) {
+            FUN_000105c4(DAT_0006d830 + 0x6d5c4,iVar12);
+          }
+        }
+        else {
+          iVar3 = FUN_0005c5e8();
+          if (0x27 < iVar3) {
+            FUN_000105c4(DAT_0006d840 + 0x6d634,iVar12);
+          }
+          FUN_000301fc(&uStack_860,0x20,0);
+          iVar3 = FUN_0003003c(&uStack_860,0x20,auStack_822 + iVar12 * 0x20);
+          if ((iVar3 != 0) && (iVar2 = FUN_0005c5e8(), 9 < iVar2)) {
+            FUN_000105c4(DAT_0006d83c + 0x6d620,iVar9,0x1b9,DAT_0006d838 + 0x6d618,iVar3);
+          }
+          iVar3 = func_0x000379c0();
+          iVar2 = func_0x000379d4();
+          if (iVar12 < iVar3 || (iVar3 == 0 || iVar2 == 0)) {
+            iVar3 = func_0x0006bf20(param_1,uStack_860,uStack_85c,iVar12,&uStack_864);
+            if (iVar3 != 0) {
+              iVar5 = FUN_0005c5e8();
+              if (iVar5 < 10) {
+                return iVar3;
+              }
+              FUN_000105c4(DAT_0006d870 + 0x6d804);
+              return iVar3;
+            }
+            iVar3 = FUN_0005c5e8();
+            if (0x27 < iVar3) {
+              FUN_000105c4(DAT_0006d844 + 0x6d648,iVar12);
+            }
+            iVar2 = *(int *)(iVar5 + 0x6d368 + DAT_0006d828);
+            iVar3 = FUN_0002f64c(iVar2);
+            FUN_000311c8(iVar2 + iVar3,iVar13,iVar12 + 1);
+            iVar3 = FUN_0002f64c(iVar2);
+            FUN_000311c8(iVar2 + iVar3,iVar1,
+                         uStack_854 << 0x18 | (uStack_854 >> 8 & 0xff) << 0x10 |
+                         (uStack_854 >> 0x10 & 0xff) << 8 | uStack_854 >> 0x18,
+                         uStack_858 << 0x18 | (uStack_858 >> 8 & 0xff) << 0x10 |
+                         (uStack_858 >> 0x10 & 0xff) << 8 | uStack_858 >> 0x18);
+            iVar3 = FUN_0002f64c(iVar2);
+            FUN_000311c8(iVar2 + iVar3,iVar10,
+                         uStack_84c << 0x18 | (uStack_84c >> 8 & 0xff) << 0x10 |
+                         (uStack_84c >> 0x10 & 0xff) << 8 | uStack_84c >> 0x18,
+                         uStack_850 << 0x18 | (uStack_850 >> 8 & 0xff) << 0x10 |
+                         (uStack_850 >> 0x10 & 0xff) << 8 | uStack_850 >> 0x18);
+            iVar3 = FUN_0002f64c(iVar2);
+            uVar8 = uStack_84c << 0x18 | (uStack_84c >> 8 & 0xff) << 0x10 |
+                    (uStack_84c >> 0x10 & 0xff) << 8 | uStack_84c >> 0x18;
+            uVar14 = uStack_854 << 0x18 | (uStack_854 >> 8 & 0xff) << 0x10 |
+                     (uStack_854 >> 0x10 & 0xff) << 8 | uStack_854 >> 0x18;
+            uVar11 = (uStack_850 << 0x18 | (uStack_850 >> 8 & 0xff) << 0x10 |
+                      (uStack_850 >> 0x10 & 0xff) << 8 | uStack_850 >> 0x18) -
+                     ((uStack_858 << 0x18 | (uStack_858 >> 8 & 0xff) << 0x10 |
+                       (uStack_858 >> 0x10 & 0xff) << 8 | uStack_858 >> 0x18) +
+                     (uint)(uVar8 < uVar14));
+            FUN_000311c8(iVar2 + iVar3,DAT_0006d82c + 0x6d56c,
+                         uVar8 - uVar14 >> 0x14 | uVar11 * 0x1000,uVar11 >> 0x14);
+          }
+          else {
+            if (iVar12 == iVar2) {
+              uVar4 = func_0x000379c0();
+              iVar6 = func_0x0006bf20(param_1,uStack_860,uStack_85c,uVar4,&uStack_864);
+              if ((iVar6 != 0) && (iVar7 = FUN_0005c5e8(), 9 < iVar7)) {
+                FUN_000105c4(DAT_0006d858 + 0x6d758);
+              }
+              iVar7 = *(int *)(iVar5 + 0x6d368 + DAT_0006d828);
+              iVar5 = FUN_0002f64c(iVar7);
+              FUN_000311c8(iVar7 + iVar5,DAT_0006d848 + 0x6d698,iVar12 + 1);
+              iVar5 = FUN_0002f64c(iVar7);
+              FUN_000311c8(iVar7 + iVar5,DAT_0006d84c + 0x6d6c0,
+                           uStack_854 << 0x18 | (uStack_854 >> 8 & 0xff) << 0x10 |
+                           (uStack_854 >> 0x10 & 0xff) << 8 | uStack_854 >> 0x18,
+                           uStack_858 << 0x18 | (uStack_858 >> 8 & 0xff) << 0x10 |
+                           (uStack_858 >> 0x10 & 0xff) << 8 | uStack_858 >> 0x18);
+              iVar5 = FUN_0002f64c(iVar7);
+              FUN_000311c8(iVar7 + iVar5,DAT_0006d850 + 0x6d6e8,
+                           uStack_84c << 0x18 | (uStack_84c >> 8 & 0xff) << 0x10 |
+                           (uStack_84c >> 0x10 & 0xff) << 8 | uStack_84c >> 0x18,
+                           uStack_850 << 0x18 | (uStack_850 >> 8 & 0xff) << 0x10 |
+                           (uStack_850 >> 0x10 & 0xff) << 8 | uStack_850 >> 0x18);
+              iVar5 = FUN_0002f64c(iVar7);
+              uVar8 = uStack_84c << 0x18 | (uStack_84c >> 8 & 0xff) << 0x10 |
+                      (uStack_84c >> 0x10 & 0xff) << 8 | uStack_84c >> 0x18;
+              uVar14 = uStack_854 << 0x18 | (uStack_854 >> 8 & 0xff) << 0x10 |
+                       (uStack_854 >> 0x10 & 0xff) << 8 | uStack_854 >> 0x18;
+              uVar11 = (uStack_850 << 0x18 | (uStack_850 >> 8 & 0xff) << 0x10 |
+                        (uStack_850 >> 0x10 & 0xff) << 8 | uStack_850 >> 0x18) -
+                       ((uStack_858 << 0x18 | (uStack_858 >> 8 & 0xff) << 0x10 |
+                         (uStack_858 >> 0x10 & 0xff) << 8 | uStack_858 >> 0x18) +
+                       (uint)(uVar8 < uVar14));
+              FUN_000311c8(iVar7 + iVar5,DAT_0006d854 + 0x6d730,
+                           uVar8 - uVar14 >> 0x14 | uVar11 * 0x1000,uVar11 >> 0x14);
+              return iVar6;
+            }
+            iVar3 = FUN_0005c5e8();
+            if (0x1d < iVar3) {
+              FUN_000105c4(DAT_0006d834 + 0x6d5f0,iVar12);
+            }
+          }
+        }
+      }
+      iStack_878 = iStack_878 + 0x81e;
+    }
+    iVar5 = 0;
+  }
+  return iVar5;
+}
+
+
+
+--------------------------------------------------
+NAME: status_progress_handler
+CONTEXT OFFSET: 0x00000300
+TABLE OFFSET: 0x000000CC
+TABLE SLOT: 0x0009ED8C
+RAW POINTER: 0x1406D874
+NORMALIZED POINTER: 0x0006D874
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x0006D874
+TARGET ADDRESS: 0006d874
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: status_progress_handler
+  ENTRY: 0006d874
+  BODY: [[0006d874, 0006d87b]]
+  ----- FUNCTION INSTRUCTIONS -----
+  0006d874  mov r0,#0x0
+  0006d878  bx lr
+  Instruction count: 2
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 status_progress_handler(void)
+
+{
+  return 0;
+}
+
+
+
+--------------------------------------------------
+NAME: callback_304
+CONTEXT OFFSET: 0x00000304
+TABLE OFFSET: 0x0000014C
+TABLE SLOT: 0x0009EE0C
+RAW POINTER: 0x1406D9B4
+NORMALIZED POINTER: 0x0006D9B4
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x0006D9B4
+TARGET ADDRESS: 0006d9b4
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: callback_304
+  ENTRY: 0006d9b4
+  BODY: [[0006d9b4, 0006dab7]]
+  ----- FUNCTION INSTRUCTIONS -----
+  0006d9b4  stmdb sp!,{r4,r5,lr}
+  0006d9b8  sub sp,sp,#0xc
+  0006d9bc  cpy r4,r0
+  0006d9c0  bl 0x0006d87c
+  0006d9c4  subs r5,r0,#0x0
+  0006d9c8  beq 0x0006d9e8
+  0006d9cc  bl 0x0005c5e8
+  0006d9d0  cmp r0,#0x9
+  0006d9d4  bgt 0x0006da80
+  0006d9d8  mvn r4,#0x0
+  0006d9dc  cpy r0,r4
+  0006d9e0  add sp,sp,#0xc
+  0006d9e4  ldmia sp!,{r4,r5,pc}
+  0006d9e8  cpy r0,r4
+  0006d9ec  bl 0x00072760
+  0006d9f0  subs r5,r0,#0x0
+  0006d9f4  beq 0x0006da34
+  0006d9f8  bl 0x0005c5e8
+  0006d9fc  cmp r0,#0x9
+  0006da00  ble 0x0006d9d8
+  0006da04  ldr r1,[0x6dab8]
+  0006da08  movw r2,#0x233
+  0006da0c  ldr r3,[0x6dabc]
+  0006da10  mvn r4,#0x0
+  0006da14  ldr r0,[0x6dac0]
+  0006da18  add r1,pc,r1
+  0006da1c  str r5,[sp,#0x0]
+  0006da20  add r3,pc,r3
+  0006da24  add r1,r1,#0x100
+  0006da28  add r0,pc,r0
+  0006da2c  bl 0x000105c4
+  0006da30  b 0x0006d9dc
+  0006da34  cpy r0,r4
+  0006da38  bl 0x0006bb74
+  0006da3c  subs r4,r0,#0x0
+  0006da40  beq 0x0006d9dc
+  0006da44  bl 0x0005c5e8
+  0006da48  cmp r0,#0x9
+  0006da4c  ble 0x0006d9d8
+  0006da50  ldr r1,[0x6dac4]
+  0006da54  movw r2,#0x235
+  0006da58  ldr r3,[0x6dac8]
+  0006da5c  ldr r0,[0x6dacc]
+  0006da60  add r1,pc,r1
+  0006da64  str r4,[sp,#0x0]
+  0006da68  add r3,pc,r3
+  0006da6c  add r1,r1,#0x100
+  0006da70  add r0,pc,r0
+  0006da74  mvn r4,#0x0
+  0006da78  bl 0x000105c4
+  0006da7c  b 0x0006d9dc
+  0006da80  ldr r1,[0x6dad0]
+  0006da84  movw r2,#0x232
+  0006da88  ldr r3,[0x6dad4]
+  0006da8c  mvn r4,#0x0
+  0006da90  ldr r0,[0x6dad8]
+  0006da94  add r1,pc,r1
+  0006da98  str r5,[sp,#0x0]
+  0006da9c  add r3,pc,r3
+  0006daa0  add r1,r1,#0x100
+  0006daa4  add r0,pc,r0
+  0006daa8  bl 0x000105c4
+  0006daac  cpy r0,r4
+  0006dab0  add sp,sp,#0xc
+  0006dab4  ldmia sp!,{r4,r5,pc}
+  Instruction count: 65
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 callback_304(undefined4 param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  iVar1 = func_0x0006d87c();
+  if (iVar1 == 0) {
+    iVar1 = func_0x00072760(param_1);
+    if (iVar1 == 0) {
+      iVar1 = FUN_0006bb74(param_1);
+      if (iVar1 == 0) {
+        return 0;
+      }
+      iVar2 = FUN_0005c5e8();
+      if (9 < iVar2) {
+        FUN_000105c4(iRam0006dacc + 0x6da78,iRam0006dac4 + 0x6db68,0x235,iRam0006dac8 + 0x6da70,
+                     iVar1);
+        return 0xffffffff;
+      }
+    }
+    else {
+      iVar2 = FUN_0005c5e8();
+      if (9 < iVar2) {
+        FUN_000105c4(iRam0006dac0 + 0x6da30,iRam0006dab8 + 0x6db20,0x233,iRam0006dabc + 0x6da28,
+                     iVar1);
+        return 0xffffffff;
+      }
+    }
+  }
+  else {
+    iVar2 = FUN_0005c5e8();
+    if (9 < iVar2) {
+      FUN_000105c4(iRam0006dad8 + 0x6daac,iRam0006dad0 + 0x6db9c,0x232,iRam0006dad4 + 0x6daa4,iVar1)
+      ;
+      return 0xffffffff;
+    }
+  }
+  return 0xffffffff;
+}
+
+
+
+--------------------------------------------------
+NAME: burn_flag_related
+CONTEXT OFFSET: 0x000002E8
+TABLE OFFSET: 0x000001CC
+TABLE SLOT: 0x0009EE8C
+RAW POINTER: 0x14074C28
+NORMALIZED POINTER: 0x00074C28
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x00074C28
+TARGET ADDRESS: 00074c28
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: burn_flag_related
+  ENTRY: 00074c28
+  BODY: [[00074c28, 00074e1f]]
+  ----- FUNCTION INSTRUCTIONS -----
+  00074c28  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  00074c2c  cpy r10,r0
+  00074c30  ldr r0,[0x74e20]
+  00074c34  sub sp,sp,#0x8
+  00074c38  add r0,pc,r0
+  00074c3c  bl 0x00009d4c
+  00074c40  subs r7,r0,#0x0
+  00074c44  beq 0x00074d70
+  00074c48  add r8,r10,#0x1000
+  00074c4c  mov r3,#0x1
+  00074c50  str r3,[r8,#0x2bc]
+  00074c54  bl 0x0002f64c
+  00074c58  cmp r0,#0x32
+  00074c5c  str r0,[r8,#0x2b8]
+  00074c60  bhi 0x00074ce4
+  00074c64  cmp r0,#0x0
+  00074c68  beq 0x00074cfc
+  00074c6c  ldr r11,[0x74e24]
+  00074c70  add r5,r10,#0x1280
+  00074c74  sub r7,r7,#0x1
+  00074c78  add r5,r5,#0x30
+  00074c7c  mov r6,#0x0
+  00074c80  add r11,pc,r11
+  00074c84  b 0x00074cbc
+  00074c88  ldr r3,[r5,#0x0]
+  00074c8c  cmp r4,#0x0
+  00074c90  ldr r1,[r5,#0x4]
+  00074c94  cpy r2,r4
+  00074c98  add r6,r6,#0x1
+  00074c9c  orrne r4,r4,r3
+  00074ca0  cpyeq r4,r3
+  00074ca4  cpyne r2,r1
+  00074ca8  str r4,[r5,#0x0]
+  00074cac  str r2,[r5,#0x4]
+  00074cb0  ldr r3,[r8,#0x2b8]
+  00074cb4  cmp r6,r3
+  00074cb8  bcs 0x00074cfc
+  00074cbc  ldrb r4,[r7,#0x1]!
+  00074cc0  bl 0x0005c5e8
+  00074cc4  cmp r0,#0x27
+  00074cc8  and r4,r4,#0x1
+  00074ccc  mov r4,r4, lsl r6
+  00074cd0  ble 0x00074c88
+  00074cd4  cpy r1,r4
+  00074cd8  cpy r0,r11
+  00074cdc  bl 0x000105c4
+  00074ce0  b 0x00074c88
+  00074ce4  bl 0x0005c5e8
+  00074ce8  cmp r0,#0x13
+  00074cec  bgt 0x00074de0
+  00074cf0  mov r0,#0x0
+  00074cf4  add sp,sp,#0x8
+  00074cf8  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+  00074cfc  bl 0x0005c5e8
+  00074d00  cmp r0,#0x27
+  00074d04  ble 0x00074d1c
+  00074d08  ldr r0,[0x74e28]
+  00074d0c  movw r3,#0x12b0
+  00074d10  ldrd r2,r3,[r3,r10]
+  00074d14  add r0,pc,r0
+  00074d18  bl 0x000105c4
+  00074d1c  ldr r1,[r8,#0x2b8]
+  00074d20  ldr r3,[r10,#0x98]
+  00074d24  cmp r1,r3
+  00074d28  bne 0x00074d90
+  00074d2c  cmp r1,#0x0
+  00074d30  movw r3,#0x12b0
+  00074d34  ldr r12,[r10,r3]
+  00074d38  beq 0x00074df4
+  00074d3c  mov r0,#0x0
+  00074d40  cpy r3,r0
+  00074d44  mov r2,r12, lsr r3
+  00074d48  add r3,r3,#0x1
+  00074d4c  tst r2,#0x1
+  00074d50  addne r0,r0,#0x1
+  00074d54  cmp r1,r3
+  00074d58  bne 0x00074d44
+  00074d5c  cmp r0,#0x0
+  00074d60  beq 0x00074df4
+  00074d64  cpy r0,r10
+  00074d68  bl 0x00074a1c
+  00074d6c  b 0x00074cf0
+  00074d70  bl 0x0005c5e8
+  00074d74  cmp r0,#0x13
+  00074d78  ble 0x00074cf0
+  00074d7c  ldr r0,[0x74e2c]
+  00074d80  add r0,pc,r0
+  00074d84  bl 0x000105c4
+  00074d88  cpy r0,r7
+  00074d8c  b 0x00074cf4
+  00074d90  bl 0x0005c5e8
+  00074d94  cmp r0,#0x9
+  00074d98  bgt 0x00074e10
+  00074d9c  bl 0x0005c5e8
+  00074da0  cmp r0,#0x9
+  00074da4  mvnle r0,#0x0
+  00074da8  ble 0x00074cf4
+  00074dac  ldr r1,[0x74e30]
+  00074db0  mvn r7,#0x0
+  00074db4  ldr r3,[0x74e34]
+  00074db8  mov r2,#0x81
+  00074dbc  ldr r0,[0x74e38]
+  00074dc0  add r1,pc,r1
+  00074dc4  str r7,[sp,#0x0]
+  00074dc8  add r3,pc,r3
+  00074dcc  add r1,r1,#0x18
+  00074dd0  add r0,pc,r0
+  00074dd4  bl 0x000105c4
+  00074dd8  cpy r0,r7
+  00074ddc  b 0x00074cf4
+  00074de0  ldr r0,[0x74e3c]
+  00074de4  add r0,pc,r0
+  00074de8  bl 0x000105c4
+  00074dec  mov r0,#0x0
+  00074df0  b 0x00074cf4
+  00074df4  bl 0x0005c5e8
+  00074df8  cmp r0,#0x13
+  00074dfc  ble 0x00074d9c
+  00074e00  ldr r0,[0x74e40]
+  00074e04  add r0,pc,r0
+  00074e08  bl 0x000105c4
+  00074e0c  b 0x00074d9c
+  00074e10  ldr r0,[0x74e44]
+  00074e14  add r0,pc,r0
+  00074e18  bl 0x000105c4
+  00074e1c  b 0x00074d9c
+  Instruction count: 126
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 burn_flag_related(int param_1)
+
+{
+  byte bVar1;
+  int iVar2;
+  uint uVar3;
+  int iVar4;
+  undefined4 uVar5;
+  uint uVar6;
+  uint uVar7;
+  byte *pbVar8;
+  undefined8 uVar9;
+  
+  iVar2 = thunk_FUN_00009bf0(iRam00074e20 + 0x74c40);
+  if (iVar2 == 0) {
+    iVar2 = FUN_0005c5e8();
+    if (0x13 < iVar2) {
+      FUN_000105c4(PTR_LAB_00074e2c + 0x74d88);
+      return 0;
+    }
+  }
+  else {
+    *(undefined4 *)(&DAT_000012bc + param_1) = 1;
+    uVar3 = FUN_0002f64c();
+    *(uint *)(&DAT_000012b8 + param_1) = uVar3;
+    if (uVar3 < 0x33) {
+      if (uVar3 != 0) {
+        pbVar8 = (byte *)(iVar2 + -1);
+        uVar3 = 0;
+        iVar2 = iRam00074e24 + 0x74c88;
+        do {
+          pbVar8 = pbVar8 + 1;
+          bVar1 = *pbVar8;
+          iVar4 = FUN_0005c5e8();
+          uVar7 = (bVar1 & 1) << (uVar3 & 0xff);
+          if (0x27 < iVar4) {
+            FUN_000105c4(iVar2,uVar7);
+          }
+          uVar6 = *(uint *)(&DAT_000012b0 + param_1);
+          uVar5 = *(undefined4 *)(&DAT_000012b4 + param_1);
+          uVar3 = uVar3 + 1;
+          if (uVar7 == 0) {
+            uVar5 = 0;
+          }
+          else {
+            uVar6 = uVar7 | uVar6;
+          }
+          *(uint *)(&DAT_000012b0 + param_1) = uVar6;
+          *(undefined4 *)(&DAT_000012b4 + param_1) = uVar5;
+        } while (uVar3 < *(uint *)(&DAT_000012b8 + param_1));
+      }
+      uVar9 = FUN_0005c5e8();
+      if (0x27 < (int)uVar9) {
+        FUN_000105c4(PTR_LAB_00074e28 + 0x74d1c,(int)((ulonglong)uVar9 >> 0x20),
+                     *(undefined4 *)(&DAT_000012b0 + param_1),
+                     *(undefined4 *)(&DAT_000012b4 + param_1));
+      }
+      uVar3 = *(uint *)(&DAT_000012b8 + param_1);
+      if (uVar3 == *(uint *)(param_1 + 0x98)) {
+        if (uVar3 != 0) {
+          iVar2 = 0;
+          uVar7 = 0;
+          do {
+            uVar6 = uVar7 & 0xff;
+            uVar7 = uVar7 + 1;
+            if ((*(uint *)(&DAT_000012b0 + param_1) >> uVar6 & 1) != 0) {
+              iVar2 = iVar2 + 1;
+            }
+          } while (uVar3 != uVar7);
+          if (iVar2 != 0) {
+            FUN_00074a1c(param_1);
+            return 0;
+          }
+        }
+        iVar2 = FUN_0005c5e8();
+        if (0x13 < iVar2) {
+          FUN_000105c4(DAT_00074e40 + 0x74e0c);
+        }
+      }
+      else {
+        iVar2 = FUN_0005c5e8();
+        if (9 < iVar2) {
+          FUN_000105c4(DAT_00074e44 + 0x74e1c);
+        }
+      }
+      iVar2 = FUN_0005c5e8();
+      if (iVar2 < 10) {
+        return 0xffffffff;
+      }
+      FUN_000105c4(PTR_LAB_00074e38 + 0x74dd8,PTR_LAB_00074e30 + 0x74de0,0x81,
+                   PTR_LAB_00074e34 + 0x74dd0,0xffffffff);
+      return 0xffffffff;
+    }
+    iVar2 = FUN_0005c5e8();
+    if (0x13 < iVar2) {
+      FUN_000105c4(DAT_00074e3c + 0x74dec);
+      return 0;
+    }
+  }
+  return 0;
+}
+
+
+
+--------------------------------------------------
+NAME: secondary_update_handler
+CONTEXT OFFSET: 0x00000308
+TABLE OFFSET: 0x00000134
+TABLE SLOT: 0x0009EDF4
+RAW POINTER: 0x1406D2F4
+NORMALIZED POINTER: 0x0006D2F4
+INSTRUCTION MODE: ARM
+TARGET OFFSET: 0x0006D2F4
+TARGET ADDRESS: 0006d2f4
+MEMORY BLOCK: ram
+  No instruction at target; attempting disassembly.
+  No function defined; attempting function creation.
+  FUNCTION: secondary_update_handler
+  ENTRY: 0006d2f4
+  BODY: [[0006d2f4, 0006d31b]]
+  ----- FUNCTION INSTRUCTIONS -----
+  0006d2f4  ldr r3,[0x6d31c]
+  0006d2f8  mov r2,#0x0
+  0006d2fc  str r2,[r0,#0xa4]
+  0006d300  cpy r0,r2
+  0006d304  add r3,pc,r3
+  0006d308  str r2,[r3,#0x4]
+  0006d30c  str r2,[r3,#0x8]
+  0006d310  str r2,[r3,#0x0]
+  0006d314  str r2,[r3,#0xc]
+  0006d318  bx lr
+  Instruction count: 10
+  ----- REFERENCES TO FUNCTION -----
+  Reference count: 0
+  ----- DECOMPILATION -----
+
+undefined4 secondary_update_handler(int param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = iRam0006d31c;
+  *(undefined4 *)(param_1 + 0xa4) = 0;
+  *(undefined4 *)(iVar1 + 0x6d310) = 0;
+  *(undefined4 *)(iVar1 + 0x6d314) = 0;
+  *(undefined4 *)(iVar1 + 0x6d30c) = 0;
+  *(undefined4 *)(iVar1 + 0x6d318) = 0;
+  return 0;
+}
+
+
+
+==================================================
+IMPORTANT LOADER CODE RANGES
+==================================================
+
+RANGE 0x0005C5F8 - 0x0005CB00
+  0005c5f8  stmdb sp!,{r4,r5,r6,lr}
+  0005c5fc  movw r2,#0x1310
+  0005c600  ldr r5,[0x5c9d8]
+  0005c604  sub sp,sp,#0x8
+  0005c608  mov r1,#0x0
+  0005c60c  ldr r4,[0x5c9dc]
+  0005c610  add r5,pc,r5
+  0005c614  cpy r0,r5
+  0005c618  bl 0x00003240
+  0005c61c  ldr r1,[0x5c9e0]
+  0005c620  add r4,pc,r4
+  0005c624  ldr r2,[0x5c9e4]
+  0005c628  add r3,r5,#0x1000
+  0005c62c  mov r0,#0xa
+  0005c630  ldr r12,[r4,r1]
+  0005c634  ldr r1,[0x5c9e8]
+  0005c638  str r12,[r3,#0x2c8]
+  0005c63c  ldr r12,[r4,r2]
+  0005c640  ldr r2,[0x5c9ec]
+  0005c644  str r12,[r3,#0x2cc]
+  0005c648  ldr r1,[r4,r1]
+  0005c64c  str r1,[r3,#0x2d0]
+  0005c650  ldr r2,[r4,r2]
+  0005c654  str r2,[r3,#0x30c]
+  0005c658  bl 0x0003eb10
+  0005c65c  cmp r0,#0x0
+  0005c660  bne 0x0005c818
+  0005c664  ldr r6,[0x5c9f0]
+  0005c668  add r6,pc,r6
+  0005c66c  cpy r0,r6
+  0005c670  bl 0x0002f64c
+  0005c674  cpy r2,r6
+  0005c678  cpy r3,r0
+  0005c67c  mov r1,#0x40
+  0005c680  add r0,r5,#0x10
+  0005c684  bl 0x00030478
+  0005c688  subs r5,r0,#0x0
+  0005c68c  bne 0x0005c878
+  0005c690  ldr r2,[0x5c9f4]
+  0005c694  mov r12,#0x0
+  0005c698  ldr r3,[0x5c9f8]
+  0005c69c  cpy r1,r12
+  0005c6a0  ldr r0,[0x5c9fc]
+  0005c6a4  ldr lr,[r4,r2]
+  0005c6a8  add r3,pc,r3
+  0005c6ac  ldr r2,[0x5ca00]
+  0005c6b0  add r5,r3,#0x1000
+  0005c6b4  str lr,[r5,#0x2d8]
+  0005c6b8  ldr lr,[r4,r0]
+  0005c6bc  add r0,r3,#0x50
+  0005c6c0  str lr,[r5,#0x2dc]
+  0005c6c4  ldr lr,[r4,r2]
+  0005c6c8  ldr r2,[0x5ca04]
+  0005c6cc  str lr,[r5,#0x2e0]
+  0005c6d0  ldr r2,[r4,r2]
+  0005c6d4  str r12,[r3,#0x4]
+  0005c6d8  ldr r3,[0x5ca08]
+  0005c6dc  str r2,[r5,#0x2e4]
+  0005c6e0  mov r2,#0x40
+  0005c6e4  ldr lr,[r4,r3]
+  0005c6e8  ldr r3,[0x5ca0c]
+  0005c6ec  str lr,[r5,#0x2ec]
+  0005c6f0  ldr lr,[r4,r3]
+  0005c6f4  ldr r3,[0x5ca10]
+  0005c6f8  str lr,[r5,#0x2f0]
+  0005c6fc  ldr lr,[r4,r3]
+  0005c700  ldr r3,[0x5ca14]
+  0005c704  str lr,[r5,#0x2f4]
+  0005c708  ldr lr,[r4,r3]
+  0005c70c  ldr r3,[0x5ca18]
+  0005c710  str lr,[r5,#0x2f8]
+  0005c714  ldr lr,[r4,r3]
+  0005c718  ldr r3,[0x5ca1c]
+  0005c71c  str lr,[r5,#0x2fc]
+  0005c720  ldr lr,[r4,r3]
+  0005c724  ldr r3,[0x5ca20]
+  0005c728  str lr,[r5,#0x300]
+  0005c72c  ldr lr,[r4,r3]
+  0005c730  ldr r3,[0x5ca24]
+  0005c734  str lr,[r5,#0x304]
+  0005c738  ldr lr,[r4,r3]
+  0005c73c  ldr r3,[0x5ca28]
+  0005c740  str lr,[r5,#0x2e8]
+  0005c744  ldr r3,[r4,r3]
+  0005c748  str r12,[r5,#0x2c4]
+  0005c74c  str r3,[r5,#0x308]
+  0005c750  bl 0x00003240
+  0005c754  ldr r3,[r5,#0x2c8]
+  0005c758  cmp r3,#0x0
+  0005c75c  beq 0x0005c788
+  0005c760  bl 0x0005c5e8
+  0005c764  cmp r0,#0x27
+  0005c768  bgt 0x0005c97c
+  0005c76c  ldr r0,[0x5ca2c]
+  0005c770  add r0,pc,r0
+  0005c774  add r3,r0,#0x1000
+  0005c778  ldr r3,[r3,#0x2c8]
+  0005c77c  blx r3
+  0005c780  subs r4,r0,#0x0
+  0005c784  bne 0x0005c8b4
+  0005c788  ldr r3,[0x5ca30]
+  0005c78c  add r3,pc,r3
+  0005c790  add r3,r3,#0x1000
+  0005c794  ldr r3,[r3,#0x2d8]
+  0005c798  cmp r3,#0x0
+  0005c79c  beq 0x0005c7c8
+  0005c7a0  bl 0x0005c5e8
+  0005c7a4  cmp r0,#0x27
+  0005c7a8  bgt 0x0005c92c
+  0005c7ac  ldr r0,[0x5ca34]
+  0005c7b0  add r0,pc,r0
+  0005c7b4  add r3,r0,#0x1000
+  0005c7b8  ldr r3,[r3,#0x2d8]
+  0005c7bc  blx r3
+  0005c7c0  subs r4,r0,#0x0
+  0005c7c4  bne 0x0005c8f4
+  0005c7c8  ldr r3,[0x5ca38]
+  0005c7cc  add r3,pc,r3
+  0005c7d0  add r3,r3,#0x1000
+  0005c7d4  ldr r3,[r3,#0x2ec]
+  0005c7d8  cmp r3,#0x0
+  0005c7dc  beq 0x0005c808
+  0005c7e0  bl 0x0005c5e8
+  0005c7e4  cmp r0,#0x27
+  0005c7e8  bgt 0x0005c964
+  0005c7ec  ldr r0,[0x5ca3c]
+  0005c7f0  add r0,pc,r0
+  0005c7f4  add r3,r0,#0x1000
+  0005c7f8  ldr r3,[r3,#0x2ec]
+  0005c7fc  blx r3
+  0005c800  subs r4,r0,#0x0
+  0005c804  bne 0x0005c944
+  0005c808  mov r4,#0x0
+  0005c80c  cpy r0,r4
+  0005c810  add sp,sp,#0x8
+  0005c814  ldmia sp!,{r4,r5,r6,pc}
+  0005c818  ldr r6,[0x5ca40]
+  0005c81c  add r6,pc,r6
+  0005c820  cpy r0,r6
+  0005c824  bl 0x0002f64c
+  0005c828  cpy r2,r6
+  0005c82c  cpy r3,r0
+  0005c830  mov r1,#0x40
+  0005c834  add r0,r5,#0x10
+  0005c838  bl 0x00030478
+  0005c83c  subs r5,r0,#0x0
+  0005c840  beq 0x0005c690
+  0005c844  bl 0x0005c5e8
+  0005c848  cmp r0,#0x9
+  0005c84c  ble 0x0005c884
+  0005c850  ldr r3,[0x5ca44]
+  0005c854  mov r2,#0x66
+  0005c858  ldr r1,[0x5ca48]
+  0005c85c  ldr r0,[0x5ca4c]
+  0005c860  str r5,[sp,#0x0]
+  0005c864  add r3,pc,r3
+  0005c868  add r1,pc,r1
+  0005c86c  add r0,pc,r0
+  0005c870  bl 0x000105c4
+  0005c874  b 0x0005c884
+  0005c878  bl 0x0005c5e8
+  0005c87c  cmp r0,#0x9
+  0005c880  bgt 0x0005c994
+  0005c884  bl 0x0005c5e8
+  0005c888  cmp r0,#0x9
+  0005c88c  mvnle r4,#0x0
+  0005c890  ble 0x0005c80c
+  0005c894  ldr r0,[0x5ca50]
+  0005c898  mvn r1,#0x0
+  0005c89c  mvn r4,#0x0
+  0005c8a0  add r0,pc,r0
+  0005c8a4  bl 0x000105c4
+  0005c8a8  cpy r0,r4
+  0005c8ac  add sp,sp,#0x8
+  0005c8b0  ldmia sp!,{r4,r5,r6,pc}
+  0005c8b4  bl 0x0005c5e8
+  0005c8b8  cmp r0,#0x9
+  0005c8bc  ble 0x0005c8d8
+  0005c8c0  ldr r1,[0x5ca54]
+  0005c8c4  cpy r2,r4
+  0005c8c8  ldr r0,[0x5ca58]
+  0005c8cc  add r1,pc,r1
+  0005c8d0  add r0,pc,r0
+  0005c8d4  bl 0x000105c4
+  0005c8d8  ldr r3,[0x5ca5c]
+  0005c8dc  cpy r0,r4
+  0005c8e0  add r3,pc,r3
+  0005c8e4  add r3,r3,#0x1000
+  0005c8e8  str r4,[r3,#0x2c0]
+  0005c8ec  add sp,sp,#0x8
+  0005c8f0  ldmia sp!,{r4,r5,r6,pc}
+  0005c8f4  bl 0x0005c5e8
+  0005c8f8  cmp r0,#0x9
+  0005c8fc  ble 0x0005c918
+  0005c900  ldr r1,[0x5ca60]
+  0005c904  cpy r2,r4
+  0005c908  ldr r0,[0x5ca64]
+  0005c90c  add r1,pc,r1
+  0005c910  add r0,pc,r0
+  0005c914  bl 0x000105c4
+  0005c918  ldr r3,[0x5ca68]
+  0005c91c  add r3,pc,r3
+  0005c920  add r3,r3,#0x1000
+  0005c924  str r4,[r3,#0x2c0]
+  0005c928  b 0x0005c80c
+  0005c92c  ldr r1,[0x5ca6c]
+  0005c930  ldr r0,[0x5ca70]
+  0005c934  add r1,pc,r1
+  0005c938  add r0,pc,r0
+  0005c93c  bl 0x000105c4
+  0005c940  b 0x0005c7ac
+  0005c944  bl 0x0005c5e8
+  0005c948  cmp r0,#0x9
+  0005c94c  bgt 0x0005c9bc
+  0005c950  ldr r3,[0x5ca74]
+  0005c954  add r3,pc,r3
+  0005c958  add r3,r3,#0x1000
+  0005c95c  str r4,[r3,#0x2c0]
+  0005c960  b 0x0005c80c
+  0005c964  ldr r1,[0x5ca78]
+  0005c968  ldr r0,[0x5ca7c]
+  0005c96c  add r1,pc,r1
+  0005c970  add r0,pc,r0
+  0005c974  bl 0x000105c4
+  0005c978  b 0x0005c7ec
+  0005c97c  ldr r1,[0x5ca80]
+  0005c980  ldr r0,[0x5ca84]
+  0005c984  add r1,pc,r1
+  0005c988  add r0,pc,r0
+  0005c98c  bl 0x000105c4
+  0005c990  b 0x0005c76c
+  0005c994  ldr r3,[0x5ca88]
+  0005c998  mov r2,#0x63
+  0005c99c  ldr r1,[0x5ca8c]
+  0005c9a0  ldr r0,[0x5ca90]
+  0005c9a4  str r5,[sp,#0x0]
+  0005c9a8  add r3,pc,r3
+  0005c9ac  add r1,pc,r1
+  0005c9b0  add r0,pc,r0
+  0005c9b4  bl 0x000105c4
+  0005c9b8  b 0x0005c884
+  0005c9bc  ldr r1,[0x5ca94]
+  0005c9c0  cpy r2,r4
+  0005c9c4  ldr r0,[0x5ca98]
+  0005c9c8  add r1,pc,r1
+  0005c9cc  add r0,pc,r0
+  0005c9d0  bl 0x000105c4
+  0005c9d4  b 0x0005c950
+  0005ca9c  ldr r3,[0x5cc6c]
+  0005caa0  stmdb sp!,{r4,lr}
+  0005caa4  add r3,pc,r3
+  0005caa8  add r3,r3,#0x1000
+  0005caac  ldr r3,[r3,#0x2f0]
+  0005cab0  cmp r3,#0x0
+  0005cab4  beq 0x0005cae0
+  0005cab8  bl 0x0005c5e8
+  0005cabc  cmp r0,#0x27
+  0005cac0  bgt 0x0005cba8
+  0005cac4  ldr r0,[0x5cc70]
+  0005cac8  add r0,pc,r0
+  0005cacc  add r3,r0,#0x1000
+  0005cad0  ldr r3,[r3,#0x2f0]
+  0005cad4  blx r3
+  0005cad8  subs r4,r0,#0x0
+  0005cadc  bne 0x0005cb6c
+  0005cae0  ldr r3,[0x5cc74]
+  0005cae4  add r3,pc,r3
+  0005cae8  add r3,r3,#0x1000
+  0005caec  ldr r3,[r3,#0x2f4]
+  0005caf0  cmp r3,#0x0
+  0005caf4  beq 0x0005cb20
+  0005caf8  bl 0x0005c5e8
+  0005cafc  cmp r0,#0x27
+  0005cb00  bgt 0x0005cc20
+Range instruction count: 274
+
+RANGE 0x0005CA9C - 0x0005CD80
+  0005ca9c  ldr r3,[0x5cc6c]
+  0005caa0  stmdb sp!,{r4,lr}
+  0005caa4  add r3,pc,r3
+  0005caa8  add r3,r3,#0x1000
+  0005caac  ldr r3,[r3,#0x2f0]
+  0005cab0  cmp r3,#0x0
+  0005cab4  beq 0x0005cae0
+  0005cab8  bl 0x0005c5e8
+  0005cabc  cmp r0,#0x27
+  0005cac0  bgt 0x0005cba8
+  0005cac4  ldr r0,[0x5cc70]
+  0005cac8  add r0,pc,r0
+  0005cacc  add r3,r0,#0x1000
+  0005cad0  ldr r3,[r3,#0x2f0]
+  0005cad4  blx r3
+  0005cad8  subs r4,r0,#0x0
+  0005cadc  bne 0x0005cb6c
+  0005cae0  ldr r3,[0x5cc74]
+  0005cae4  add r3,pc,r3
+  0005cae8  add r3,r3,#0x1000
+  0005caec  ldr r3,[r3,#0x2f4]
+  0005caf0  cmp r3,#0x0
+  0005caf4  beq 0x0005cb20
+  0005caf8  bl 0x0005c5e8
+  0005cafc  cmp r0,#0x27
+  0005cb00  bgt 0x0005cc20
+  0005cb04  ldr r0,[0x5cc78]
+  0005cb08  add r0,pc,r0
+  0005cb0c  add r3,r0,#0x1000
+  0005cb10  ldr r3,[r3,#0x2f4]
+  0005cb14  blx r3
+  0005cb18  subs r4,r0,#0x0
+  0005cb1c  bne 0x0005cbc0
+  0005cb20  ldr r3,[0x5cc7c]
+  0005cb24  add r3,pc,r3
+  0005cb28  add r3,r3,#0x1000
+  0005cb2c  ldr r3,[r3,#0x2e8]
+  0005cb30  cmp r3,#0x0
+  0005cb34  beq 0x0005cb60
+  0005cb38  bl 0x0005c5e8
+  0005cb3c  cmp r0,#0x27
+  0005cb40  bgt 0x0005cc38
+  0005cb44  ldr r0,[0x5cc80]
+  0005cb48  add r0,pc,r0
+  0005cb4c  add r3,r0,#0x1000
+  0005cb50  ldr r3,[r3,#0x2e8]
+  0005cb54  blx r3
+  0005cb58  subs r4,r0,#0x0
+  0005cb5c  bne 0x0005cbfc
+  0005cb60  mov r4,#0x0
+  0005cb64  cpy r0,r4
+  0005cb68  ldmia sp!,{r4,pc}
+  0005cb6c  bl 0x0005c5e8
+  0005cb70  cmp r0,#0x9
+  0005cb74  ble 0x0005cb90
+  0005cb78  ldr r1,[0x5cc84]
+  0005cb7c  cpy r2,r4
+  0005cb80  ldr r0,[0x5cc88]
+  0005cb84  add r1,pc,r1
+  0005cb88  add r0,pc,r0
+  0005cb8c  bl 0x000105c4
+  0005cb90  ldr r3,[0x5cc8c]
+  0005cb94  cpy r0,r4
+  0005cb98  add r3,pc,r3
+  0005cb9c  add r3,r3,#0x1000
+  0005cba0  str r4,[r3,#0x2c0]
+  0005cba4  ldmia sp!,{r4,pc}
+  0005cba8  ldr r1,[0x5cc90]
+  0005cbac  ldr r0,[0x5cc94]
+  0005cbb0  add r1,pc,r1
+  0005cbb4  add r0,pc,r0
+  0005cbb8  bl 0x000105c4
+  0005cbbc  b 0x0005cac4
+  0005cbc0  bl 0x0005c5e8
+  0005cbc4  cmp r0,#0x9
+  0005cbc8  ble 0x0005cbe4
+  0005cbcc  ldr r1,[0x5cc98]
+  0005cbd0  cpy r2,r4
+  0005cbd4  ldr r0,[0x5cc9c]
+  0005cbd8  add r1,pc,r1
+  0005cbdc  add r0,pc,r0
+  0005cbe0  bl 0x000105c4
+  0005cbe4  ldr r3,[0x5cca0]
+  0005cbe8  cpy r0,r4
+  0005cbec  add r3,pc,r3
+  0005cbf0  add r3,r3,#0x1000
+  0005cbf4  str r4,[r3,#0x2c0]
+  0005cbf8  ldmia sp!,{r4,pc}
+  0005cbfc  bl 0x0005c5e8
+  0005cc00  cmp r0,#0x9
+  0005cc04  bgt 0x0005cc50
+  0005cc08  ldr r3,[0x5cca4]
+  0005cc0c  cpy r0,r4
+  0005cc10  add r3,pc,r3
+  0005cc14  add r3,r3,#0x1000
+  0005cc18  str r4,[r3,#0x2c0]
+  0005cc1c  ldmia sp!,{r4,pc}
+  0005cc20  ldr r1,[0x5cca8]
+  0005cc24  ldr r0,[0x5ccac]
+  0005cc28  add r1,pc,r1
+  0005cc2c  add r0,pc,r0
+  0005cc30  bl 0x000105c4
+  0005cc34  b 0x0005cb04
+  0005cc38  ldr r1,[0x5ccb0]
+  0005cc3c  ldr r0,[0x5ccb4]
+  0005cc40  add r1,pc,r1
+  0005cc44  add r0,pc,r0
+  0005cc48  bl 0x000105c4
+  0005cc4c  b 0x0005cb44
+  0005cc50  ldr r1,[0x5ccb8]
+  0005cc54  cpy r2,r4
+  0005cc58  ldr r0,[0x5ccbc]
+  0005cc5c  add r1,pc,r1
+  0005cc60  add r0,pc,r0
+  0005cc64  bl 0x000105c4
+  0005cc68  b 0x0005cc08
+  0005ccc0  ldr r3,[0x5ceec]
+  0005ccc4  ldr r2,[0x5cef0]
+  0005ccc8  stmdb sp!,{r4,r5,lr}
+  0005cccc  sub sp,sp,#0xc
+  0005ccd0  add r3,pc,r3
+  0005ccd4  add r5,sp,#0x8
+  0005ccd8  ldr r4,[r3,r2]
+  0005ccdc  cpy r0,r4
+  0005cce0  bl 0x0002f64c
+  0005cce4  add r0,r0,#0x1
+  0005cce8  mov r2,#0x800
+  0005ccec  str r0,[r5,#-0x4]!
+  0005ccf0  mov r1,#0x0
+  0005ccf4  cpy r0,r4
+  0005ccf8  bl 0x00003240
+  0005ccfc  ldr r0,[0x5cef4]
+  0005cd00  cpy r2,r5
+  0005cd04  cpy r1,r4
+  0005cd08  add r0,pc,r0
+  0005cd0c  bl 0x00059188
+  0005cd10  ldr r3,[0x5cef8]
+  0005cd14  add r3,pc,r3
+  0005cd18  add r3,r3,#0x1000
+  0005cd1c  ldr r3,[r3,#0x2e0]
+  0005cd20  cmp r3,#0x0
+  0005cd24  beq 0x0005cd50
+  0005cd28  bl 0x0005c5e8
+  0005cd2c  cmp r0,#0x27
+  0005cd30  bgt 0x0005ce20
+  0005cd34  ldr r0,[0x5cefc]
+  0005cd38  add r0,pc,r0
+  0005cd3c  add r3,r0,#0x1000
+  0005cd40  ldr r3,[r3,#0x2e0]
+  0005cd44  blx r3
+  0005cd48  subs r4,r0,#0x0
+  0005cd4c  bne 0x0005cde0
+  0005cd50  ldr r3,[0x5cf00]
+  0005cd54  add r3,pc,r3
+  0005cd58  add r3,r3,#0x1000
+  0005cd5c  ldr r3,[r3,#0x2fc]
+  0005cd60  cmp r3,#0x0
+  0005cd64  beq 0x0005cd90
+  0005cd68  bl 0x0005c5e8
+  0005cd6c  cmp r0,#0x27
+  0005cd70  bgt 0x0005cea0
+  0005cd74  ldr r0,[0x5cf04]
+  0005cd78  add r0,pc,r0
+  0005cd7c  add r3,r0,#0x1000
+  0005cd80  ldr r3,[r3,#0x2fc]
+Range instruction count: 165
+
+RANGE 0x0005D390 - 0x0005D500
+  0005d390  stmdb sp!,{r4,lr}
+  0005d394  bl 0x0005d2c8
+  0005d398  cmp r0,#0x0
+  0005d39c  bne 0x0005d400
+  0005d3a0  ldr r3,[0x5d46c]
+  0005d3a4  add r3,pc,r3
+  0005d3a8  add r3,r3,#0x1000
+  0005d3ac  ldr r3,[r3,#0x308]
+  0005d3b0  cmp r3,#0x0
+  0005d3b4  beq 0x0005d3e0
+  0005d3b8  bl 0x0005c5e8
+  0005d3bc  cmp r0,#0x27
+  0005d3c0  bgt 0x0005d454
+  0005d3c4  ldr r0,[0x5d470]
+  0005d3c8  add r0,pc,r0
+  0005d3cc  add r3,r0,#0x1000
+  0005d3d0  ldr r3,[r3,#0x308]
+  0005d3d4  blx r3
+  0005d3d8  subs r4,r0,#0x0
+  0005d3dc  bne 0x0005d42c
+  0005d3e0  bl 0x0005ca9c
+  0005d3e4  cmp r0,#0x0
+  0005d3e8  beq 0x0005d3f4
+  0005d3ec  mov r0,#0x0
+  0005d3f0  ldmia sp!,{r4,pc}
+  0005d3f4  bl 0x0005ccc0
+  0005d3f8  mov r0,#0x0
+  0005d3fc  ldmia sp!,{r4,pc}
+  0005d400  ldr r0,[0x5d474]
+  0005d404  mov r3,#0x0
+  0005d408  cpy r1,r3
+  0005d40c  mov r2,#0x40
+  0005d410  add r0,pc,r0
+  0005d414  add r12,r0,#0x1000
+  0005d418  add r0,r0,#0x50
+  0005d41c  str r3,[r12,#0x2c0]
+  0005d420  bl 0x00003240
+  0005d424  mov r0,#0x0
+  0005d428  ldmia sp!,{r4,pc}
+  0005d42c  bl 0x0005c5e8
+  0005d430  cmp r0,#0x9
+  0005d434  ble 0x0005d3e0
+  0005d438  ldr r1,[0x5d478]
+  0005d43c  cpy r2,r4
+  0005d440  ldr r0,[0x5d47c]
+  0005d444  add r1,pc,r1
+  0005d448  add r0,pc,r0
+  0005d44c  bl 0x000105c4
+  0005d450  b 0x0005d3e0
+  0005d454  ldr r1,[0x5d480]
+  0005d458  ldr r0,[0x5d484]
+  0005d45c  add r1,pc,r1
+  0005d460  add r0,pc,r0
+  0005d464  bl 0x000105c4
+  0005d468  b 0x0005d3c4
+  0005d488  stmdb sp!,{r4,lr}
+  0005d48c  bl 0x0005d234
+  0005d490  bl 0x0005c5f8
+  0005d494  cmp r0,#0x0
+  0005d498  beq 0x0005d4a4
+  0005d49c  ldmia sp!,{r4,lr}
+  0005d4a0  b 0x0005cf4c
+  0005d4a4  bl 0x0005ca9c
+  0005d4a8  cmp r0,#0x0
+  0005d4ac  bne 0x0005d49c
+  0005d4b0  bl 0x0005ccc0
+  0005d4b4  cmp r0,#0x0
+  0005d4b8  bne 0x0005d49c
+  0005d4bc  bl 0x0005d390
+  0005d4c0  b 0x0005d49c
+  0005d4c4  stmdb sp!,{r4,lr}
+  0005d4c8  cpy r4,r0
+  0005d4cc  bl 0x0005c5f8
+  0005d4d0  cmp r0,#0x0
+  0005d4d4  beq 0x0005d548
+  0005d4d8  ldr r3,[0x5d588]
+  0005d4dc  add r3,pc,r3
+  0005d4e0  add r3,r3,#0x1000
+  0005d4e4  ldr r3,[r3,#0x304]
+  0005d4e8  cmp r3,#0x0
+  0005d4ec  beq 0x0005d518
+  0005d4f0  bl 0x0005c5e8
+  0005d4f4  cmp r0,#0x27
+  0005d4f8  bgt 0x0005d570
+  0005d4fc  ldr r0,[0x5d58c]
+  0005d500  add r0,pc,r0
+Range instruction count: 86
+
+RANGE 0x0006C700 - 0x0006C840
+  0006c734  stmdb sp!,{r4,lr}
+  0006c738  mov r1,#0x1000000
+  0006c73c  cpy r4,r0
+  0006c740  mov r0,#0x40
+  0006c744  bl 0x000113a0
+  0006c748  cmp r0,#0x0
+  0006c74c  beq 0x0006c764
+  0006c750  mov r3,#0x1000000
+  0006c754  str r0,[r4,#0x9c]
+  0006c758  str r3,[r4,#0xa0]
+  0006c75c  mov r0,#0x0
+  0006c760  ldmia sp!,{r4,pc}
+  0006c764  bl 0x0005c5e8
+  0006c768  cmp r0,#0x9
+  0006c76c  bgt 0x0006c778
+  0006c770  mvn r0,#0x0
+  0006c774  ldmia sp!,{r4,pc}
+  0006c778  ldr r1,[0x6c7a4]
+  0006c77c  mov r2,#0x30
+  0006c780  ldr r3,[0x6c7a8]
+  0006c784  ldr r0,[0x6c7ac]
+  0006c788  add r1,pc,r1
+  0006c78c  add r3,pc,r3
+  0006c790  add r1,r1,#0x4c
+  0006c794  add r0,pc,r0
+  0006c798  bl 0x000105c4
+  0006c79c  mvn r0,#0x0
+  0006c7a0  ldmia sp!,{r4,pc}
+  0006c7b0  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  0006c7b4  sub sp,sp,#0x78
+  0006c7b8  mov r4,#0x0
+  0006c7bc  add r6,sp,#0x28
+  0006c7c0  mov r10,#0x50
+  0006c7c4  cpy r5,r0
+  0006c7c8  cpy r1,r4
+  0006c7cc  cpy r2,r10
+  0006c7d0  cpy r0,r6
+  0006c7d4  str r4,[sp,#0x14]
+  0006c7d8  add r8,r5,#0x1000
+  0006c7dc  add r7,sp,#0x18
+  0006c7e0  bl 0x00003240
+  0006c7e4  add r3,sp,#0x14
+  0006c7e8  str r4,[sp,#0x20]
+  0006c7ec  str r6,[sp,#0x18]
+  0006c7f0  cpy r0,r5
+  0006c7f4  str r10,[sp,#0x1c]
+  0006c7f8  cpy r1,r7
+  0006c7fc  ldr r2,[r8,#0x2dc]
+  0006c800  str r3,[sp,#0x24]
+  0006c804  blx r2
+  0006c808  subs r4,r0,#0x0
+  0006c80c  bne 0x0006c918
+  0006c810  ldr r11,[sp,#0x14]
+  0006c814  cmp r11,#0x50
+  0006c818  bne 0x0006c8fc
+  0006c81c  ldr r10,[sp,#0x30]
+  0006c820  rev r10,r10
+  0006c824  sub r3,r10,#0x50
+  0006c828  cmp r3,#0x7b0
+  0006c82c  str r3,[sp,#0x8]
+  0006c830  bhi 0x0006c95c
+  0006c834  add r1,r10,#0x3f
+  0006c838  mov r0,#0x40
+  0006c83c  bic r1,r1,#0x3f
+  0006c840  bl 0x000113a0
+Range instruction count: 65
+
+RANGE 0x0006D000 - 0x0006D1A0
+  0006d024  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  0006d028  sub sp,sp,#0x830
+  0006d02c  sub sp,sp,#0x8
+  0006d030  cpy r5,r0
+  0006d034  add r8,sp,#0x18
+  0006d038  movw r2,#0x81e
+  0006d03c  cpy r4,r1
+  0006d040  cpy r0,r8
+  0006d044  mov r1,#0x0
+  0006d048  mov r6,#0x0
+  0006d04c  bl 0x00003240
+  0006d050  ldr r2,[0x6d134]
+  0006d054  movw r10,#0x81e
+  0006d058  ldr r3,[0x6d138]
+  0006d05c  ldr r7,[r5,#0x90]
+  0006d060  add r2,pc,r2
+  0006d064  str r2,[sp,#0xc]
+  0006d068  add r3,pc,r3
+  0006d06c  ldr r2,[0x6d13c]
+  0006d070  add r3,r3,#0x94
+  0006d074  add r5,r7,#0x16
+  0006d078  str r3,[sp,#0x10]
+  0006d07c  add r2,pc,r2
+  0006d080  str r2,[sp,#0x14]
+  0006d084  b 0x0006d0c0
+  0006d088  add r0,sp,#0x1c
+  0006d08c  ldr r12,[sp,#0x18]
+  0006d090  ldmia r0,{r0,r1,r2}
+  0006d094  ldr r3,[sp,#0x28]
+  0006d098  rev r12,r12
+  0006d09c  str r12,[r4,#0x0]
+  0006d0a0  rev r0,r0
+  0006d0a4  rev r1,r1
+  0006d0a8  rev r2,r2
+  0006d0ac  rev r3,r3
+  0006d0b0  str r0,[r4,#0x4]
+  0006d0b4  str r1,[r4,#0x8]
+  0006d0b8  str r2,[r4,#0xc]
+  0006d0bc  str r3,[r4,#0x10]
+  0006d0c0  ldrh lr,[r7,#0x14]
+  0006d0c4  movw r3,#0x81e
+  0006d0c8  cpy r2,r5
+  0006d0cc  cpy r1,r3
+  0006d0d0  cpy r0,r8
+  0006d0d4  add r5,r5,r10
+  0006d0d8  mov r12,lr, lsr #0x8
+  0006d0dc  orr r12,r12,lr, lsl #0x8
+  0006d0e0  uxth r12,r12
+  0006d0e4  cmp r6,r12
+  0006d0e8  add r6,r6,#0x1
+  0006d0ec  bge 0x0006d124
+  0006d0f0  bl 0x0003003c
+  0006d0f4  subs r11,r0,#0x0
+  0006d0f8  beq 0x0006d088
+  0006d0fc  bl 0x0005c5e8
+  0006d100  cmp r0,#0x9
+  0006d104  ble 0x0006d088
+  0006d108  str r11,[sp,#0x0]
+  0006d10c  mov r2,#0xa7
+  0006d110  ldr r3,[sp,#0xc]
+  0006d114  ldr r1,[sp,#0x10]
+  0006d118  ldr r0,[sp,#0x14]
+  0006d11c  bl 0x000105c4
+  0006d120  b 0x0006d088
+  0006d124  mov r0,#0x0
+  0006d128  add sp,sp,#0x830
+  0006d12c  add sp,sp,#0x8
+  0006d130  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+  0006d140  stmdb sp!,{r4,r5,r6,r7,r8,lr}
+  0006d144  sub sp,sp,#0x8
+  0006d148  ldr r4,[r0,#0x90]
+  0006d14c  cmp r4,#0x0
+  0006d150  beq 0x0006d20c
+  0006d154  cpy r5,r0
+  0006d158  bl 0x0006ca94
+  0006d15c  ldrh r3,[r4,#0x0]
+  0006d160  movw r2,#0x4f4c
+  0006d164  ldrh r1,[r4,#0x2]
+  0006d168  movt r2,#0x4441
+  0006d16c  orr r3,r3,r1, lsl #0x10
+  0006d170  cmp r3,r2
+  0006d174  bne 0x0006d2a8
+  0006d178  add r3,r5,#0x1000
+  0006d17c  cpy r0,r5
+  0006d180  ldr r3,[r3,#0x2d0]
+  0006d184  blx r3
+  0006d188  subs r5,r0,#0x0
+  0006d18c  beq 0x0006d1ac
+  0006d190  bl 0x0005c5e8
+  0006d194  cmp r0,#0x9
+  0006d198  bgt 0x0006d270
+  0006d19c  mvn r5,#0x0
+  0006d1a0  cpy r0,r5
+Range instruction count: 93
+
+RANGE 0x0006D280 - 0x0006D3C0
+  0006d280  add r1,pc,r1
+  0006d284  str r5,[sp,#0x0]
+  0006d288  add r3,pc,r3
+  0006d28c  mvn r5,#0x0
+  0006d290  add r1,r1,#0xac
+  0006d294  add r0,pc,r0
+  0006d298  bl 0x000105c4
+  0006d29c  cpy r0,r5
+  0006d2a0  add sp,sp,#0x8
+  0006d2a4  ldmia sp!,{r4,r5,r6,r7,r8,pc}
+  0006d2a8  bl 0x0005c5e8
+  0006d2ac  cmp r0,#0x9
+  0006d2b0  ble 0x0006d19c
+  0006d2b4  ldrh r3,[r4,#0x0]
+  0006d2b8  mvn r5,#0x0
+  0006d2bc  ldrh r1,[r4,#0x2]
+  0006d2c0  ldr r0,[0x6d2f0]
+  0006d2c4  orr r1,r3,r1, lsl #0x10
+  0006d2c8  add r0,pc,r0
+  0006d2cc  bl 0x000105c4
+  0006d2d0  b 0x0006d1a0
+  0006d2f4  ldr r3,[0x6d31c]
+  0006d2f8  mov r2,#0x0
+  0006d2fc  str r2,[r0,#0xa4]
+  0006d300  cpy r0,r2
+  0006d304  add r3,pc,r3
+  0006d308  str r2,[r3,#0x4]
+  0006d30c  str r2,[r3,#0x8]
+  0006d310  str r2,[r3,#0x0]
+  0006d314  str r2,[r3,#0xc]
+  0006d318  bx lr
+  0006d320  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  0006d324  sub sp,sp,#0x870
+  0006d328  add r11,sp,#0x50
+  0006d32c  cpy r10,r0
+  0006d330  movw r2,#0x81e
+  0006d334  mov r1,#0x0
+  0006d338  cpy r0,r11
+  0006d33c  add r5,sp,#0x30
+  0006d340  bl 0x00003240
+  0006d344  mov r1,#0x0
+  0006d348  cpy r0,r5
+  0006d34c  mov r2,#0x20
+  0006d350  ldr r8,[0x6d810]
+  0006d354  bl 0x00003240
+  0006d358  ldr r1,[r10,#0x90]
+  0006d35c  mov r3,#0x0
+  0006d360  add r8,pc,r8
+  0006d364  str r3,[sp,#0x2c]
+  0006d368  cmp r1,r3
+  0006d36c  str r1,[sp,#0x1c]
+  0006d370  beq 0x0006d7ac
+  0006d374  ldr r2,[0x6d814]
+  0006d378  add r1,r1,#0x16
+  0006d37c  str r3,[sp,#0x14]
+  0006d380  ldr r3,[0x6d818]
+  0006d384  add r2,pc,r2
+  0006d388  str r1,[sp,#0x18]
+  0006d38c  add r2,r2,#0xc4
+  0006d390  add r3,pc,r3
+  0006d394  str r2,[sp,#0x24]
+  0006d398  add r3,r3,#0xc4
+  0006d39c  str r3,[sp,#0x20]
+  0006d3a0  ldr r3,[sp,#0x1c]
+  0006d3a4  ldrh r2,[r3,#0x14]
+  0006d3a8  mov r3,r2, lsr #0x8
+  0006d3ac  orr r3,r3,r2, lsl #0x8
+  0006d3b0  ldr r2,[sp,#0x14]
+  0006d3b4  uxth r3,r3
+  0006d3b8  cmp r2,r3
+  0006d3bc  bge 0x0006d808
+  0006d3c0  movw r3,#0x81e
+Range instruction count: 72
+
+RANGE 0x0006D800 - 0x0006DA20
+  0006d800  bl 0x000105c4
+  0006d804  b 0x0006d734
+  0006d808  mov r7,#0x0
+  0006d80c  b 0x0006d734
+  0006d874  mov r0,#0x0
+  0006d878  bx lr
+  0006d87c  ldr r3,[0x6d994]
+  0006d880  add r1,r0,#0x1000
+  0006d884  ldr r2,[0x6d998]
+  0006d888  stmdb sp!,{r4,lr}
+  0006d88c  sub sp,sp,#0x8
+  0006d890  add r3,pc,r3
+  0006d894  ldr r12,[r1,#0x2c0]
+  0006d898  ldr lr,[r3,r2]
+  0006d89c  ldr r3,[lr,#0x0]
+  0006d8a0  cmp r12,r3
+  0006d8a4  beq 0x0006d910
+  0006d8a8  cpy r2,lr
+  0006d8ac  mov r3,#0x1
+  0006d8b0  ldr r1,[r2,#0xc]
+  0006d8b4  add r2,r2,#0xc
+  0006d8b8  cmp r1,r12
+  0006d8bc  beq 0x0006d914
+  0006d8c0  add r3,r3,#0x1
+  0006d8c4  cmp r3,#0x8
+  0006d8c8  bne 0x0006d8b0
+  0006d8cc  mov r2,#0x7
+  0006d8d0  mov r1,#0x1
+  0006d8d4  bl 0x00073038
+  0006d8d8  subs r4,r0,#0x0
+  0006d8dc  bne 0x0006d8f8
+  0006d8e0  movw r0,#0xc6c0
+  0006d8e4  movt r0,#0x2d
+  0006d8e8  bl 0x0002faa4
+  0006d8ec  mov r0,#0x0
+  0006d8f0  add sp,sp,#0x8
+  0006d8f4  ldmia sp!,{r4,pc}
+  0006d8f8  bl 0x0005c5e8
+  0006d8fc  cmp r0,#0x9
+  0006d900  bgt 0x0006d964
+  0006d904  mvn r0,#0x0
+  0006d908  add sp,sp,#0x8
+  0006d90c  ldmia sp!,{r4,pc}
+  0006d910  mov r3,#0x0
+  0006d914  add r3,r3,r3, lsl #0x1
+  0006d918  add r3,lr,r3, lsl #0x2
+  0006d91c  ldmib r3,{r1,r2}
+  0006d920  bl 0x00073038
+  0006d924  subs r4,r0,#0x0
+  0006d928  beq 0x0006d8e0
+  0006d92c  bl 0x0005c5e8
+  0006d930  cmp r0,#0x9
+  0006d934  ble 0x0006d904
+  0006d938  ldr r1,[0x6d99c]
+  0006d93c  mov r2,#0x21c
+  0006d940  ldr r3,[0x6d9a0]
+  0006d944  ldr r0,[0x6d9a4]
+  0006d948  add r1,pc,r1
+  0006d94c  str r4,[sp,#0x0]
+  0006d950  add r3,pc,r3
+  0006d954  add r1,r1,#0xe0
+  0006d958  add r0,pc,r0
+  0006d95c  bl 0x000105c4
+  0006d960  b 0x0006d904
+  0006d964  ldr r1,[0x6d9a8]
+  0006d968  mov r2,#0x224
+  0006d96c  ldr r3,[0x6d9ac]
+  0006d970  ldr r0,[0x6d9b0]
+  0006d974  add r1,pc,r1
+  0006d978  str r4,[sp,#0x0]
+  0006d97c  add r3,pc,r3
+  0006d980  add r1,r1,#0xe0
+  0006d984  add r0,pc,r0
+  0006d988  bl 0x000105c4
+  0006d98c  mvn r0,#0x0
+  0006d990  b 0x0006d8f0
+  0006d9b4  stmdb sp!,{r4,r5,lr}
+  0006d9b8  sub sp,sp,#0xc
+  0006d9bc  cpy r4,r0
+  0006d9c0  bl 0x0006d87c
+  0006d9c4  subs r5,r0,#0x0
+  0006d9c8  beq 0x0006d9e8
+  0006d9cc  bl 0x0005c5e8
+  0006d9d0  cmp r0,#0x9
+  0006d9d4  bgt 0x0006da80
+  0006d9d8  mvn r4,#0x0
+  0006d9dc  cpy r0,r4
+  0006d9e0  add sp,sp,#0xc
+  0006d9e4  ldmia sp!,{r4,r5,pc}
+  0006d9e8  cpy r0,r4
+  0006d9ec  bl 0x00072760
+  0006d9f0  subs r5,r0,#0x0
+  0006d9f4  beq 0x0006da34
+  0006d9f8  bl 0x0005c5e8
+  0006d9fc  cmp r0,#0x9
+  0006da00  ble 0x0006d9d8
+  0006da04  ldr r1,[0x6dab8]
+  0006da08  movw r2,#0x233
+  0006da0c  ldr r3,[0x6dabc]
+  0006da10  mvn r4,#0x0
+  0006da14  ldr r0,[0x6dac0]
+  0006da18  add r1,pc,r1
+  0006da1c  str r5,[sp,#0x0]
+  0006da20  add r3,pc,r3
+Range instruction count: 104
+
+RANGE 0x00037980 - 0x00037A80
+  00037980  bl 0x000105c4
+  00037984  ldr r2,[0x379b8]
+  00037988  ldr r3,[0x379bc]
+  0003798c  ldr lr,[r6,r2]
+  00037990  add r3,pc,r3
+  00037994  str lr,[r3,r4,lsl #0x2]
+  00037998  b 0x000378e0
+  000379c0  ldr r3,[0x379d0]
+  000379c4  add r3,pc,r3
+  000379c8  ldr r0,[r3,#0x100]
+  000379cc  bx lr
+  000379d4  ldr r3,[0x379e4]
+  000379d8  add r3,pc,r3
+  000379dc  ldr r0,[r3,#0x180]
+  000379e0  bx lr
+  000379e8  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  000379ec  sub sp,sp,#0x8c0
+  000379f0  add r3,sp,#0xa0
+  000379f4  cpy r4,r0
+  000379f8  movw r2,#0x81e
+  000379fc  mov r1,#0x0
+  00037a00  str r0,[sp,#0x54]
+  00037a04  add r10,sp,#0x60
+  00037a08  cpy r0,r3
+  00037a0c  str r3,[sp,#0x28]
+  00037a10  bl 0x00003240
+  00037a14  mov r2,#0x20
+  00037a18  cpy r0,r10
+  00037a1c  mov r1,#0x0
+  00037a20  bl 0x00003240
+  00037a24  ldr r2,[r4,#0x90]
+  00037a28  cmp r2,#0x0
+  00037a2c  str r2,[sp,#0x50]
+  00037a30  beq 0x00037fa0
+  00037a34  ldr r3,[0x38020]
+  00037a38  add r2,r2,#0x16
+  00037a3c  cpy r11,r10
+  00037a40  str r2,[sp,#0x4c]
+  00037a44  mov r2,#0x0
+  00037a48  add r3,pc,r3
+  00037a4c  str r2,[sp,#0x48]
+  00037a50  add r3,r3,#0x14
+  00037a54  str r3,[sp,#0x44]
+  00037a58  ldr r3,[sp,#0x50]
+  00037a5c  ldrh r2,[r3,#0x14]
+  00037a60  mov r3,r2, lsr #0x8
+  00037a64  orr r3,r3,r2, lsl #0x8
+  00037a68  ldr r2,[sp,#0x48]
+  00037a6c  uxth r3,r3
+  00037a70  cmp r2,r3
+  00037a74  bge 0x00037fd8
+  00037a78  movw r3,#0x81e
+  00037a7c  ldr r2,[sp,#0x4c]
+  00037a80  cpy r1,r3
+Range instruction count: 54
+
+RANGE 0x00074A00 - 0x00074D00
+  00074a00  cmp r3,#0x0
+  00074a04  movwne r2,#0x12b0
+  00074a08  movne r3,#0x1
+  00074a0c  ldrne r0,[r0,r2]
+  00074a10  andne r0,r0,r3, lsl r1
+  00074a14  moveq r0,#0x1
+  00074a18  bx lr
+  00074a1c  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  00074a20  sub sp,sp,#0x860
+  00074a24  sub sp,sp,#0x8
+  00074a28  cpy r5,r0
+  00074a2c  add r3,sp,#0x48
+  00074a30  movw r2,#0x81e
+  00074a34  cpy r0,r3
+  00074a38  mov r1,#0x0
+  00074a3c  str r3,[sp,#0xc]
+  00074a40  add r7,sp,#0x28
+  00074a44  bl 0x00003240
+  00074a48  ldr r3,[0x74c08]
+  00074a4c  mov r2,#0x20
+  00074a50  cpy r0,r7
+  00074a54  mov r1,#0x0
+  00074a58  add r3,pc,r3
+  00074a5c  str r3,[sp,#0x24]
+  00074a60  bl 0x00003240
+  00074a64  mov r3,#0x0
+  00074a68  ldr r2,[r5,#0x90]
+  00074a6c  str r3,[r5,#0xa4]
+  00074a70  cpy r11,r3
+  00074a74  ldr r3,[0x74c0c]
+  00074a78  add r8,r2,#0x16
+  00074a7c  str r2,[sp,#0x18]
+  00074a80  add r3,pc,r3
+  00074a84  str r3,[sp,#0x1c]
+  00074a88  ldr r3,[0x74c10]
+  00074a8c  add r3,pc,r3
+  00074a90  str r3,[sp,#0x20]
+  00074a94  ldr r3,[sp,#0x18]
+  00074a98  ldrh r2,[r3,#0x14]
+  00074a9c  mov r3,r2, lsr #0x8
+  00074aa0  orr r3,r3,r2, lsl #0x8
+  00074aa4  uxth r3,r3
+  00074aa8  cmp r11,r3
+  00074aac  bge 0x00074bfc
+  00074ab0  movw r3,#0x81e
+  00074ab4  cpy r2,r8
+  00074ab8  cpy r1,r3
+  00074abc  ldr r0,[sp,#0xc]
+  00074ac0  bl 0x0003003c
+  00074ac4  subs r4,r0,#0x0
+  00074ac8  bne 0x00074bb8
+  00074acc  ldr r3,[r5,#0x98]
+  00074ad0  cmp r3,#0x0
+  00074ad4  beq 0x00074b9c
+  00074ad8  ldr r3,[0x74c14]
+  00074adc  mov r4,#0x0
+  00074ae0  add r3,pc,r3
+  00074ae4  str r3,[sp,#0x10]
+  00074ae8  ldr r3,[sp,#0xc]
+  00074aec  add r6,r3,#0x1e
+  00074af0  ldr r3,[0x74c18]
+  00074af4  add r3,pc,r3
+  00074af8  str r3,[sp,#0x14]
+  00074afc  b 0x00074b3c
+  00074b00  cpy r1,r4
+  00074b04  cpy r0,r5
+  00074b08  bl 0x000749f8
+  00074b0c  cmp r0,#0x0
+  00074b10  beq 0x00074b80
+  00074b14  ldr r2,[sp,#0x28]
+  00074b18  ldr r3,[r5,#0xa4]
+  00074b1c  rev r2,r2
+  00074b20  add r3,r3,r2
+  00074b24  str r3,[r5,#0xa4]
+  00074b28  ldr r3,[r5,#0x98]
+  00074b2c  add r4,r4,#0x1
+  00074b30  add r6,r6,#0x20
+  00074b34  cmp r3,r4
+  00074b38  bls 0x00074b9c
+  00074b3c  mov r3,#0x20
+  00074b40  cpy r2,r6
+  00074b44  cpy r1,r3
+  00074b48  cpy r0,r7
+  00074b4c  bl 0x0003003c
+  00074b50  subs r10,r0,#0x0
+  00074b54  beq 0x00074b00
+  00074b58  bl 0x0005c5e8
+  00074b5c  cmp r0,#0x9
+  00074b60  ble 0x00074b00
+  00074b64  str r10,[sp,#0x0]
+  00074b68  mov r2,#0x6b
+  00074b6c  ldr r3,[sp,#0x1c]
+  00074b70  ldr r1,[sp,#0x10]
+  00074b74  ldr r0,[sp,#0x14]
+  00074b78  bl 0x000105c4
+  00074b7c  b 0x00074b00
+  00074b80  bl 0x0005c5e8
+  00074b84  cmp r0,#0x27
+  00074b88  ble 0x00074b28
+  00074b8c  cpy r1,r4
+  00074b90  ldr r0,[sp,#0x20]
+  00074b94  bl 0x000105c4
+  00074b98  b 0x00074b28
+  00074b9c  bl 0x0005c5e8
+  00074ba0  cmp r0,#0x27
+  00074ba4  bgt 0x00074be8
+  00074ba8  add r8,r8,#0x810
+  00074bac  add r11,r11,#0x1
+  00074bb0  add r8,r8,#0xe
+  00074bb4  b 0x00074a94
+  00074bb8  bl 0x0005c5e8
+  00074bbc  cmp r0,#0x9
+  00074bc0  ble 0x00074acc
+  00074bc4  ldr r1,[0x74c1c]
+  00074bc8  mov r2,#0x66
+  00074bcc  ldr r0,[0x74c20]
+  00074bd0  str r4,[sp,#0x0]
+  00074bd4  ldr r3,[sp,#0x24]
+  00074bd8  add r1,pc,r1
+  00074bdc  add r0,pc,r0
+  00074be0  bl 0x000105c4
+  00074be4  b 0x00074acc
+  00074be8  ldr r0,[0x74c24]
+  00074bec  ldr r1,[r5,#0xa4]
+  00074bf0  add r0,pc,r0
+  00074bf4  bl 0x000105c4
+  00074bf8  b 0x00074ba8
+  00074bfc  add sp,sp,#0x860
+  00074c00  add sp,sp,#0x8
+  00074c04  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+  00074c28  stmdb sp!,{r4,r5,r6,r7,r8,r10,r11,lr}
+  00074c2c  cpy r10,r0
+  00074c30  ldr r0,[0x74e20]
+  00074c34  sub sp,sp,#0x8
+  00074c38  add r0,pc,r0
+  00074c3c  bl 0x00009d4c
+  00074c40  subs r7,r0,#0x0
+  00074c44  beq 0x00074d70
+  00074c48  add r8,r10,#0x1000
+  00074c4c  mov r3,#0x1
+  00074c50  str r3,[r8,#0x2bc]
+  00074c54  bl 0x0002f64c
+  00074c58  cmp r0,#0x32
+  00074c5c  str r0,[r8,#0x2b8]
+  00074c60  bhi 0x00074ce4
+  00074c64  cmp r0,#0x0
+  00074c68  beq 0x00074cfc
+  00074c6c  ldr r11,[0x74e24]
+  00074c70  add r5,r10,#0x1280
+  00074c74  sub r7,r7,#0x1
+  00074c78  add r5,r5,#0x30
+  00074c7c  mov r6,#0x0
+  00074c80  add r11,pc,r11
+  00074c84  b 0x00074cbc
+  00074c88  ldr r3,[r5,#0x0]
+  00074c8c  cmp r4,#0x0
+  00074c90  ldr r1,[r5,#0x4]
+  00074c94  cpy r2,r4
+  00074c98  add r6,r6,#0x1
+  00074c9c  orrne r4,r4,r3
+  00074ca0  cpyeq r4,r3
+  00074ca4  cpyne r2,r1
+  00074ca8  str r4,[r5,#0x0]
+  00074cac  str r2,[r5,#0x4]
+  00074cb0  ldr r3,[r8,#0x2b8]
+  00074cb4  cmp r6,r3
+  00074cb8  bcs 0x00074cfc
+  00074cbc  ldrb r4,[r7,#0x1]!
+  00074cc0  bl 0x0005c5e8
+  00074cc4  cmp r0,#0x27
+  00074cc8  and r4,r4,#0x1
+  00074ccc  mov r4,r4, lsl r6
+  00074cd0  ble 0x00074c88
+  00074cd4  cpy r1,r4
+  00074cd8  cpy r0,r11
+  00074cdc  bl 0x000105c4
+  00074ce0  b 0x00074c88
+  00074ce4  bl 0x0005c5e8
+  00074ce8  cmp r0,#0x13
+  00074cec  bgt 0x00074de0
+  00074cf0  mov r0,#0x0
+  00074cf4  add sp,sp,#0x8
+  00074cf8  ldmia sp!,{r4,r5,r6,r7,r8,r10,r11,pc}
+  00074cfc  bl 0x0005c5e8
+  00074d00  cmp r0,#0x27
+Range instruction count: 185
+
+==================================================
+SUMMARY
+==================================================
+Callback entries checked: 17
+Analysis completed.
+END OF REPORT
